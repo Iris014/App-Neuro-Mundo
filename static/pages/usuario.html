@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Encabezado de Perfil -->
+        <header class="app-header">
+            <div class="header-main">
+                <h1>Mi Cuenta</h1>
+                <span class="settings-icon">⚙️</span>
+            </div>
+        </header>
+
+        <!-- Contenido del Perfil -->
+        <main class="app-content">
+            
+            <!-- Tarjeta de Usuario Principal -->
+            <div class="profile-card-top">
+                <div class="profile-avatar-big">👋</div>
+                <h2>Mamá / Papá Protector</h2>
+                <p class="profile-email">familia.unida@email.com</p>
+                <div class="profile-badges-row">
+                    <span class="user-badge-item">Miembro Activo</span>
+                    <span class="user-badge-item">Guía de Apoyo</span>
+                </div>
+            </div>
+
+            <!-- Opciones del Menú Tipo Ajustes Móvil -->
+            <h3 class="block-title section-spacer">Configuraciones de la App</h3>
+            
+            <div class="settings-list-group">
+                <div class="settings-list-item" onclick="alert('Configuración de alertas sensoriales')">
+                    <div class="item-left">🔔 Notificaciones de Crisis</div>
+                    <span class="item-arrow">➔</span>
+                </div>
+                <div class="settings-list-item" onclick="alert('Miembro de la comunidad verificado')">
+                    <div class="item-left">🔒 Privacidad y Seguridad</div>
+                    <span class="item-arrow">➔</span>
+                </div>
+                <div class="settings-list-item" onclick="alert('Contacto con soporte técnico')">
+                    <div class="item-left">🤝 Solicitar Ayuda Técnica</div>
+                    <span class="item-arrow">➔</span>
+                </div>
+                <div class="settings-list-item logout-item" onclick="location.href='index.html'">
+                    <div class="item-left">🚪 Cerrar Sesión Temporal</div>
+                    <span class="item-arrow">➔</span>
+                </div>
+            </div>
+
+            <div class="scroll-spacing"></div>
+        </main>
+
+        <!-- Navegación Inferior Móvil -->
+        <nav class="app-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Inicio</span>
+            </a>
+            <a href="herramientas.html" class="nav-item">
+                <span class="nav-icon">🛠️</span>
+                <span class="nav-label">Herramientas</span>
+            </a>
+            <a href="comunidad.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-label">Comunidad</span>
+            </a>
+            <a href="perfil.html" class="nav-item active">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>

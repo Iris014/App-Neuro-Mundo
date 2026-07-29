@@ -1,60 +1,118 @@
 console.log("Conexión centralizada con JS...");
 
-// <button id="btn-idioma" onclick="alternarIdioma()">🌐 Switch to English</button>
+// <button id="btn-idioma" onclick="alternarIdioma()">EN</button>
+// <button id="btn-idioma" onclick="alternarIdioma()">ES</button>
+/*<!-- Botón de Idioma Integrado -->
+                    <button id="btn-idioma" onclick="alternarIdioma()" style="cursor: pointer; background: transparent; border: 1px solid #ccc; border-radius: 4px; padding: 2px 6px; font-weight: bold;">EN</button>
+                    📶 🔋
+
+                    Botón Selector de Idioma (Hereda la línea gráfica del Header)
+.lang-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-btn:active {
+    background: rgba(255, 255, 255, 0.3);
+}
+                    */
+
 
 let idiomaActual = "es";
 const traducciones = {
     paginaIndex: {
         es: {
-            btn: "🌐 Switch to English",
-            anuncio: "Garantía de 1 año incluida ✅",
-            placeholderBusqueda: "Buscar en Neo-Industries",
+            btn: "EN",
+            brand: "Espacio Amigable",
+            welcomeTitle: "BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI",
+            welcomeSubtitle: "UN LUGAR AMIGABLE PARA PERSONAS CON AUTISMO",
+            speechBubble: "AMAR, RESPETAR E INCLUIR.",
+            placeholderBusqueda: "Buscar guías, actividades o consejos...",
+            catTitulo: "Categorías de Apoyo",
+            catCasa: "En Casa",
+            catEscuela: "Escuela",
+            catTerapia: "Terapia",
+            catAutocuidado: "Auto-cuidado",
+            toolsTitulo: "Herramientas Diarias",
+            tool1Titulo: "Agenda Visual del Día",
+            tool1Desc: "Crea y gestiona las rutinas diarias mediante imágenes y pictogramas simples.",
+            tool2Titulo: "Semáforo de Alerta Sensorial",
+            tool2Desc: "Monitorea y registra los niveles de estrés o sobrecarga del niño en tiempo real.",
+            tool3Titulo: "Temporizador de Transición",
+            tool3Desc: "Ayuda a tu hijo a cambiar de una actividad a otra sin generar ansiedad.",
+            articlesTitulo: "Lecturas Recomendadas",
+            articlesSeeAll: "Ver todo",
+            art1Tag: "Crisis",
+            art1Titulo: "Cómo gestionar una crisis sensorial en espacios públicos",
+            art1Desc: "Una guía paso a paso con técnicas de desescalada amigables y respetuosas.",
+            art1Autor: "Por Dra. Elena Ramos",
+            art1Tiempo: "Hace 2 horas",
+            art2Tag: "Juego",
+            art2Titulo: "5 Juegos de estimulación propioceptiva en casa",
+            art2Desc: "Actividades divertidas que ayudan a regular el sistema nervioso a través del movimiento.",
+            art2Autor: "Por T.O. Marcos Díaz",
+            art2Tiempo: "Ayer",
+            commBannerTitulo: "¿Necesitas hablar con alguien?",
+            commBannerDesc: "Únete a nuestros círculos de apoyo virtuales liderados por psicólogos especialistas.",
+            commBannerBtn: "Entrar al Chat Grupal",
             navInicio: "Inicio",
-            navForo: "Foro",
-            navSoporte: "Soporte",
-            navRegistro: "Registrarse",
-            bannerTitulo: "🎉 ¡YA ESTÁN DE VUELTA! 🧼 JABONES PERFUMADOS",
-            bannerSub1: "Lo que tanto estabas esperando — de vuelta en MyCOCOS®",
-            bannerSub2: "⚠️ Stock limitado · Solo 200 unidades disponibles",
-            btnComprar: "🛒 COMPRAR",
-            resenas: ". reseñas",
-            ftComunidad: "Hoy más de 500.000 ya están usando MyCOCOS® en Chile",
-            ftContacto: "CONTACTANOS: Vía DM de Instagram",
-            ftHorarioSemana: "De lunes a viernes de 9hrs a 18hrs",
-            ftHorarioFinde: "Sábados de 10hrs a 13hrs",
-            ftTituloLinks: "ENLACES",
-            ftLinkComunidad: "The Club Comunidad",
-            ftTituloSub: "Suscríbete a las OFERTAS VIP",
-            ftSubDesc: "Recibe los mejores tips para aumentar tu confianza",
-            ftLblCorreo: "Correo Electrónico:"
+            navHerramientas: "Herramientas",
+            navComunidad: "Comunidad",
+            navPerfil: "Perfil"
         },
         en: {
-            btn: "🌐 Cambiar a Español",
-            anuncio: "1-Year Warranty Included ✅",
-            placeholderBusqueda: "Search in Neo-Industries",
+            btn: "ES",
+            brand: "Friendly Space",
+            welcomeTitle: "WELCOME: A SPACE DESIGNED FOR YOU",
+            welcomeSubtitle: "A FRIENDLY PLACE FOR PEOPLE WITH AUTISM",
+            speechBubble: "LOVE, RESPECT AND INCLUDE.",
+            placeholderBusqueda: "Search guides, activities or tips...",
+            catTitulo: "Support Categories",
+            catCasa: "At Home",
+            catEscuela: "School",
+            catTerapia: "Therapy",
+            catAutocuidado: "Self-care",
+            toolsTitulo: "Daily Tools",
+            tool1Titulo: "Daily Visual Schedule",
+            tool1Desc: "Create and manage daily routines using simple images and pictograms.",
+            tool2Titulo: "Sensory Alert Traffic Light",
+            tool2Desc: "Monitor and track stress or overload levels in real time.",
+            tool3Titulo: "Transition Timer",
+            tool3Desc: "Help your child transition from one activity to another without anxiety.",
+            articlesTitulo: "Recommended Readings",
+            articlesSeeAll: "See all",
+            art1Tag: "Crisis",
+            art1Titulo: "How to manage a sensory meltdown in public spaces",
+            art1Desc: "A step-by-step guide with friendly and respectful de-escalation techniques.",
+            art1Autor: "By Dr. Elena Ramos",
+            art1Tiempo: "2 hours ago",
+            art2Tag: "Play",
+            art2Titulo: "5 Proprioceptive stimulation games at home",
+            art2Desc: "Fun activities that help regulate the nervous system through movement.",
+            art2Autor: "By O.T. Marcos Díaz",
+            art2Tiempo: "Yesterday",
+            commBannerTitulo: "Need to talk to someone?",
+            commBannerDesc: "Join our virtual support circles led by specialist psychologists.",
+            commBannerBtn: "Join Group Chat",
             navInicio: "Home",
-            navForo: "Forum",
-            navSoporte: "Support",
-            navRegistro: "Sign Up",
-            bannerTitulo: "🎉 THEY ARE BACK! 🧼 SCENTED SOAPS",
-            bannerSub1: "What you've been waiting for — back at MyCOCOS®",
-            bannerSub2: "⚠️ Limited stock · Only 200 units available",
-            btnComprar: "🛒 BUY NOW",
-            resenas: ". reviews",
-            ftComunidad: "Today over 500,000 are already using MyCOCOS® in Chile",
-            ftContacto: "CONTACT US: Via Instagram DM",
-            ftHorarioSemana: "Monday to Friday from 9am to 6pm",
-            ftHorarioFinde: "Saturdays from 10am to 1pm",
-            ftTituloLinks: "LINKS",
-            ftLinkComunidad: "The Club Community",
-            ftTituloSub: "Subscribe to VIP OFFERS",
-            ftSubDesc: "Get the best tips to boost your confidence",
-            ftLblCorreo: "Email Address:"
+            navHerramientas: "Tools",
+            navComunidad: "Community",
+            navPerfil: "Profile"
         }
     },
     paginaProblematica: {
         es: {
-            btn: "🌐 Inglés",
+            btn: "EN",
             titulo: "El Desafío del Autismo: Diagnóstico, Estrés Familiar y Oportunidad",
             intro: "A pesar de la abundancia de información actual, las familias enfrentan dos grandes barreras: el subdiagnóstico y la falta de herramientas para el manejo diario. Esta realidad justifica la urgente necesidad de una solución digital centralizada.",
             subRealidad: "1. La Realidad Oculta: Casos No Diagnosticados",
@@ -78,7 +136,7 @@ const traducciones = {
             `
         },
         en: {
-            btn: "🌐 Spanish",
+            btn: "ES",
             titulo: "The Autism Challenge: Diagnosis, Family Stress, and Opportunity",
             intro: "Despite the abundance of information available today, families face two major barriers: underdiagnosis and a lack of tools for daily management. This reality justifies the urgent need for a centralized digital solution.",
             subRealidad: "1. The Hidden Reality: Undiagnosed Cases",
@@ -105,7 +163,7 @@ const traducciones = {
 
     paginaForo: {
         es: {
-            btn: "🌐 Inglés",
+            btn: "EN",
             titulo: "Casos y Mensajes de la Comunidad",
             lblCuidador: "Mensaje del cuidador:",
             lblRespuesta: "Respuesta de la comunidad:",
@@ -115,7 +173,7 @@ const traducciones = {
             msgRespuesta2: '"Agarrarle las manos es lo peor que podemos hacer. Ese aleteo es su forma de liberar estrés. Déjalo aletear tranquilo."'
         },
         en: {
-            btn: "🌐 Spanish",
+            btn: "ES",
             titulo: "Community Messages and Cases",
             lblCuidador: "Caregiver Message:",
             lblRespuesta: "Community Response:",
@@ -128,7 +186,7 @@ const traducciones = {
 
     paginaProyecto: {
         es: {
-            btn: "🌐 Inglés",
+            btn: "EN",
             titulo: "Red Comunitaria de Apoyo para Familias con TEA",
             subConcepto: "1. Concepto General",
             descConcepto: "La propuesta consiste en una plataforma digital comunitaria y pseudónima dedicada exclusivamente a padres y cuidadores de personas en el Espectro Autista. Su diseño se inspira en la arquitectura de foros de discusión (estilo Reddit).",
@@ -144,7 +202,7 @@ const traducciones = {
             descIot: "<strong>Simulador Sensorial en VR:</strong> Herramienta inmersiva para recrear la percepción visual y auditiva de personas en el espectro."
         },
         en: {
-            btn: "🌐 Spanish",
+            btn: "ES",
             titulo: "Community Support Network for Families with ASD",
             subConcepto: "1. General Concept",
             descConcepto: "The proposal consists of a pseudonymous digital community platform dedicated exclusively to parents and caregivers of individuals on the Autism Spectrum, inspired by forum architecture.",
@@ -162,7 +220,7 @@ const traducciones = {
     },
     paginaMetodologia: {
         es: {
-            btnIdioma: "🌐 Switch to English",
+            btnIdioma: "EN",
             navP1: "Página 1: Diagnóstico",
             navP2: "Página 2: Comunidad",
             navP3: "Página 3: Experiencia VR",
@@ -220,7 +278,7 @@ const traducciones = {
             ods8Desc: "Estabilización de rutinas familiares para permitir la reincorporación laboral y autonomía de tiempo de las madres y cuidadores."
         },
         en: {
-            btnIdioma: "🌐 Cambiar a Español",
+            btnIdioma: "ES",
             navP1: "Page 1: Diagnosis",
             navP2: "Page 2: Community",
             navP3: "Page 3: VR Experience",

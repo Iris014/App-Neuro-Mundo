@@ -1,217 +1,193 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyCocos</title>
-    <!-- Asegúrate de que esta ruta sea la correcta en tu proyecto -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Espacio Amigable App</title>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
-
 <body>
-    <!-- 1. Barra de Anuncios Superior -->
-    <div class="barra-anuncio">
-        <button class="flecha">←</button>
-        <p class="texto-anuncio">Garantía de 1 año incluida ✅</p>
-        <button class="flecha">→</button>
+
+    <!-- Contenedor del dispositivo móvil (Simulador/Shell) -->
+    <div class="app-container">
+
+        <!-- Barra de Estado / Notificaciones de la App -->
+        <header class="app-header">
+            <div class="header-top">
+                <span class="app-time">09:41</span>
+                <div class="app-icons">📶 🔋</div>
+            </div>
+            <div class="header-main">
+                <div class="app-brand">
+                    <span class="app-logo">🌼</span>
+                    <h1>Espacio Amigable</h1>
+                </div>
+                <button class="notification-btn" aria-label="Notificaciones">🔔<span class="badge"></span></button>
+            </div>
+        </header>
+
+        <!-- Contenido de la Aplicación (Scollable) -->
+        <main class="app-content">
+
+            <!-- Sección de Bienvenida Basada en la Imagen -->
+            <section class="welcome-card">
+                <div class="welcome-overlay">
+                    <h2 class="welcome-title">BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI</h2>
+                    <p class="welcome-subtitle">UN LUGAR AMIGABLE PARA PERSONAS CON AUTISMO</p>
+                    <div class="speech-bubble">
+                        <p>AMAR, RESPETAR E INCLUIR.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Buscador Global de la App -->
+            <section class="search-section">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Buscar guías, actividades o consejos...">
+                </div>
+            </section>
+
+            <!-- Categorías Rápidas (Formato Botones App) -->
+            <section class="categories-section">
+                <h3 class="block-title">Categorías de Apoyo</h3>
+                <div class="categories-scroll">
+                    <div class="category-item active">
+                        <span class="cat-icon">🏠</span>
+                        <span class="cat-name">En Casa</span>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">🏫</span>
+                        <span class="cat-name">Escuela</span>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">🧠</span>
+                        <span class="cat-name">Terapia</span>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">🧘</span>
+                        <span class="cat-name">Auto-cuidado</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Herramientas Diarias -->
+            <section class="tools-section">
+                <h3 class="block-title">Herramientas Diarias</h3>
+                
+                <!-- Tarjeta 1: Pictogramas -->
+                <div class="tool-card">
+                    <div class="tool-icon bg-blue">📅</div>
+                    <div class="tool-info">
+                        <h4>Agenda Visual del Día</h4>
+                        <p>Crea y gestiona las rutinas diarias mediante imágenes y pictogramas simples.</p>
+                    </div>
+                    <span class="arrow-right">➔</span>
+                </div>
+
+                <!-- Tarjeta 2: Semáforo Sensorial -->
+                <div class="tool-card">
+                    <div class="tool-icon bg-yellow">🚦</div>
+                    <div class="tool-info">
+                        <h4>Semáforo de Alerta Sensorial</h4>
+                        <p>Monitorea y registra los niveles de estrés o sobrecarga del niño en tiempo real.</p>
+                    </div>
+                    <span class="arrow-right">➔</span>
+                </div>
+
+                <!-- Tarjeta 3: Temporizador -->
+                <div class="tool-card">
+                    <div class="tool-icon bg-green">⏳</div>
+                    <div class="tool-info">
+                        <h4>Temporizador de Transición</h4>
+                        <p>Ayuda a tu hijo a cambiar de una actividad a otra sin generar ansiedad.</p>
+                    </div>
+                    <span class="arrow-right">➔</span>
+                </div>
+            </section>
+
+            <!-- Sección de Artículos Recomendados (Feed) -->
+            <section class="articles-section">
+                <div class="section-header-flex">
+                    <h3 class="block-title">Lecturas Recomendadas</h3>
+                    <a href="#" class="see-all">Ver todo</a>
+                </div>
+
+                <!-- Artículo 1 -->
+                <article class="feed-card">
+                    <div class="feed-tag tag-crisis">Crisis</div>
+                    <div class="feed-body">
+                        <h4>Cómo gestionar una crisis sensorial en espacios públicos</h4>
+                        <p>Una guía paso a paso con técnicas de desescalada amigables y respetuosas.</p>
+                        <div class="feed-footer">
+                            <span class="author">Por Dra. Elena Ramos</span>
+                            <span class="time">Hace 2 horas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="feed-card">
+                    <div class="feed-tag tag-juego">Juego</div>
+                    <div class="feed-body">
+                        <h4>5 Juegos de estimulación propioceptiva en casa</h4>
+                        <p>Actividades divertidas que ayudan a regular el sistema nervioso a través del movimiento.</p>
+                        <div class="feed-footer">
+                            <span class="author">Por T.O. Marcos Díaz</span>
+                            <span class="time">Ayer</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="feed-card">
+                    <div class="feed-tag tag-comunidad">Historias</div>
+                    <div class="feed-body">
+                        <h4>El camino hacia la inclusión escolar: Experiencias reales</h4>
+                        <p>Madres y padres comparten los desafíos y victorias en el sistema educativo tradicional.</p>
+                        <div class="feed-footer">
+                            <span class="author">Comunidad de Padres</span>
+                            <span class="time">Hace 3 días</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Sección de Comunidad y Soporte Emocional -->
+            <section class="community-banner">
+                <div class="community-content">
+                    <h4>¿Necesitas hablar con alguien?</h4>
+                    <p>Únete a nuestros círculos de apoyo virtuales liderados por psicólogos especialistas.</p>
+                    <button class="community-btn">Entrar al Chat Grupal</button>
+                </div>
+            </section>
+
+            <!-- Espacio final para que el scroll no tape el menú inferior -->
+            <div class="scroll-spacing"></div>
+
+        </main>
+
+        <!-- Barra de Navegación Inferior Fija (Bottom Nav Bar) -->
+        <nav class="app-nav">
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Inicio</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">🛠️</span>
+                <span class="nav-label">Herramientas</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-label">Comunidad</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Perfil</span>
+            </a>
+        </nav>
+
     </div>
 
-    <!-- 2. Menú de Navegación Principal -->
-    meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Author" content="Cesar, Agustin, Yhojan, Gabriel">
-    <title>Cyberpunk 2077 - Inicio</title>
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="icon" href="static/images/image_9c1d16ba.png">
-    </head>
-
-    <body>
-
-        <header class="reddit-header">
-            <div class="reddit-left">
-                <img src="static/images/image_9c1d16ba.png" alt="Logo Cyberpunk" class="logo">
-            </div>
-
-            <div class="reddit-search-container">
-                <span class="search-icon">🔍</span>
-                <input type="text" placeholder="Buscar en Neo-Industries" class="reddit-search-input"
-                    style="pointer-events: auto; user-select: text;">
-            </div>
-
-            <nav>
-                <a href="index.html">Inicio</a>
-                <a href="static/pages/foro.html">Foro</a>
-                <a href="static/pages/soporte.html">Soporte</a>
-                <a href="static/pages/formulario.html" class="registro">Registrarse</a>
-            </nav>
-        </header> >
-        <main class="contenido">
-
-
-            <section class="section-aura-azul">
-                <div class="section-aura">
-                    <div class="tarjeta-foto-aura">
-                        <img src="https://cdn.shopify.com/s/files/1/0505/9982/1502/files/Pack_trio_de_jabones_naturales_para_hombre.jpg?v=1769525762"
-                            alt="aura" class="foto-aura">
-                    </div>
-                    <div class="aura-texto">
-                        <h1 class="h1-aura">🎉 ¡YA ESTÁN DE VUELTA! 🧼 JABONES PERFUMADOS</h1>
-                        <p class="p-aura">Lo que tanto estabas esperando — de vuelta en MyCOCOS®</p>
-                        <p class="p-aura-2">⚠️ Stock limitado · Solo 200 unidades disponibles</p>
-                    </div>
-                </div>
-                <div class="section-aura-button">
-                    <a href="pages/jabones.html" class="aura-button">🛒 COMPRAR</a>
-                </div>
-            </section>
-
-            <section class="tarjetas-tienda">
-                <div class="tarjeta-tienda">
-                    <div class="contenido-tienda">
-                        <div>
-                            <img src="https://mycocos.cl/cdn/shop/files/amarillo-3_grande.jpg?v=1767623329"
-                                alt="fondo-evento" class="fondo-tienda" />
-                        </div>
-                        <div class="texto-tienda">
-                            <h2 class="event-title">Rasuradora MyCOCOS® 4.0</h2>
-                            <p class="event-date">⭐⭐⭐⭐⭐850 <b>. reseñas</b></p>
-                            <p class="tipo-tienda">$6.990</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tarjeta-tienda">
-                    <div class="contenido-tienda">
-                        <div>
-                            <img src="https://mycocos.cl/cdn/shop/files/azul-3.jpg?v=1767623411" alt="fondo-evento-2"
-                                class="fondo-tienda" />
-                        </div>
-                        <div class="texto-tienda">
-                            <h2 class="event-title">Pack rasuradora MyCOCOS®</h2>
-                            <p class="event-date">⭐⭐⭐⭐⭐850 <b>. reseñas</b>6</p>
-                            <p class="tipo-tienda">$6.990</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tarjeta-tienda">
-                    <div class="contenido-tienda">
-                        <div>
-                            <img src="https://mycocos.cl/cdn/shop/files/verde-3_1080x.jpg?v=1767623361"
-                                alt="fondo-evento-3" class="fondo-tienda" />
-                        </div>
-                        <div class="texto-tienda">
-                            <h2 class="event-title">rasurador MyCOCOS® 2.0</h2>
-                            <p class="event-date">⭐⭐⭐⭐⭐850 <b>. reseñas</b></p>
-                            <p class="tipo-tienda">$6.990</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tarjeta-tienda">
-                    <div class="contenido-tienda">
-                        <div>
-                            <img src="static/images/Pack_rasuradora_mycocos_400x.webp" alt="fondo-evento"
-                                class="fondo-tienda" />
-                        </div>
-                        <div class="texto-tienda">
-                            <h2 class="event-title">Rasuradora MyCOCOS® 4.0</h2>
-                            <p class="event-date">⭐⭐⭐⭐⭐850 <b>. reseñas</b></p>
-                            <p class="tipo-tienda">$6.990</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tarjeta-tienda">
-                    <div class="contenido-tienda">
-                        <div>
-                            <img src="static/images/Kit_perfect_trio_400x.webp" alt="fondo-evento-2"
-                                class="fondo-tienda" />
-                        </div>
-                        <div class="texto-tienda">
-                            <h2 class="event-title">Pack rasuradora MyCOCOS®</h2>
-                            <p class="event-date">⭐⭐⭐⭐⭐850 <b>. reseñas</b>6</p>
-                            <p class="tipo-tienda">$6.990</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tarjeta-tienda">
-                    <div class="contenido-tienda">
-                        <div>
-                            <img src="static/images/pack-rasuradora-mycocos1_c71431b5-f476-4993-9e24-e863d25f7f76_400x.webp"
-                                alt="fondo-evento-3" class="fondo-tienda" />
-                        </div>
-                        <div class="texto-tienda">
-                            <h2 class="event-title">rasurador MyCOCOS® 2.0</h2>
-                            <p class="event-date">⭐⭐⭐⭐⭐850 <b>. reseñas</b></p>
-                            <p class="tipo-tienda">$6.990</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="fin">
-            <div class="txt">
-                <h3>MyCOCOS® CLUB</h3>
-                <p>Hoy más de 500.000 ya están usando MyCOCOS® en Chile</p>
-                <p>CONTACTANOS: Vía DM de Instagram</p>
-                <p>theclub@mycocos.cl</p>
-                <p>De lunes a viernes de 9hrs a 18hrs</p>
-                <p>Sábados de 10hrs a 13hrs</p>
-            </div>
-            <div class="txt">
-                <h3>LINKS</h3>
-                <a href="pages/club.html">The Club Comunidad</a>
-                <a href="https://www.instagram.com/mycocos.cl/?hl=es">Instagram</a>
-                <a href="https://www.facebook.com/Mycocos.cl/?locale=es_LA">Facebook</a>
-                <a href="https://x.com/mycocos_cl">Twitter</a>
-                <a href="https://www.youtube.com/channel/UCCoU9qUCcMpE_tK5iTh73iQ">Youtube</a>
-                <a href="https://www.tiktok.com/@mycocos.cl">Tiktok</a>
-                <a
-                    href="https://open.spotify.com/user/31jw2g6rlmzzhf5zn4iqw72ajsbm?si=b613a3427d174dfe&nd=1&dlsi=b6f38c77d30e4718">Spotify</a>
-                <a href="pages/club.html">MyCOCOS® CLUB</a>
-            </div>
-            <div class="txt">
-                <h3>Suscríbete a las OFERTAS VIP</h3>
-                <p>Recibe los mejores tips para aumentar tu confianza</p>
-                <form>
-                    <label for="correo">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" placeholder="Su e-mail">
-                    <button type="submit">→</button>
-                </form>
-            </div>
-            <div class="redes">
-                <div class="tarjeta-redes">
-                    <a href="https://www.facebook.com/Mycocos.cl/?locale=es_LA"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_de_Facebook.png"
-                            alt="facebook">
-                </div>
-                <div class="tarjeta-redes">
-                    <a href="https://www.instagram.com/mycocos.cl/?hl=es"><img
-                            src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1280px-Instagram_logo_2016.svg.png"
-                            alt="instagram">
-                </div>
-                <div class="tarjeta-redes">
-                    <a href="https://x.com/mycocos_cl"><img
-                            src="https://img.magnific.com/vector-gratis/nuevo-diseno-icono-x-logotipo-twitter-2023_1017-45418.jpg?semt=ais_hybrid&w=740&q=80"
-                            alt="twitter">
-                </div>
-                <div class="tarjeta-redes">
-                    <a href="https://www.youtube.com/channel/UCCoU9qUCcMpE_tK5iTh73iQ"><img
-                            src="https://goodly.co.in/wp-content/uploads/2023/10/youtube-logo-png-46016-1.png"
-                            alt="youtube">
-                </div>
-                <div class="tarjeta-redes">
-                    <a href="https://www.tiktok.com/@mycocos.cl"><img
-                            src="https://img.magnific.com/vector-premium/logotipo-tik-tok_578229-290.jpg?semt=ais_hybrid&w=740&q=80"
-                            alt="tiktok">
-                </div>
-                <div class="tarjeta-redes">
-                    <a
-                        href="https://open.spotify.com/user/31jw2g6rlmzzhf5zn4iqw72ajsbm?si=b613a3427d174dfe&nd=1&dlsi=b6f38c77d30e4718"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/500px-Spotify_App_Logo.svg.png?_=20210620075506"
-                            alt="spotify">
-                </div>
-            </div>
-        </footer>
-        <script src="static/js/script.js"></script>
-    </body>
-
+</body>
 </html>
