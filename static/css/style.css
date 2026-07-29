@@ -5,12 +5,12 @@
 }
 
 body {
-    background-image: url("../images/Cyber.jpg");
     background-repeat: no-repeat; 
     background-position: center center; 
     background-attachment: fixed; 
     background-size: cover;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
 }
 
 header {
@@ -50,8 +50,9 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #fcee0a;
+    background-color: #002650;
     color: #000;
+    border-radius: 10%;
 }
 
 .registro {
@@ -1014,4 +1015,88 @@ gap: 50px;
   margin-top: 10px;
   color: #b9a26d;
   text-shadow: 2px 2px 20px #C9A84C;
+}
+.reddit-header {
+    position: fixed;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #050505;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 1000;
+    border-bottom: 2px solid #fcee0a;
+    box-sizing: border-box;
+}
+
+.reddit-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reddit-brand-text {
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.reddit-search-container {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 6px 15px;
+    width: 40%;
+    max-width: 500px;
+    transition: border-color 0.3s ease;
+}
+
+.reddit-search-container:focus-within {
+    border-color: #fcee0a;
+}
+
+.search-icon {
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.reddit-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 100%;
+    font-size: 13px;
+}
+
+.reddit-search-input::placeholder {
+    color: #888;
+}
+
+.reddit-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.reddit-nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.reddit-nav-link:hover {
+    color: #fcee0a;
+}
+
+body {
+    padding-top: 90px;
 }

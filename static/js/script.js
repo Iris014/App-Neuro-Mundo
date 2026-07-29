@@ -3,10 +3,56 @@ console.log("Conexión centralizada con JS...");
 // <button id="btn-idioma" onclick="alternarIdioma()">🌐 Switch to English</button>
 
 let idiomaActual = "es";
-
 const traducciones = {
-
     paginaIndex: {
+        es: {
+            btn: "🌐 Switch to English",
+            anuncio: "Garantía de 1 año incluida ✅",
+            placeholderBusqueda: "Buscar en Neo-Industries",
+            navInicio: "Inicio",
+            navForo: "Foro",
+            navSoporte: "Soporte",
+            navRegistro: "Registrarse",
+            bannerTitulo: "🎉 ¡YA ESTÁN DE VUELTA! 🧼 JABONES PERFUMADOS",
+            bannerSub1: "Lo que tanto estabas esperando — de vuelta en MyCOCOS®",
+            bannerSub2: "⚠️ Stock limitado · Solo 200 unidades disponibles",
+            btnComprar: "🛒 COMPRAR",
+            resenas: ". reseñas",
+            ftComunidad: "Hoy más de 500.000 ya están usando MyCOCOS® en Chile",
+            ftContacto: "CONTACTANOS: Vía DM de Instagram",
+            ftHorarioSemana: "De lunes a viernes de 9hrs a 18hrs",
+            ftHorarioFinde: "Sábados de 10hrs a 13hrs",
+            ftTituloLinks: "ENLACES",
+            ftLinkComunidad: "The Club Comunidad",
+            ftTituloSub: "Suscríbete a las OFERTAS VIP",
+            ftSubDesc: "Recibe los mejores tips para aumentar tu confianza",
+            ftLblCorreo: "Correo Electrónico:"
+        },
+        en: {
+            btn: "🌐 Cambiar a Español",
+            anuncio: "1-Year Warranty Included ✅",
+            placeholderBusqueda: "Search in Neo-Industries",
+            navInicio: "Home",
+            navForo: "Forum",
+            navSoporte: "Support",
+            navRegistro: "Sign Up",
+            bannerTitulo: "🎉 THEY ARE BACK! 🧼 SCENTED SOAPS",
+            bannerSub1: "What you've been waiting for — back at MyCOCOS®",
+            bannerSub2: "⚠️ Limited stock · Only 200 units available",
+            btnComprar: "🛒 BUY NOW",
+            resenas: ". reviews",
+            ftComunidad: "Today over 500,000 are already using MyCOCOS® in Chile",
+            ftContacto: "CONTACT US: Via Instagram DM",
+            ftHorarioSemana: "Monday to Friday from 9am to 6pm",
+            ftHorarioFinde: "Saturdays from 10am to 1pm",
+            ftTituloLinks: "LINKS",
+            ftLinkComunidad: "The Club Community",
+            ftTituloSub: "Subscribe to VIP OFFERS",
+            ftSubDesc: "Get the best tips to boost your confidence",
+            ftLblCorreo: "Email Address:"
+        }
+    },
+    paginaProblematica: {
         es: {
             btn: "🌐 Inglés",
             titulo: "El Desafío del Autismo: Diagnóstico, Estrés Familiar y Oportunidad",
@@ -57,6 +103,28 @@ const traducciones = {
         }
     },
 
+    paginaForo: {
+        es: {
+            btn: "🌐 Inglés",
+            titulo: "Casos y Mensajes de la Comunidad",
+            lblCuidador: "Mensaje del cuidador:",
+            lblRespuesta: "Respuesta de la comunidad:",
+            msgCuidador1: '"Hola. Hoy fuimos al supermercado y mi hijo de 6 años se tiró al suelo a gritar y patear cerca de las cajas. Sentí muchísimo miedo y vergüenza... Pensé que era un berrinche."',
+            msgRespuesta1: '"Te entiendo perfectamente porque me pasó lo mismo. No es un berrinche, se saturó con tanta luz y ruido. Lo que me sirvió fue hacer compras en horas con poca gente y usar audífonos para el ruido."',
+            msgCuidador2: '"Mi hijo de 5 años empezó a caminar en círculos y a aletear muy fuerte con las manos en la sala de espera del médico..."',
+            msgRespuesta2: '"Agarrarle las manos es lo peor que podemos hacer. Ese aleteo es su forma de liberar estrés. Déjalo aletear tranquilo."'
+        },
+        en: {
+            btn: "🌐 Spanish",
+            titulo: "Community Messages and Cases",
+            lblCuidador: "Caregiver Message:",
+            lblRespuesta: "Community Response:",
+            msgCuidador1: '"Hello. Today we went to the supermarket and my 6-year-old son threw himself on the floor, screaming and kicking near the checkout counters. I felt so scared and ashamed... I thought it was a tantrum."',
+            msgRespuesta1: '"I completely get you because the exact same thing happened to me. It is not a tantrum, he was just overwhelmed by all the lights and noise. What helped me was shopping during off-peak hours and using noise-canceling headphones."',
+            msgCuidador2: '"My 5-year-old son started pacing in circles and flapping his hands really hard in the waiting room..."',
+            msgRespuesta2: '"Holding his hands is the worst thing we can do. That hand-flapping is his way of releasing stress. Let him flap away comfortably."'
+        }
+    },
 
     paginaProyecto: {
         es: {
@@ -92,40 +160,134 @@ const traducciones = {
             descIot: "<strong>VR Sensory Processing Simulator:</strong> Immersive tool recreating the sensory perception of individuals on the spectrum."
         }
     },
-
-
-    paginaUsuarios: {
+    paginaMetodologia: {
         es: {
-            btn: "🌐 Inglés",
-            titulo: "Casos y Mensajes de la Comunidad",
-            lblCuidador: "Mensaje del cuidador:",
-            lblRespuesta: "Respuesta de la comunidad:",
-            msgCuidador1: '"Hola. Hoy fuimos al supermercado y mi hijo de 6 años se tiró al suelo a gritar y patear cerca de las cajas. Sentí muchísimo miedo y vergüenza... Pensé que era un berrinche."',
-            msgRespuesta1: '"Te entiendo perfectamente porque me pasó lo mismo. No es un berrinche, se saturó con tanta luz y ruido. Lo que me sirvió fue hacer compras en horas con poca gente y usar audífonos para el ruido."',
-            msgCuidador2: '"Mi hijo de 5 años empezó a caminar en círculos y a aletear muy fuerte con las manos en la sala de espera del médico..."',
-            msgRespuesta2: '"Agarrarle las manos es lo peor que podemos hacer. Ese aleteo es su forma de liberar estrés. Déjalo aletear tranquilo."'
+            btnIdioma: "🌐 Switch to English",
+            navP1: "Página 1: Diagnóstico",
+            navP2: "Página 2: Comunidad",
+            navP3: "Página 3: Experiencia VR",
+            navP4: "Página 4: Bienestar & ODS",
+
+            // PÁGINA 1
+            p1HeroTitulo: "No es rebeldía, es neurodivergencia: Entendiendo las señales no vistas",
+            p1HeroDesc: "Punto de entrada informativo para visibilizar el subdiagnóstico y romper barreras de desinformación.",
+            p1Card1Titulo: "📊 Datos de Subdiagnóstico",
+            p1Card1Desc: "El 25% de los niños con criterios clínicos no reciben diagnóstico oportuno antes de los 8 años ni en la adolescencia.",
+            p1Card2Titulo: "🌍 Brecha Social y Acceso",
+            p1Card2Desc: "Familias de menores recursos enfrentan barreras geográficas y económicas severas para acceder a neuropediatras.",
+            p1Card3Titulo: "🧩 Test de Orientación Sensorial",
+            p1Card3Desc: "Herramienta no clínica interactiva para diferenciar colapsos sensoriales de rabietas convencionales.",
+
+            // PÁGINA 2
+            p2Titulo: "Red Pseudónima de Apoyo & Foro Comunitario",
+            p2Desc: "Intercambio de experiencias sin estigma, filtrado por patrones conductuales y validación empírica.",
+            p2SearchPlaceholder: "Buscar por palabra clave (ej. supermercado, sueño, vacuna)...",
+            p2CopilotoTxt: "Haz una pregunta rápida sobre alguna conducta y resumiré las respuestas con mayor tasa de éxito de la comunidad.",
+            lblCuidador: "Mensaje del Cuidador:",
+            lblRespuesta: "Respuesta de la Comunidad Validada:",
+
+            // Casos Página 2
+            p2Cat1: "Categoría 1: Espacios Públicos",
+            p2C1Titulo: "Caso 1: El colapso en el supermercado",
+            msgC1: '"Hola. Hoy fuimos al supermercado y mi hijo de 6 años se tiró al suelo a gritar y patear cerca de las cajas. Sentí muchísimo miedo y vergüenza..."',
+            msgR1: '"Uff, te entiendo perfectamente porque a mí me pasó exactamente lo mismo... lo que a mí me sirvió fue empezar a hacer compras cortas a horas con poca gente y llevar sus audífonos..."',
+
+            p2C2Titulo: "Caso 2: Regulación y aleteo en la sala de espera médica",
+            msgC2: '"En la sala de espera empezó a caminar en círculos y a aletear muy fuerte con las manos. Le agarré las manos con fuerza... ¿Cómo le quito esos movimientos?"',
+            msgR2: '"Agarrarle las manos es lo peor que podemos hacer porque ese aleteo es su forma de sacar todo el estrés. Déjalo aletear tranquilo porque así su cuerpo se calma."',
+
+            p2Cat2: "Categoría 2: Comunicación No Verbal",
+            p2C3Titulo: "Caso 3: Autoagresión por falta de comunicación",
+            msgC3: '"Mi hija de 4 años no habla y lleva toda la tarde mordiéndose la mano y empujándome hacia la cocina... Siento que no logro conectar con ella."',
+            msgR3: '"A mí me salvó la vida pegar fotos de la comida y el agua en la puerta del refrigerador. Guíale suavemente el dedito para que toque la imagen."',
+
+            // PÁGINA 3
+            p3Titulo: "Centro de Empatía, VR e Integración IoT",
+            p3Desc: "Simulador inmersivo para experimentar de primera mano la sobrecarga sensorial y ajustar el entorno del hogar.",
+            p3Sub1: "🥽 Simulador de Hipersensibilidad VR",
+            p3Desc1: "Ajusta parámetros de luces, estímulos auditivos y multitud para experimentar cómo percibe un entorno saturado una persona neurodivergente.",
+            btnDemoVr: "Iniciar Demo Interactiva",
+            p3Sub2: "📑 Guías Visuales & Pictogramas",
+            p3Desc2: "Descarga plantillas con secuencias visuales para visitas médicas, lavarse las manos y horarios de pantalla.",
+            btnDescarga: "Descargar Recursos (PDF)",
+
+            // PÁGINA 4
+            p4Titulo: "Impacto en Salud Mental y Alineación con ODS",
+            p4Desc: "Datos de efectividad social y reducción de la carga emocional en cuidadores.",
+            ods3Desc: "Reducción del 40% del estrés familiar y mitigación de síntomas de ansiedad (80.2%) y depresión (72.5%) en cuidadores mediante corregulación.",
+            ods4Desc: "Capacitación continua no formal sobre respuesta no violenta, corregulación y eliminación de castigos contraproducentes.",
+            ods10Desc: "Democratización de recursos especializados para familias de bajos ingresos y comunidades vulnerables de forma totalmente gratuita.",
+            ods8Desc: "Estabilización de rutinas familiares para permitir la reincorporación laboral y autonomía de tiempo de las madres y cuidadores."
         },
         en: {
-            btn: "🌐 Spanish",
-            titulo: "Community Messages and Cases",
+            btnIdioma: "🌐 Cambiar a Español",
+            navP1: "Page 1: Diagnosis",
+            navP2: "Page 2: Community",
+            navP3: "Page 3: VR Experience",
+            navP4: "Page 4: Well-being & SDGs",
+
+            // PÁGINA 1
+            p1HeroTitulo: "It's not defiance, it's neurodivergence: Understanding unseen signals",
+            p1HeroDesc: "Informative entry point to raise awareness about underdiagnosis and break misinformation barriers.",
+            p1Card1Titulo: "📊 Underdiagnosis Data",
+            p1Card1Desc: "25% of children meeting clinical criteria do not receive a timely diagnosis before age 8 or during adolescence.",
+            p1Card2Titulo: "🌍 Social Gap & Access",
+            p1Card2Desc: "Low-income families face severe geographic and economic barriers to access pediatric neurologists.",
+            p1Card3Titulo: "🧩 Sensorial Orientation Test",
+            p1Card3Desc: "Interactive non-clinical tool to differentiate sensory meltdowns from conventional tantrums.",
+
+            // PÁGINA 2
+            p2Titulo: "Pseudonymous Support Network & Forum",
+            p2Desc: "Stigma-free experience exchange, filtered by behavioral patterns and empirical validation.",
+            p2SearchPlaceholder: "Search by keyword (e.g., supermarket, sleep, vaccine)...",
+            p2CopilotoTxt: "Ask a quick question about a behavior and I will summarize the community's most successful strategies.",
             lblCuidador: "Caregiver Message:",
-            lblRespuesta: "Community Response:",
-            msgCuidador1: '"Hello. Today we went to the supermarket and my 6-year-old son threw himself on the floor, screaming and kicking near the checkout counters. I felt so scared and ashamed... I thought it was a tantrum."',
-            msgRespuesta1: '"I completely get you because the exact same thing happened to me. It is not a tantrum, he was just overwhelmed by all the lights and noise. What helped me was shopping during off-peak hours and using noise-canceling headphones."',
-            msgCuidador2: '"My 5-year-old son started pacing in circles and flapping his hands really hard in the waiting room..."',
-            msgRespuesta2: '"Holding his hands is the worst thing we can do. That hand-flapping is his way of releasing stress. Let him flap away comfortably."'
+            lblRespuesta: "Validated Community Response:",
+
+            // Casos Página 2
+            p2Cat1: "Category 1: Public Spaces",
+            p2C1Titulo: "Case 1: Supermarket Meltdown",
+            msgC1: '"Hello. Today we went to the supermarket and my 6-year-old son dropped to the floor screaming and kicking near the registers..."',
+            msgR1: '"Uff, I completely understand because the exact same thing happened to me... What helped me was making short shopping trips during off-peak hours..."',
+
+            p2C2Titulo: "Case 2: Stimming in the Medical Waiting Room",
+            msgC2: '"My 5-year-old was getting a vaccine. In the waiting room, he started pacing in circles and flapping his hands hard..."',
+            msgR2: '"Holding his hands is the worst thing we can do because hand-flapping is his way of releasing stress. Let him stim peacefully."',
+
+            p2Cat2: "Category 2: Non-Verbal Communication",
+            p2C3Titulo: "Case 3: Self-Harm Due to Communication Frustration",
+            msgC3: '"I am desperate. My 4-year-old daughter doesn\'t speak and has been biting her hand all afternoon..."',
+            msgR3: '"Sticking pictures of food and water on the fridge door saved my life. Gently guide her finger to tap the image."',
+
+            // PÁGINA 3
+            p3Titulo: "Empathy Center, VR & IoT Integration",
+            p3Desc: "Immersive simulator to experience sensory overload firsthand and adjust home environments.",
+            p3Sub1: "🥽 VR Hypersensitivity Simulator",
+            p3Desc1: "Adjust parameters for lighting, auditory stimuli, and crowds to experience how a neurodivergent person perceives environments.",
+            btnDemoVr: "Launch Interactive Demo",
+            p3Sub2: "📑 Visual Guides & Pictograms",
+            p3Desc2: "Download visual sequence templates for doctor visits, handwashing, and screen time management.",
+            btnDescarga: "Download Resources (PDF)",
+
+            // PÁGINA 4
+            p4Titulo: "Mental Health Impact & SDG Alignment",
+            p4Desc: "Social effectiveness data and emotional burden reduction for caregivers.",
+            ods3Desc: "40% reduction in family stress and mitigation of anxiety (80.2%) and depressive symptoms (72.5%) in caregivers through co-regulation.",
+            ods4Desc: "Continuous non-formal education on non-violent responses, co-regulation, and elimination of counterproductive punishments.",
+            ods10Desc: "Democratization of specialized resources for low-income families and vulnerable communities entirely free of charge.",
+            ods8Desc: "Stabilization of family routines to enable mothers and caregivers to re-enter the workforce and gain time autonomy."
         }
     }
 };
 
-// Función principal llamada por el botón onclick="alternarIdioma()"
 function alternarIdioma() {
     // Alternar idioma entre español e inglés
-    idiomaActual = (idiomaActual === "es") ? "en" : "es";
+    idiomaActual = (idiomaActual === "es")
+        ? "en" : "es";
 
     // Intentar actualizar la PARTE 1 si los elementos existen en la página activa
     if (document.getElementById("titulo-principal")) {
-        const t = traducciones.parte1[idiomaActual];
+        const t = traducciones.paginaIndex[idiomaActual];
         document.getElementById("btn-idioma").textContent = t.btn;
         document.getElementById("titulo-principal").textContent = t.titulo;
         document.getElementById("desc-intro").textContent = t.intro;
@@ -136,9 +298,8 @@ function alternarIdioma() {
         document.getElementById("titulo-ods").textContent = t.tituloOds;
         document.getElementById("lista-ods").innerHTML = t.listaOds;
     }
-
     if (document.getElementById("titulo-solucion")) {
-        const t = traducciones.parte2[idiomaActual];
+        const t = traducciones.paginaProblematica[idiomaActual];
         document.getElementById("btn-idioma").textContent = t.btn;
         document.getElementById("titulo-solucion").textContent = t.titulo;
         document.getElementById("sub-concepto").textContent = t.subConcepto;
@@ -150,9 +311,8 @@ function alternarIdioma() {
         document.getElementById("sub-iot").textContent = t.subIot;
         document.getElementById("desc-iot").innerHTML = t.descIot;
     }
-
     if (document.getElementById("titulo-comunidad")) {
-        const t = traducciones.parte3[idiomaActual];
+        const t = traducciones.paginaForo[idiomaActual];
         document.getElementById("btn-idioma").textContent = t.btn;
         document.getElementById("titulo-comunidad").textContent = t.titulo;
         document.getElementById("lbl-cuidador1").textContent = t.lblCuidador;
@@ -164,4 +324,91 @@ function alternarIdioma() {
         document.getElementById("msg-cuidador2").textContent = t.msgCuidador2;
         document.getElementById("msg-respuesta2").textContent = t.msgRespuesta2;
     }
+    if (document.getElementById("txt-anuncio")) {
+        const t = traducciones.paginaProyecto[idiomaActual];
+        document.getElementById("btn-idioma").textContent = t.btn;
+        document.getElementById("txt-anuncio").textContent = t.anuncio;
+        document.getElementById("search-input").placeholder = t.placeholderBusqueda;
+        document.getElementById("nav-inicio").textContent = t.navInicio;
+        document.getElementById("nav-foro").textContent = t.navForo;
+        document.getElementById("nav-soporte").textContent = t.navSoporte;
+        document.getElementById("nav-registro").textContent = t.navRegistro;
+        document.getElementById("banner-titulo").textContent = t.bannerTitulo;
+        document.getElementById("banner-sub1").textContent = t.bannerSub1;
+        document.getElementById("banner-sub2").textContent = t.bannerSub2;
+        document.getElementById("btn-comprar").textContent = t.btnComprar;
+
+        for (let i = 1; i <= 6; i++) {
+            const el = document.getElementById(`lbl-resenas-${i}`);
+            if (el) el.textContent = t.resenas;
+        }
+
+        document.getElementById("ft-comunidad").textContent = t.ftComunidad;
+        document.getElementById("ft-contacto").textContent = t.ftContacto;
+        document.getElementById("ft-horario-semana").textContent = t.ftHorarioSemana;
+        document.getElementById("ft-horario-finde").textContent = t.ftHorarioFinde;
+        document.getElementById("ft-titulo-links").textContent = t.ftTituloLinks;
+        document.getElementById("ft-link-comunidad").textContent = t.ftLinkComunidad;
+        document.getElementById("ft-titulo-sub").textContent = t.ftTituloSub;
+        document.getElementById("ft-sub-desc").textContent = t.ftSubDesc;
+        document.getElementById("ft-lbl-correo").textContent = t.ftLblCorreo;
+    }
+    if (document.getElementById("p1-hero-titulo")) {
+        const t = traducciones.paginaMetodologia[idiomaActual];
+        document.getElementById("btn-idioma").textContent = t.btn;
+
+        // Navegación de páginas
+        if (document.getElementById("nav-p1")) document.getElementById("nav-p1").textContent = t.navPag1;
+        if (document.getElementById("nav-p2")) document.getElementById("nav-p2").textContent = t.navPag2;
+        if (document.getElementById("nav-p3")) document.getElementById("nav-p3").textContent = t.navPag3;
+        if (document.getElementById("nav-p4")) document.getElementById("nav-p4").textContent = t.navPag4;
+
+        // Página 1
+        document.getElementById("p1-hero-titulo").textContent = t.p1HeroTitulo;
+        document.getElementById("p1-hero-desc").textContent = t.p1HeroDesc;
+        document.getElementById("p1-card1-titulo").textContent = t.p1Card1Titulo;
+        document.getElementById("p1-card1-desc").textContent = t.p1Card1Desc;
+        document.getElementById("p1-card2-titulo").textContent = t.p1Card2Titulo;
+        document.getElementById("p1-card2-desc").textContent = t.p1Card2Desc;
+        document.getElementById("p1-card3-titulo").textContent = t.p1Card3Titulo;
+        document.getElementById("p1-card3-desc").textContent = t.p1Card3Desc;
+
+        // Página 2
+        document.getElementById("p2-titulo").textContent = t.p2Titulo;
+        document.getElementById("p2-desc").textContent = t.p2Desc;
+        document.getElementById("p2-search-input").placeholder = t.p2SearchInput;
+        document.getElementById("p2-copiloto-txt").textContent = t.p2CopilotoTxt;
+
+        // Página 3
+        document.getElementById("p3-titulo").textContent = t.p3Titulo;
+        document.getElementById("p3-desc").textContent = t.p3Desc;
+        document.getElementById("p3-sub1").textContent = t.p3Sub1;
+        document.getElementById("p3-desc1").textContent = t.p3Desc1;
+        document.getElementById("btn-demo-vr").textContent = t.btnDemoVr;
+        document.getElementById("p3-sub2").textContent = t.p3Sub2;
+        document.getElementById("p3-desc2").textContent = t.p3Desc2;
+        document.getElementById("btn-descarga").textContent = t.btnDescarga;
+
+        // Página 4
+        document.getElementById("p4-titulo").textContent = t.p4Titulo;
+        document.getElementById("p4-desc").textContent = t.p4Desc;
+        document.getElementById("ods3-desc").textContent = t.ods3Desc;
+        document.getElementById("ods4-desc").textContent = t.ods4Desc;
+        document.getElementById("ods10-desc").textContent = t.ods10Desc;
+        document.getElementById("ods8-desc").textContent = t.ods8Desc;
+    }
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.querySelector(".reddit-search-input");
+
+    if (searchInput) {
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                const query = searchInput.value.trim();
+                if (query !== "") {
+                    alert("Buscando: " + query);
+                }
+            }
+        });
+    }
+});
