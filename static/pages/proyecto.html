@@ -9,35 +9,36 @@
 <body data-sensory="estandar">
 
     <div class="app-container">
-
+        <!-- ENCABEZADO FIJO DE LA APLICACIÓN -->
         <header class="app-header">
             <div class="header-top">
-                <span class="app-time">09:41</span>
-                <div class="app-icons">
-                    <button id="btn-idioma" class="lang-btn">EN</button>
-                    <span>📶 🔋</span>
-                </div>
+                <span>09:41</span>
+                <span>ESPACIO AMIGABLE</span>
             </div>
             <div class="header-main">
                 <div class="app-brand">
-                    <span class="app-logo">🚀</span>
-                    <h1 id="proy-titulo-brand">Ecosistema Integrado</h1>
+                    <img src="../images/image_4223f367.png" alt="Logo Espacio Amigable" class="logo-app">
+                    <h1>Espacio Amigable</h1>
                 </div>
-                <a href="perfil.html" class="notification-btn" aria-label="Notificaciones">🔔<span class="badge"></span></a>
+                <button class="notification-btn" aria-label="Notificaciones">
+                    🔔
+                    <span class="badge"></span>
+                </button>
             </div>
         </header>
 
+        <!-- CONTENIDO PRINCIPAL SCROLLEABLE -->
         <main class="app-content">
 
-            <!-- Ficha Técnica Principal / Hero Translúcido -->
+            <!-- FICHA TÉCNICA PRINCIPAL / HERO TRANSLÚCIDO -->
             <section class="glass-hero">
-                <span style="font-size: 0.7rem; font-weight: 700; color: var(--accent-yellow); text-transform: uppercase;" id="proy-badge-hero">Propuesta de Valor</span>
-                <h2 style="font-size: 1.2rem; color: var(--bg-dark-blue); margin-top: 4px;" id="proy-title-hero">Espacio Amigable App</h2>
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; line-height: 1.4;" id="proy-desc-hero">
+                <span class="glass-hero-badge" id="proy-badge-hero">Propuesta de Valor</span>
+                <h2 class="glass-hero-title" id="proy-title-hero">Espacio Amigable App</h2>
+                <p class="glass-hero-desc" id="proy-desc-hero">
                     Una solución digital interactiva diseñada para conectar a la persona neurodivergente, su familia y los entornos que frecuenta bajo un mismo lenguaje visual accesibilizado.
                 </p>
 
-                <!-- Píldoras de Propiedades -->
+                <!-- PÍLDORAS DE PROPIEDADES -->
                 <div class="feature-pill-list">
                     <span class="feature-pill" id="pill-1">✨ Interfaz Limpia</span>
                     <span class="feature-pill" id="pill-2">💬 Pictogramas</span>
@@ -45,23 +46,31 @@
                 </div>
             </section>
 
-            <!-- Bloques Informativos de Propósito -->
-            <section style="display: flex; flex-direction: column; gap: 12px;">
+            <!-- BLOQUES INFORMATIVOS DE PROPÓSITO / EJES -->
+            <section class="ejes-container">
                 <h3 class="block-title" id="proy-sec-title">Ejes Fundamentales</h3>
 
-                <div style="background: var(--card-background); padding: 14px; border-radius: 16px; display: flex; gap: 12px; align-items: center;">
-                    <span style="font-size: 1.5rem;">🤝</span>
-                    <div>
-                        <h4 style="font-size: 0.85rem;" id="eje1-title">Puente de Comunicación</h4>
-                        <p style="font-size: 0.75rem; color: var(--text-muted);" id="eje1-desc">Facilita el diálogo entre terapeutas, educadores y cuidadores.</p>
+                <div class="eje-card">
+                    <span class="eje-icon">🤝</span>
+                    <div class="eje-text">
+                        <h4 id="eje1-title">Puente de Comunicación</h4>
+                        <p id="eje1-desc">Facilita el diálogo entre terapeutas, educadores y cuidadores.</p>
                     </div>
                 </div>
 
-                <div style="background: var(--card-background); padding: 14px; border-radius: 16px; display: flex; gap: 12px; align-items: center;">
-                    <span style="font-size: 1.5rem;">🌿</span>
-                    <div>
-                        <h4 style="font-size: 0.85rem;" id="eje2-title">Prevención y Calma</h4>
-                        <p style="font-size: 0.75rem; color: var(--text-muted);" id="eje2-desc">Anticipa situaciones de sobrecarga mediante rutinas ajustables.</p>
+                <div class="eje-card">
+                    <span class="eje-icon">🌿</span>
+                    <div class="eje-text">
+                        <h4 id="eje2-title">Prevención y Calma</h4>
+                        <p id="eje2-desc">Anticipa situaciones de sobrecarga mediante rutinas ajustables.</p>
+                    </div>
+                </div>
+
+                <div class="eje-card">
+                    <span class="eje-icon">🎯</span>
+                    <div class="eje-text">
+                        <h4 id="eje3-title">Inclusión Autónoma</h4>
+                        <p id="eje3-desc">Promueve la toma de decisiones y el desarrollo de rutinas propias.</p>
                     </div>
                 </div>
             </section>
@@ -69,6 +78,7 @@
             <div class="scroll-spacing"></div>
         </main>
 
+        <!-- NAVEGACIÓN INFERIOR FIJA -->
         <nav class="app-nav">
             <a href="index.html" class="nav-item">
                 <span class="nav-icon">🏠</span>

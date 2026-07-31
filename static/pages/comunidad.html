@@ -9,78 +9,141 @@
 <body>
 
     <div class="app-container">
-        <!-- Encabezado de Comunidad -->
+        <!-- ENCABEZADO DE COMUNIDAD -->
         <header class="app-header">
+            <div class="header-top">
+                <span>09:41</span>
+                <span>ESPACIO AMIGABLE</span>
+            </div>
             <div class="header-main">
-                <h1>Muro de la Comunidad</h1>
-                <button class="add-post-btn" onclick="alert('Función para crear nueva publicación en desarrollo')">📝</button>
+                <div class="app-brand">
+                    <img src="../images/image_4223f367.png" alt="Logo Espacio Amigable" class="logo-app">
+                    <h1>Muro de la Comunidad</h1>
+                </div>
+                <button class="notification-btn" aria-label="Notificaciones">
+                    🔔
+                    <span class="badge"></span>
+                </button>
             </div>
         </header>
 
-        <!-- Contenido Multimedia / Foro -->
+        <!-- CONTENIDO TIPO REDDIT -->
         <main class="app-content">
             
-            <!-- Caja interactiva para publicar -->
-            <div class="share-box">
+            <!-- CAJA PARA CREAR NATIVE POST -->
+            <div class="reddit-create-box">
                 <div class="share-input-row">
                     <span class="user-avatar-small">👤</span>
-                    <input type="text" placeholder="Comparte una experiencia o pregunta hoy...">
+                    <input type="text" id="reddit-post-input" placeholder="Crear una publicación o consulta...">
                 </div>
                 <div class="share-actions">
                     <button class="share-opt">🖼️ Foto</button>
-                    <button class="share-opt">🏷️ Etiqueta</button>
-                    <button class="publish-btn">Publicar</button>
+                    <button class="share-opt">🏷️ r/Consejos</button>
+                    <button class="publish-btn" onclick="crearPublicacionReddit()">Publicar</button>
                 </div>
             </div>
 
-            <h3 class="block-title">Publicaciones Recientes</h3>
-
-            <!-- Publicación 1 -->
-            <div class="community-post-card">
-                <div class="post-header">
-                    <div class="post-user-info">
-                        <span class="user-avatar-circle">👩</span>
-                        <div>
-                            <h4>Laura Jiménez</h4>
-                            <p class="post-time">Hace 45 minutos</p>
-                        </div>
-                    </div>
-                    <span class="post-more">•••</span>
-                </div>
-                <div class="post-body">
-                    <p>¡Gran victoria hoy! Logramos terminar la rutina de la noche sin crisis sensoriales utilizando el temporizador de la app. ¡Poco a poco se avanza! 💪✨</p>
-                </div>
-                <div class="post-interactions">
-                    <button class="interaction-btn active-like">❤️ 24</button>
-                    <button class="interaction-btn" onclick="location.href='chat.html'">💬 5 comentarios</button>
-                </div>
+            <!-- FILTROS DE FEED ESTILO REDDIT -->
+            <div class="reddit-filter-bar">
+                <button class="filter-btn active">🔥 Tendencias</button>
+                <button class="filter-btn">✨ Nuevos</button>
+                <button class="filter-btn">🏆 Destacados</button>
             </div>
 
-            <!-- Publicación 2 -->
-            <div class="community-post-card">
-                <div class="post-header">
-                    <div class="post-user-info">
-                        <span class="user-avatar-circle">👨</span>
-                        <div>
-                            <h4>Andrés Mendoza</h4>
-                            <p class="post-time">Hace 3 horas</p>
+            <!-- CONTENEDOR DE PUBLICACIONES DINÁMICAS -->
+            <div id="posts-feed">
+
+                <!-- PUBLICACIÓN 1 (TIPO REDDIT) -->
+                <article class="reddit-post-card">
+                    <!-- Barra de Votación Lateral -->
+                    <div class="vote-sidebar">
+                        <button class="vote-btn upvote" onclick="votar(this, 1)">▲</button>
+                        <span class="vote-count">24</span>
+                        <button class="vote-btn downvote" onclick="votar(this, -1)">▼</button>
+                    </div>
+
+                    <!-- Contenido del Post -->
+                    <div class="post-main-content">
+                        <div class="post-header-meta">
+                            <span class="community-tag">r/LogrosDiarios</span>
+                            <span class="meta-dot">•</span>
+                            <span class="post-author">u/LauraJimenez</span>
+                            <span class="post-time">Hace 45 min</span>
+                        </div>
+                        
+                        <h3 class="reddit-post-title">¡Gran victoria hoy con la rutina nocturna!</h3>
+                        <p class="reddit-post-body">Logramos terminar la rutina de la noche sin crisis sensoriales utilizando el temporizador de la app. ¡Poco a poco se avanza! 💪✨</p>
+
+                        <!-- Acciones del Post -->
+                        <div class="reddit-post-actions">
+                            <button class="reddit-action-btn" onclick="toggleComments('comments-1')">
+                                💬 <span class="comment-count">5</span> Comentarios
+                            </button>
+                            <button class="reddit-action-btn" onclick="compartirPost()">🔗 Compartir</button>
+                        </div>
+
+                        <!-- HILO DE COMENTARIOS TIPO REDDIT (OCULTO POR DEFECTO) -->
+                        <div id="comments-1" class="reddit-comments-thread" style="display: none;">
+                            <div class="comment-item">
+                                <strong>u/CarlosR:</strong> ¡Felicidades! A nosotros también nos sirvió mucho el aviso de 5 minutos antes.
+                            </div>
+                            <div class="comment-item">
+                                <strong>u/Sonia_Terapia:</strong> Excelente estrategia visual. La anticipación es clave.
+                            </div>
+                            <div class="comment-input-box">
+                                <input type="text" placeholder="Escribe un comentario..." onkeypress="agregarComentario(event, this, 'comments-1')">
+                            </div>
                         </div>
                     </div>
-                    <span class="post-more">•••</span>
-                </div>
-                <div class="post-body">
-                    <p>¿Alguien conoce de parques infantiles o plazas adaptadas y tranquilas en el sector norte? Busco un espacio que no sea excesivamente ruidoso los fines de semana.</p>
-                </div>
-                <div class="post-interactions">
-                    <button class="interaction-btn">❤️ 12</button>
-                    <button class="interaction-btn" onclick="location.href='chat.html'">💬 8 comentarios</button>
-                </div>
+                </article>
+
+                <!-- PUBLICACIÓN 2 (TIPO REDDIT) -->
+                <article class="reddit-post-card">
+                    <!-- Barra de Votación Lateral -->
+                    <div class="vote-sidebar">
+                        <button class="vote-btn upvote" onclick="votar(this, 1)">▲</button>
+                        <span class="vote-count">12</span>
+                        <button class="vote-btn downvote" onclick="votar(this, -1)">▼</button>
+                    </div>
+
+                    <!-- Contenido del Post -->
+                    <div class="post-main-content">
+                        <div class="post-header-meta">
+                            <span class="community-tag tag-preguntas">r/EspaciosSeguros</span>
+                            <span class="meta-dot">•</span>
+                            <span class="post-author">u/AndresMendoza</span>
+                            <span class="post-time">Hace 3 horas</span>
+                        </div>
+                        
+                        <h3 class="reddit-post-title">¿Parques tranquilos en el sector norte?</h3>
+                        <p class="reddit-post-body">¿Alguien conoce plazas adaptadas o de bajo nivel de ruido los fines de semana? Busco un espacio amigable sin aglomeraciones.</p>
+
+                        <!-- Acciones del Post -->
+                        <div class="reddit-post-actions">
+                            <button class="reddit-action-btn" onclick="toggleComments('comments-2')">
+                                💬 <span class="comment-count">8</span> Comentarios
+                            </button>
+                            <button class="reddit-action-btn" onclick="compartirPost()">🔗 Compartir</button>
+                        </div>
+
+                        <!-- HILO DE COMENTARIOS -->
+                        <div id="comments-2" class="reddit-comments-thread" style="display: none;">
+                            <div class="comment-item">
+                                <strong>u/Elena_P:</strong> El Parque de los Cerezos por las mañanas es súper tranquilo.
+                            </div>
+                            <div class="comment-input-box">
+                                <input type="text" placeholder="Escribe un comentario..." onkeypress="agregarComentario(event, this, 'comments-2')">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
             </div>
 
             <div class="scroll-spacing"></div>
         </main>
 
-        <!-- Navegación Inferior Móvil -->
+        <!-- NAVEGACIÓN INFERIOR MÓVIL -->
         <nav class="app-nav">
             <a href="index.html" class="nav-item">
                 <span class="nav-icon">🏠</span>
@@ -100,6 +163,7 @@
             </a>
         </nav>
     </div>
+    <script src="../js/script.js"></script>
 
 </body>
 </html>

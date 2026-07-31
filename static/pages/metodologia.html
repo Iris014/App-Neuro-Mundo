@@ -1,323 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espacio Amigable - Plataforma Modo App</title>
+    <title>Espacio Amigable</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <!-- MARCO CELULAR -->
-    <div class="marco-movil">
-
-        <!-- CABECERA DE LA APP -->
-        <header class="cabecera-app">
-            <h1 class="titulo-app">Espacio Amigable</h1>
-            <p class="subtitulo-app">Accesibilidad Cognitiva y Apoyo Familiar</p>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-top">
+                <span>09:41</span>
+                <span>ESPACIO AMIGABLE</span>
+            </div>
+            <div class="header-main">
+                <div class="app-brand">
+                    <img src="../images/image_4223f367.png" alt="Logo Espacio Amigable" class="logo-app">
+                    <h1>Espacio Amigable</h1>
+                </div>
+                <button class="notification-btn" aria-label="Notificaciones">
+                    🔔
+                    <span class="badge"></span>
+                </button>
+            </div>
         </header>
 
-        <!-- PESTAÑAS NAVEGABLES -->
-        <nav class="pestanas-navegacion">
-            <button class="boton-pestana activa" onclick="cambiarTab('p1', this)">Diagnóstico</button>
-            <button class="boton-pestana" onclick="cambiarTab('p2', this)">Comunidad</button>
-            <button class="boton-pestana" onclick="cambiarTab('p3', this)">Empatía VR</button>
-            <button class="boton-pestana" onclick="cambiarTab('p4', this)">Impacto ODS</button>
-        </nav>
+<main class="app-content">
+            
+            <section class="welcome-card">
+                <h2 class="welcome-title">¡Hola! Nos alegra verte</h2>
+                <p class="welcome-subtitle">Tu entorno seguro, accesible e inclusivo</p>
+                <div class="speech-bubble">¿Qué quieres explorar hoy?</div>
+            </section>
 
-        <!-- CUERPO CON CONTENIDO SIMPLIFICADO Y TEXTO GRANDE -->
-        <main class="cuerpo-app">
-
-            <!-- PÁGINA 1: DIAGNÓSTICO -->
-            <section id="p1" class="seccion-app activa">
-                <div class="hero-card">
-                    <span class="hero-badge">El Desafío Oculto</span>
-                    <h2>No es rebeldía, es neurodivergencia</h2>
-                    <p>Entendiendo las señales no vistas para romper la barrera del subdiagnóstico temprano.</p>
+            <section class="search-section">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Buscar pictogramas, historias o herramientas...">
                 </div>
+            </section>
 
-                <div class="desplegable-item color-azul">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>📊 Datos Rutgers & Brecha Social</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <div class="bloque-dato">
-                            <span class="numero-gran-impacto">25%</span>
-                            <p style="font-weight: 700;">De casos no son detectados a tiempo en la infancia y adolescencia.</p>
-                        </div>
-                        <p><strong>Brecha Social:</strong> Familias latinas y de bajos ingresos enfrentan mayor desinformación y falta de especialistas.</p>
+            <section class="categories-section">
+                <h3 class="block-title">Categorías principales</h3>
+                <div class="categories-scroll">
+                    <div class="category-item active">
+                        <span class="cat-icon">⭐</span>
+                        <span class="cat-name">Inicio</span>
                     </div>
-                </div>
-
-                <div class="desplegable-item color-morado">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>🔍 Test Sensorial y Conductual</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Aprende a diferenciar fácil y rápido entre un berrinche común y una <strong>sobrecarga sensorial</strong>.</p>
-                        <button class="boton-vibrante">Iniciar Cuestionario Rápido</button>
+                    <div class="category-item">
+                        <span class="cat-icon">🎨</span>
+                        <span class="cat-name">Pictogramas</span>
                     </div>
-                </div>
-
-                <div class="desplegable-item color-rosa">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>💡 Biblioteca de Patrones</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Mapeo de desencadenantes (sonidos altos, texturas) y reguladores (aleteo, abrazos) para conectar con familias afines.</p>
+                    <div class="category-item">
+                        <span class="cat-icon">🌱</span>
+                        <span class="cat-name">Regulación</span>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">📅</span>
+                        <span class="cat-name">Rutinas</span>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">🤖</span>
+                        <span class="cat-name">Copiloto IA</span>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">💬</span>
+                        <span class="cat-name">Comunidad</span>
                     </div>
                 </div>
             </section>
 
-            <!-- PÁGINA 2: COMUNIDAD -->
-            <section id="p2" class="seccion-app">
-                <h3 class="titulo-seccion-interna">Red Pseudónima de Apoyo</h3>
+            <section class="copiloto-box">
+                <div class="copiloto-icon">🤖</div>
+                <div class="copiloto-text">
+                    <h4>Copiloto de Apoyo Adaptativo IA</h4>
+                    <p>Asistente inteligente para traducción directa a pictogramas y sugerencias de regulación.</p>
+                </div>
+            </section>
 
-                <div class="copiloto-box">
-                    <div class="copiloto-icon">🤖</div>
-                    <div class="copiloto-text">
-                        <h4>Copiloto Comunitario IA</h4>
-                        <p>Traductor instantáneo de conductas y necesidades no verbales.</p>
+            <section class="tools-section">
+                <h3 class="block-title">Herramientas Diarias</h3>
+                
+                <div class="tool-card">
+                    <div class="tool-icon bg-blue">💬</div>
+                    <div class="tool-info">
+                        <h4>Tablero AAC de Comunicación</h4>
+                        <p>Expresa tus necesidades y emociones rápidamente mediante apoyos visuales.</p>
+                    </div>
+                    <span class="arrow-right">➔</span>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon bg-yellow">🧘</div>
+                    <div class="tool-info">
+                        <h4>Espacio de Calma y Descompresión</h4>
+                        <p>Ejercicios guiados de respiración, temporizadores y estímulos visuales.</p>
+                    </div>
+                    <span class="arrow-right">➔</span>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon bg-green">🎧</div>
+                    <div class="tool-info">
+                        <h4>Filtros Sensoriales y Audio</h4>
+                        <p>Frecuencias calmantes y ruido blanco orientados a momentos de sobrecarga.</p>
+                    </div>
+                    <span class="arrow-right">➔</span>
+                </div>
+            </section>
+
+            <section class="autonomia-section">
+                <h3 class="block-title">Módulos de Apoyo y Rutinas</h3>
+
+                <div class="tarjeta-modulo-app color-azul">
+                    <div class="encabezado-tarjeta-app">
+                        <span class="titulo-tarjeta-app">📅 Agenda Visual Diaria</span>
+                    </div>
+                    <p class="desc-tarjeta-app">Estructura las secuencias de tus actividades diarias paso a paso para reducir la ansiedad.</p>
+                    <button class="boton-app-primario">Ver mi día</button>
+                </div>
+
+                <div class="tarjeta-modulo-app color-morado">
+                    <div class="encabezado-tarjeta-app">
+                        <span class="titulo-tarjeta-app">🚦 Semáforo de Autorregulación</span>
+                    </div>
+                    <p class="desc-tarjeta-app">Identifica tu nivel de cansancio o sobrecarga y activa estrategias inmediatas de calma.</p>
+                    <button class="boton-app-primario">Explorar emociones</button>
+                </div>
+
+                <div class="tarjeta-modulo-app color-naranja">
+                    <div class="encabezado-tarjeta-app">
+                        <span class="titulo-tarjeta-app">🧩 Historias Sociales Ilustradas</span>
+                    </div>
+                    <p class="desc-tarjeta-app">Guías paso a paso para prepararte ante visitas médicas, cambios de rutina o imprevistos.</p>
+                    <button class="boton-app-primario">Leer historias</button>
+                </div>
+            </section>
+
+            <section class="metrics-section">
+                <div class="metrica-card">
+                    <span class="metrica-num">+85%</span>
+                    <span class="metrica-txt">Disminución de la frustración mediante el uso de agendas estructuradas y tableros visuales.</span>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h3 class="block-title">Evidencia y Experiencia</h3>
+                <div class="case-card">
+                    <span class="case-tag">✓ Validado por Especialistas</span>
+                    <p class="case-question">"¿Cómo facilita el semáforo emocional la adaptación a cambios?"</p>
+                    <p class="desc-tarjeta-app">Proporciona anticipación predecible, permitiendo al usuario tomar pausas conscientes antes de colapsar.</p>
+                </div>
+            </section>
+
+            <section class="articles-section">
+                <div class="section-header-flex">
+                    <h3 class="block-title">Recursos y Plantillas</h3>
+                    <a href="#" class="see-all">Ver todo</a>
+                </div>
+
+                <div class="feed-card">
+                    <span class="feed-tag tag-crisis">Guía de Apoyo</span>
+                    <div class="feed-body">
+                        <h4>Estrategias ante la sobrecarga sensorial</h4>
+                        <p>Pautas esenciales recomendadas por terapeutas ocupacionales para crear ambientes amigables.</p>
+                    </div>
+                    <div class="feed-footer">
+                        <span>⏱️ Lectura 3 min</span>
+                        <span>❤️ 142 Apoyos</span>
                     </div>
                 </div>
 
-                <h3 class="titulo-seccion-interna">Casos Reales y Soluciones</h3>
-
-                <!-- Caso 1 -->
-                <div class="desplegable-item color-naranja">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>🛒 Crisis en el Supermercado</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <div class="tarjeta-caso">
-                            <p class="caso-pregunta">"Mi hijo se tiró a gritar en las cajas. Pensé que era berrinche y me enojé. ¿Qué hago?"</p>
-                            <div class="caso-respuesta">
-                                <span class="tag-validado">✓ Solución Validada</span>
-                                <p><strong>No es berrinche, es saturación.</strong> Usa audífonos de ruido, realiza compras cortas en horas fijas y acompáñalo en silencio hasta que pase.</p>
-                            </div>
-                        </div>
+                <div class="feed-card feed-card-green">
+                    <span class="feed-tag tag-juego">Descargables</span>
+                    <div class="feed-body">
+                        <h4>Kit Imprimible de Rutina de Baño y Aseo</h4>
+                        <p>Plantilla visual en PDF lista para descargar y pegar en el hogar.</p>
                     </div>
-                </div>
-
-                <!-- Caso 2 -->
-                <div class="desplegable-item color-azul">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>🏥 Aleteo en el Médico</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <div class="tarjeta-caso">
-                            <p class="caso-pregunta">"En la sala de espera aleteaba mucho y le frené las manos. Lloró peor. ¿Cómo lo quito?"</p>
-                            <div class="caso-respuesta">
-                                <span class="tag-validado">✓ Solución Validada</span>
-                                <p><strong>¡Nunca le frenes las manos!</strong> El aleteo libera su estrés. Anticípale la visita con dibujos simples en papel.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Caso 3 -->
-                <div class="desplegable-item color-morado">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>💬 Mordidas por Frustración</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <div class="tarjeta-caso">
-                            <p class="caso-pregunta">"No habla y se muerde la mano cuando quiere algo en la cocina."</p>
-                            <div class="caso-respuesta">
-                                <span class="tag-validado">✓ Solución Validada</span>
-                                <p><strong>Usa apoyos visuales.</strong> Pega fotos de agua y comida en el refrigerador para que señale lo que necesita sin hacerse daño.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Caso 4 -->
-                <div class="desplegable-item color-verde">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>🥦 Rechazo a Comidas Nuevas</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <div class="tarjeta-caso">
-                            <p class="caso-pregunta">"Solo come fideos y yogurt. ¿Cómo logro que pruebe otros alimentos?"</p>
-                            <div class="caso-respuesta">
-                                <span class="tag-validado">✓ Solución Validada</span>
-                                <p><strong>Juega sin obligar a comer:</strong> Tocar texturas y oler primero. Reduce el estrés y la arcada en la mesa.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Caso 5 -->
-                <div class="desplegable-item color-rosa">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>🌙 Despertares a las 3 AM</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <div class="tarjeta-caso">
-                            <p class="caso-pregunta">"Se despierta en la madrugada lleno de energía. No puedo más."</p>
-                            <div class="caso-respuesta">
-                                <span class="tag-validado">✓ Solución Validada</span>
-                                <p><strong>Rutina estricta y reloj con luz:</strong> Baño, cuento y sin pantallas. La luz del reloj indica cuándo levantarse.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Caso 6 -->
-                <div class="desplegable-item color-naranja">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>📱 Berrinches por la Tablet</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <div class="tarjeta-caso">
-                            <p class="caso-pregunta">"Al quitarle la pantalla es un caos total."</p>
-                            <div class="caso-respuesta">
-                                <span class="tag-validado">✓ Solución Validada</span>
-                                <p><strong>Avisos y temporizador:</strong> Avisa a los 20 y 10 min. Dale el control: <em>"¿La guardas tú o la guardo yo?"</em></p>
-                            </div>
-                        </div>
+                    <div class="feed-footer">
+                        <span>📄 Descarga PDF</span>
+                        <span>⭐ Destacado</span>
                     </div>
                 </div>
             </section>
 
-            <!-- PÁGINA 3: VR E IOT -->
-            <section id="p3" class="seccion-app">
-                <h3 class="titulo-seccion-interna">Simulación Inmersiva</h3>
-
-                <div class="desplegable-item color-morado">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>🥽 Centro VR & Simulador Web</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Experimenta en carne propia la sobrecarga de luces y ruidos en un supermercado.</p>
-                        <button class="boton-vibrante">Probar Demo en Pantalla</button>
-                    </div>
-                </div>
-
-                <div class="desplegable-item color-verde">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>📥 Guías y Pictogramas</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <ul class="lista-descargas">
-                            <li>📌 Tarjetas para el Refrigerador</li>
-                            <li>🏥 Secuencia para ir al Médico</li>
-                            <li>⏱️ Temporizador de Pantallas</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="desplegable-item color-azul">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>🌿 Rincón de Descompresión</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Aprende cómo pequeñas reducciones de ruido e iluminación calman de inmediato la carga cognitiva.</p>
-                    </div>
+            <!-- BANNER DE COMUNIDAD Y RED DE FAMILIAS -->
+            <section class="community-banner">
+                <div class="community-content">
+                    <h4>🤝 Red de Familias y Profesionales</h4>
+                    <p>Conéctate a un espacio seguro donde compartir experiencias, secuencias y tableros personalizados.</p>
+                    <button class="community-btn">Unirme a la comunidad</button>
                 </div>
             </section>
 
-            <!-- PÁGINA 4: IMPACTO ODS -->
-            <section id="p4" class="seccion-app">
-                <h3 class="titulo-seccion-interna">Métricas de Bienestar</h3>
-
-                <div class="metrica-destacada">
-                    <span class="metrica-num">-40%</span>
-                    <p class="metrica-txt">Reducción del Estrés Familiar usando Corregulación sin Castigos</p>
-                </div>
-
-                <div class="desplegable-item color-rosa">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>🧠 Salud Mental del Cuidador</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Apoyo directo contra la ansiedad (<strong>80%</strong>) y depresión (<strong>72%</strong>) en madres y cuidadores.</p>
-                    </div>
-                </div>
-
-                <h3 class="titulo-seccion-interna">Alineación Objetivos ONU (ODS)</h3>
-
-                <div class="desplegable-item color-azul">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>❤️ ODS 3: Salud y Bienestar</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Reducción preventiva del aislamiento y mitigación del agotamiento en el hogar.</p>
-                    </div>
-                </div>
-
-                <div class="desplegable-item color-morado">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>📘 ODS 4: Educación de Calidad</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Educación no formal para criar desde el respeto y evitar violencia o represión.</p>
-                    </div>
-                </div>
-
-                <div class="desplegable-item color-verde">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>⚖️ ODS 10: Menos Desigualdad</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Herramientas gratuitas y accesibles para comunidades sin acceso a especialistas.</p>
-                    </div>
-                </div>
-
-                <div class="desplegable-item color-naranja">
-                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
-                        <span>💼 ODS 8: Trabajo Decente</span>
-                        <span class="icono-flecha">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <p>Estabiliza las rutinas para que las familias recuperen su autonomía laboral.</p>
-                    </div>
-                </div>
-            </section>
-
+            <div class="scroll-spacing"></div>
         </main>
 
-        <!-- BARRA DE NAVEGACIÓN INFERIOR -->
-        <footer class="nav-inferior">
-            <div class="nav-item activo" onclick="cambiarTab('p1', this)">
+        <nav class="app-nav">
+            <a href="#" class="nav-item active">
                 <span class="nav-icon">🏠</span>
-                <span>Inicio</span>
-            </div>
-            <div class="nav-item" onclick="cambiarTab('p2', this)">
-                <span class="nav-icon">💬</span>
-                <span>Foro</span>
-            </div>
-            <div class="nav-item" onclick="cambiarTab('p3', this)">
-                <span class="nav-icon">🥽</span>
-                <span>VR/Demo</span>
-            </div>
-            <div class="nav-item" onclick="cambiarTab('p4', this)">
-                <span class="nav-icon">📊</span>
-                <span>ODS</span>
-            </div>
-        </footer>
-
+                <span class="nav-label">Inicio</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">🧩</span>
+                <span class="nav-label">Recursos</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">❤️</span>
+                <span class="nav-label">Bienestar</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Perfil</span>
+            </a>
+        </nav>
     </div>
 
-    <script src="../js/script.js"></script>
 </body>
-
 </html>
