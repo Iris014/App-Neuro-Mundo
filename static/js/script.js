@@ -472,26 +472,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-        // Función para abrir/cerrar acordeones desplegables
-        function toggleDesplegable(elementoBoton) {
-            const contenedor = elementoBoton.parentElement;
-            contenedor.classList.toggle('abierto');
+function toggleAcc(btn) {
+            const card = btn.parentElement;
+            card.classList.toggle('abierto');
         }
 
-        // Función para alternar entre las 4 páginas de la plataforma
-        function cambiarSeccion(idSeccion) {
+        function cambiarTab(id, el) {
             // Ocultar todas las secciones
-            const secciones = document.querySelectorAll('.seccion-app-bloque');
-            secciones.forEach(sec => sec.classList.remove('activa'));
+            document.querySelectorAll('.seccion-app').forEach(s => s.classList.remove('activa'));
+            // Mostrar la sección seleccionada
+            document.getElementById(id).classList.add('activa');
 
-            // Quitar clase activa de las pestañas
+            // Actualizar estado de las pestañas superiores
             const pestanas = document.querySelectorAll('.boton-pestana');
             pestanas.forEach(p => p.classList.remove('activa'));
+            
+            // Actualizar estado del menú inferior
+            const navs = document.querySelectorAll('.nav-item');
+            navs.forEach(n => n.classList.remove('activo'));
 
-            // Mostrar la sección seleccionada
-            document.getElementById(idSeccion).classList.add('activa');
-
-            // Marcar pestaña seleccionada
-            event.currentTarget.classList.add('activa');
+            // Marcar elemento activo según dónde hizo clic
+            if (el.classList.contains('boton-pestana')) {
+                el.classList.add('activa');
+            }
         }

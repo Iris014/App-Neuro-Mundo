@@ -10,398 +10,313 @@
 
 <body>
 
-    <!-- CONTENEDOR PRINCIPAL MODO APP / CELULAR -->
-    <div class="marco-dispositivo-movil">
+    <!-- MARCO CELULAR -->
+    <div class="marco-movil">
 
-        <!-- ENCABEZADO SUPERIOR -->
+        <!-- CABECERA DE LA APP -->
         <header class="cabecera-app">
             <h1 class="titulo-app">Espacio Amigable</h1>
-            <p class="subtitulo-app">Plataforma de Accesibilidad Cognitiva & Apoyo Familiar</p>
+            <p class="subtitulo-app">Accesibilidad Cognitiva y Apoyo Familiar</p>
         </header>
 
-        <!-- NAVEGACIÓN POR PÁGINAS / SECCIONES -->
-        <nav class="pestanas-app-navegacion">
-            <button class="boton-pestana activa" onclick="cambiarSeccion('pag1')">Diagnóstico</button>
-            <button class="boton-pestana" onclick="cambiarSeccion('pag2')">Comunidad</button>
-            <button class="boton-pestana" onclick="cambiarSeccion('pag3')">Empatía VR</button>
-            <button class="boton-pestana" onclick="cambiarSeccion('pag4')">Impacto ODS</button>
+        <!-- PESTAÑAS NAVEGABLES -->
+        <nav class="pestanas-navegacion">
+            <button class="boton-pestana activa" onclick="cambiarTab('p1', this)">Diagnóstico</button>
+            <button class="boton-pestana" onclick="cambiarTab('p2', this)">Comunidad</button>
+            <button class="boton-pestana" onclick="cambiarTab('p3', this)">Empatía VR</button>
+            <button class="boton-pestana" onclick="cambiarTab('p4', this)">Impacto ODS</button>
         </nav>
 
-        <!-- CONTENIDO DINÁMICO -->
+        <!-- CUERPO CON CONTENIDO SIMPLIFICADO Y TEXTO GRANDE -->
         <main class="cuerpo-app">
 
-            <!-- ==========================================
-                 PÁGINA 1: DIAGNÓSTICO E INVISIBILIDAD
-                 ========================================== -->
-            <section id="pag1" class="seccion-app-bloque activa">
-
-                <!-- Hero Banner Impactante -->
-                <div class="tarjeta-hero-editorial">
-                    <span class="etiqueta-alerta">El Desafío Oculto</span>
-                    <h2 class="titulo-hero">No es rebeldía, es neurodivergencia</h2>
-                    <p class="subtitulo-hero">Entendiendo las señales no vistas para romper la barrera del
-                        subdiagnóstico.</p>
+            <!-- PÁGINA 1: DIAGNÓSTICO -->
+            <section id="p1" class="seccion-app activa">
+                <div class="hero-card">
+                    <span class="hero-badge">El Desafío Oculto</span>
+                    <h2>No es rebeldía, es neurodivergencia</h2>
+                    <p>Entendiendo las señales no vistas para romper la barrera del subdiagnóstico temprano.</p>
                 </div>
 
-                <!-- Bloque Datos Rutgers (Desplegable) -->
-                <div class="desplegable-item">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>📊 Infografía: Datos Rutgers & Brecha Social</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-azul">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>📊 Datos Rutgers & Brecha Social</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <div class="bloque-dato-destacado">
-                            <strong class="numero-impacto">25%</strong>
-                            <p>De casos no detectados tanto en menores de 8 años como en la adolescencia (16 años).</p>
+                        <div class="bloque-dato">
+                            <span class="numero-gran-impacto">25%</span>
+                            <p style="font-weight: 700;">De casos no son detectados a tiempo en la infancia y adolescencia.</p>
                         </div>
-                        <p class="texto-panel-movil">
-                            <strong>Módulo de Brecha Social:</strong> Expone cómo la falta de acceso a especialistas
-                            afecta con mayor gravedad a comunidades latinas, afroamericanas y de bajos ingresos.
-                        </p>
+                        <p><strong>Brecha Social:</strong> Familias latinas y de bajos ingresos enfrentan mayor desinformación y falta de especialistas.</p>
                     </div>
                 </div>
 
-                <!-- Test de Orientación Sensorial (Desplegable) -->
-                <div class="desplegable-item">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>🔍 Test de Orientación Sensorial y Conductual</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-morado">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>🔍 Test Sensorial y Conductual</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p class="texto-panel-movil">Cuestionario interactivo no clínico para ayudar a los cuidadores a
-                            diferenciar entre un berrinche convencional y una sobrecarga sensorial o un colapso.</p>
-                        <button class="boton-app-primario modo-ancho">Iniciar Test Sensorial</button>
+                        <p>Aprende a diferenciar fácil y rápido entre un berrinche común y una <strong>sobrecarga sensorial</strong>.</p>
+                        <button class="boton-vibrante">Iniciar Cuestionario Rápido</button>
                     </div>
                 </div>
 
-                <!-- Profundización: Biblioteca de Patrones Sensoriales -->
-                <div class="desplegable-item especial-respaldo">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>💡 Respaldo: Biblioteca de Patrones Sensoriales</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-rosa">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>💡 Biblioteca de Patrones</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p class="texto-panel-movil">En lugar de clasificar por "grados rígidos", mapeamos
-                            <strong>triggers específicos</strong> (frecuencias de sonido alto, texturas pegajosas) y
-                            <strong>reguladores</strong> (aleteo, compresión, estímulos visuales) para conectar a
-                            familias con la misma combinación sensorial.</p>
+                        <p>Mapeo de desencadenantes (sonidos altos, texturas) y reguladores (aleteo, abrazos) para conectar con familias afines.</p>
                     </div>
                 </div>
-
             </section>
 
-            <!-- ==========================================
-                 PÁGINA 2: COMUNIDAD Y RESPUESTAS (ESTILO REDDIT)
-                 ========================================== -->
-            <section id="pag2" class="seccion-app-bloque">
-                <h2 class="titulo-bloque-app">Red Pseudónima de Apoyo</h2>
-                <p class="subtitulo-seccion">Estrategias probadas por cuidadores manteniendo la privacidad del menor.
-                </p>
+            <!-- PÁGINA 2: COMUNIDAD -->
+            <section id="p2" class="seccion-app">
+                <h3 class="titulo-seccion-interna">Red Pseudónima de Apoyo</h3>
 
-                <!-- Algoritmo de Consenso Empático (Desplegable explicativo) -->
-                <div class="desplegable-item especial-respaldo">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>⚡ Algoritmo de Consenso Empático</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="copiloto-box">
+                    <div class="copiloto-icon">🤖</div>
+                    <div class="copiloto-text">
+                        <h4>Copiloto Comunitario IA</h4>
+                        <p>Traductor instantáneo de conductas y necesidades no verbales.</p>
+                    </div>
+                </div>
+
+                <h3 class="titulo-seccion-interna">Casos Reales y Soluciones</h3>
+
+                <!-- Caso 1 -->
+                <div class="desplegable-item color-naranja">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>🛒 Crisis en el Supermercado</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p class="texto-panel-movil">Las respuestas en el foro no se ordenan por popularidad, sino por
-                            su valor de efectividad situacional mediante la validación: <em>"Esto funcionó en mi caso en
-                                [X] semanas"</em>.</p>
+                        <div class="tarjeta-caso">
+                            <p class="caso-pregunta">"Mi hijo se tiró a gritar en las cajas. Pensé que era berrinche y me enojé. ¿Qué hago?"</p>
+                            <div class="caso-respuesta">
+                                <span class="tag-validado">✓ Solución Validada</span>
+                                <p><strong>No es berrinche, es saturación.</strong> Usa audífonos de ruido, realiza compras cortas en horas fijas y acompáñalo en silencio hasta que pase.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- BANCO DE CASOS Y RESPUESTAS (DESPLEGABLES CATEGORIZADOS) -->
-
-                <!-- Categoría 1 -->
-                <h3 class="subtitulo-categoria-foro">1. Crisis e Sobrecarga Sensorial en Espacios Públicos</h3>
-
-                <div class="desplegable-item caso-foro">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>🛒 Caso 1: El colapso en el supermercado</span>
-                        <span class="flecha-icono">▼</span>
+                <!-- Caso 2 -->
+                <div class="desplegable-item color-azul">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>🏥 Aleteo en el Médico</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <div class="mensaje-cuidador">
-                            <strong>Cuidador:</strong> "Mi hijo de 6 años se tiró al suelo a gritar cerca de las cajas.
-                            Pensé que era un berrinche por un dulce, me enojé y lo saqué a la fuerza. Llegamos a casa
-                            exhaustos y llorando. ¿Cómo le quito esa maña?"
-                        </div>
-                        <div class="respuesta-comunidad">
-                            <span class="insignia-validado">✓ Respuesta Validada</span>
-                            <p>"No es una maña, se saturó con la luz, ruido y gente. A mí me sirvió hacer compras cortas
-                                a horas con poca gente y llevar sus audífonos de ruido. Si da la crisis, olvídate de la
-                                gente, no lo regañes y llévalo con amor a un sitio tranquilo para acompañarlo en
-                                silencio hasta que pase el colapso."</p>
+                        <div class="tarjeta-caso">
+                            <p class="caso-pregunta">"En la sala de espera aleteaba mucho y le frené las manos. Lloró peor. ¿Cómo lo quito?"</p>
+                            <div class="caso-respuesta">
+                                <span class="tag-validado">✓ Solución Validada</span>
+                                <p><strong>¡Nunca le frenes las manos!</strong> El aleteo libera su estrés. Anticípale la visita con dibujos simples en papel.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="desplegable-item caso-foro">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>🏥 Caso 2: Aleteo en la sala de espera médica</span>
-                        <span class="flecha-icono">▼</span>
+                <!-- Caso 3 -->
+                <div class="desplegable-item color-morado">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>💬 Mordidas por Frustración</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <div class="mensaje-cuidador">
-                            <strong>Cuidador:</strong> "En la sala de espera para su vacuna empezó a caminar en círculos
-                            y aletear muy fuerte. Le agarré las manos con fuerza, se puso rígido y lloró
-                            desconsoladamente. ¿Cómo le quito esos movimientos raros?"
-                        </div>
-                        <div class="respuesta-comunidad">
-                            <span class="insignia-validado">✓ Respuesta Validada</span>
-                            <p>"Agarrarle las manos empeora todo; el aleteo es su forma de liberar estrés. Funciona
-                                dibujarle previamente la secuencia de eventos (auto -> sala de espera -> doctor -> casa)
-                                para anticipar. En la sala, déjalo aletear tranquilo porque así su cuerpo se autorregula
-                                solo."</p>
+                        <div class="tarjeta-caso">
+                            <p class="caso-pregunta">"No habla y se muerde la mano cuando quiere algo en la cocina."</p>
+                            <div class="caso-respuesta">
+                                <span class="tag-validado">✓ Solución Validada</span>
+                                <p><strong>Usa apoyos visuales.</strong> Pega fotos de agua y comida en el refrigerador para que señale lo que necesita sin hacerse daño.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Categoría 2 -->
-                <h3 class="subtitulo-categoria-foro">2. Comunicación No Verbal y Frustración</h3>
-
-                <div class="desplegable-item caso-foro">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>💬 Caso 3: Autoagresión por falta de comunicación</span>
-                        <span class="flecha-icono">▼</span>
+                <!-- Caso 4 -->
+                <div class="desplegable-item color-verde">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>🥦 Rechazo a Comidas Nuevas</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <div class="mensaje-cuidador">
-                            <strong>Cuidador:</strong> "Mi hija de 4 años no habla y lleva toda la tarde mordiéndose la
-                            mano y empujándome hacia la cocina. Le di comida, pero se frustró más y me lanzó un vaso.
-                            Tengo pánico de no lograr comunicarnos."
-                        </div>
-                        <div class="respuesta-comunidad">
-                            <span class="insignia-validado">✓ Respuesta Validada</span>
-                            <p>"Está desesperada por no poder pedir algo simple. Pega fotos de agua, comida y leche en
-                                el refrigerador a su altura. Cuando ocurra, llévala de la mano hacia las fotos, guía su
-                                dedito suavemente hacia la imagen del agua y dásela diciendo 'mira, agua'. Aprenderá a
-                                mostrarte la foto sin hacerse daño."</p>
+                        <div class="tarjeta-caso">
+                            <p class="caso-pregunta">"Solo come fideos y yogurt. ¿Cómo logro que pruebe otros alimentos?"</p>
+                            <div class="caso-respuesta">
+                                <span class="tag-validado">✓ Solución Validada</span>
+                                <p><strong>Juega sin obligar a comer:</strong> Tocar texturas y oler primero. Reduce el estrés y la arcada en la mesa.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Categoría 3 -->
-                <h3 class="subtitulo-categoria-foro">3. Estrategias Sensoriales y Rutinas Diarias</h3>
-
-                <div class="desplegable-item caso-foro">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>🥦 Caso 4: Selectividad alimentaria y juego sensorial</span>
-                        <span class="flecha-icono">▼</span>
+                <!-- Caso 5 -->
+                <div class="desplegable-item color-rosa">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>🌙 Despertares a las 3 AM</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <div class="mensaje-cuidador">
-                            <strong>Cuidador:</strong> "Mi hijo de 8 años solo come fideos, yogurt, pan y manzana.
-                            Empezamos a jugar con la comida sin presión (tocar fideos crudos, oler verduras). Ayer probó
-                            una papa frita solo. ¡Es un avance enorme!"
-                        </div>
-                        <div class="respuesta-comunidad">
-                            <span class="insignia-validado">✓ Respuesta Validada</span>
-                            <p>"Trabajar la parte sensorial sin obligar a comer baja muchísimo el rechazo y el llanto en
-                                la mesa. ¡Gracias por compartirlo, alivia saber que no estamos solos en esto!"</p>
+                        <div class="tarjeta-caso">
+                            <p class="caso-pregunta">"Se despierta en la madrugada lleno de energía. No puedo más."</p>
+                            <div class="caso-respuesta">
+                                <span class="tag-validado">✓ Solución Validada</span>
+                                <p><strong>Rutina estricta y reloj con luz:</strong> Baño, cuento y sin pantallas. La luz del reloj indica cuándo levantarse.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="desplegable-item caso-foro">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>🌙 Caso 5: Alteraciones del sueño y anticipación</span>
-                        <span class="flecha-icono">▼</span>
+                <!-- Caso 6 -->
+                <div class="desplegable-item color-naranja">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>📱 Berrinches por la Tablet</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <div class="mensaje-cuidador">
-                            <strong>Cuidador:</strong> "Mi hijo se despertaba a las 3am con mucha energía. Aplicamos
-                            rutina fija (baño, cuento, luz baja) y una luz nocturna con reloj que cambia de color cuando
-                            se puede levantar. Ha mejorado bastante."
-                        </div>
-                        <div class="respuesta-comunidad">
-                            <span class="insignia-validado">✓ Respuesta Validada</span>
-                            <p>"Nos pasó similar. A agregar la luz nocturna le sumamos una siesta corta de día y quitar
-                                cualquier azúcar después de las 5pm. Bajaron mucho los despertares nocturnos."</p>
+                        <div class="tarjeta-caso">
+                            <p class="caso-pregunta">"Al quitarle la pantalla es un caos total."</p>
+                            <div class="caso-respuesta">
+                                <span class="tag-validado">✓ Solución Validada</span>
+                                <p><strong>Avisos y temporizador:</strong> Avisa a los 20 y 10 min. Dale el control: <em>"¿La guardas tú o la guardo yo?"</em></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="desplegable-item caso-foro">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>📱 Caso 6: Transición difícil con pantallas</span>
-                        <span class="flecha-icono">▼</span>
-                    </button>
-                    <div class="contenido-desplegable">
-                        <div class="mensaje-cuidador">
-                            <strong>Cuidador:</strong> "Al quitarle la tablet a mi hijo eran gritos. Ahora usamos avisos
-                            (20 min, 10 min) con un temporizador y le damos la opción: '¿guardas tú la tablet o la
-                            guardo yo?'. Los berrinches bajaron al darle un poco de control."
-                        </div>
-                        <div class="respuesta-comunidad">
-                            <span class="insignia-validado">✓ Respuesta Validada</span>
-                            <p>"Saber que a otros también les cuesta soltar la pantalla me hace sentir muy acompañada.
-                                ¡Gracias por compartir la estrategia!"</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Widget Copiloto IA (Simulado en la interfaz) -->
-                <div class="widget-copiloto-ia">
-                    <div class="icono-copiloto">🤖</div>
-                    <div class="texto-copiloto">
-                        <strong>Copiloto Comunitario IA</strong>
-                        <p>Traductor de necesidades no verbales listo para ayudarte.</p>
-                    </div>
-                </div>
-
             </section>
 
-            <!-- ==========================================
-                 PÁGINA 3: EMPATÍA Y SIMULACIÓN (VR / IoT)
-                 ========================================== -->
-            <section id="pag3" class="seccion-app-bloque">
-                <h2 class="titulo-bloque-app">Experiencia Inmersiva VR e IoT</h2>
-                <p class="subtitulo-seccion">Traduce la teoría en una experiencia transformadora para el hogar.</p>
+            <!-- PÁGINA 3: VR E IOT -->
+            <section id="p3" class="seccion-app">
+                <h3 class="titulo-seccion-interna">Simulación Inmersiva</h3>
 
-                <!-- Centro de Conexión VR -->
-                <div class="desplegable-item">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>🥽 Centro de Conexión VR & Simulador Web</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-morado">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>🥽 Centro VR & Simulador Web</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p class="texto-panel-movil">Vincule visores VR para graduar intensidad de luces,
-                            multiplicadores de ruido ambiental o probar la experiencia interactiva de sobrecarga
-                            sensorial en un supermercado.</p>
-                        <button class="boton-app-primario modo-ancho">Probar Simulador Web</button>
+                        <p>Experimenta en carne propia la sobrecarga de luces y ruidos en un supermercado.</p>
+                        <button class="boton-vibrante">Probar Demo en Pantalla</button>
                     </div>
                 </div>
 
-                <!-- Guías Visuales Descargables -->
-                <div class="desplegable-item">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>📥 Guías Visuales Descargables (Pictogramas)</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-verde">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>📥 Guías y Pictogramas</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <ul class="lista-descargables">
-                            <li>📄 Pictogramas para la puerta del refrigerador</li>
-                            <li>📄 Secuencia visual para visitas al médico</li>
-                            <li>📄 Temporizador visual para el uso de pantallas</li>
+                        <ul class="lista-descargas">
+                            <li>📌 Tarjetas para el Refrigerador</li>
+                            <li>🏥 Secuencia para ir al Médico</li>
+                            <li>⏱️ Temporizador de Pantallas</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Descompresión Guiada (Respaldo) -->
-                <div class="desplegable-item especial-respaldo">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>🌿 Respaldo: Rincón de Descompresión VR</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-azul">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>🌿 Rincón de Descompresión</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p class="texto-panel-movil">Incluye un "contraste interactivo": el cuidador experimenta el
-                            entorno con sobrecarga y acto seguido activa "filtros de regulación" (cancelación de ruido y
-                            pictogramas) para entender el valor del diseño amigable.</p>
+                        <p>Aprende cómo pequeñas reducciones de ruido e iluminación calman de inmediato la carga cognitiva.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- ==========================================
-                 PÁGINA 4: IMPACTO Y BIENESTAR (ODS)
-                 ========================================== -->
-            <section id="pag4" class="seccion-app-bloque">
-                <h2 class="titulo-bloque-app">Impacto Familiar y Matriz ODS</h2>
-                <p class="subtitulo-seccion">Demostrando la efectividad y alineación con metas globales de la ONU.</p>
+            <!-- PÁGINA 4: IMPACTO ODS -->
+            <section id="p4" class="seccion-app">
+                <h3 class="titulo-seccion-interna">Métricas de Bienestar</h3>
 
-                <!-- Dashboard de Métricas -->
-                <div class="panel-control-movil">
-                    <h3 class="titulo-tarjeta-app">Dashboard de Métricas Familiares</h3>
-                    <div class="tarjeta-metrica-destacada">
-                        <span class="porcentaje-exito">-40%</span>
-                        <p>Reducción del estrés familiar con herramientas de corregulación en lugar de castigos.</p>
-                    </div>
+                <div class="metrica-destacada">
+                    <span class="metrica-num">-40%</span>
+                    <p class="metrica-txt">Reducción del Estrés Familiar usando Corregulación sin Castigos</p>
                 </div>
 
-                <!-- Módulo Salud Mental Cuidador -->
-                <div class="desplegable-item">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>🧠 Módulo de Salud Mental para el Cuidador</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-rosa">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>🧠 Salud Mental del Cuidador</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p class="texto-panel-movil">Validación activa de los niveles de ansiedad
-                            (<strong>80.2%</strong>) y síntomas depresivos (<strong>72.5%</strong>) en madres y
-                            cuidadores, ofreciendo herramientas de acompañamiento emocional diario.</p>
+                        <p>Apoyo directo contra la ansiedad (<strong>80%</strong>) y depresión (<strong>72%</strong>) en madres y cuidadores.</p>
                     </div>
                 </div>
 
-                <!-- DESPLEGABLES PROFUNDIZACIÓN MATRIZ ODS -->
-                <h3 class="subtitulo-categoria-foro">Matriz de Impacto ODS</h3>
+                <h3 class="titulo-seccion-interna">Alineación Objetivos ONU (ODS)</h3>
 
-                <div class="desplegable-item ods-card">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
+                <div class="desplegable-item color-azul">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
                         <span>❤️ ODS 3: Salud y Bienestar</span>
-                        <span class="flecha-icono">▼</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p><strong>Problema:</strong> 72.5% de las madres sufren síntomas depresivos y 80.2% padecen
-                            ansiedad por agotamiento y vergüenza social.</p>
-                        <p><strong>Impacto:</strong> Intervención preventiva que reduce la sensación de aislamiento y
-                            disminuye el estrés familiar en un 40%.</p>
+                        <p>Reducción preventiva del aislamiento y mitigación del agotamiento en el hogar.</p>
                     </div>
                 </div>
 
-                <div class="desplegable-item ods-card">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
+                <div class="desplegable-item color-morado">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
                         <span>📘 ODS 4: Educación de Calidad</span>
-                        <span class="flecha-icono">▼</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p><strong>Problema:</strong> 35%-40% de padres enfrentan el diagnóstico con desinformación o
-                            recurriendo a castigos.</p>
-                        <p><strong>Impacto:</strong> Ecosistema de educación no formal continua que enseña corregulación
-                            respetuosa sin violencia ni represión.</p>
+                        <p>Educación no formal para criar desde el respeto y evitar violencia o represión.</p>
                     </div>
                 </div>
 
-                <div class="desplegable-item ods-card">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>⚖️ ODS 10: Reducción de Desigualdades</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-verde">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>⚖️ ODS 10: Menos Desigualdad</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p><strong>Problema:</strong> Subdiagnóstico desproporcionado en comunidades latinas,
-                            afroamericanas y de bajos ingresos por falta de acceso médico.</p>
-                        <p><strong>Impacto:</strong> Democratización gratuita y pseudónima del conocimiento
-                            especializado para cualquier familia con internet.</p>
+                        <p>Herramientas gratuitas y accesibles para comunidades sin acceso a especialistas.</p>
                     </div>
                 </div>
 
-                <div class="desplegable-item ods-card">
-                    <button class="cabecera-desplegable" onclick="toggleDesplegable(this)">
-                        <span>💼 ODS 8: Trabajo Decente & Economía</span>
-                        <span class="flecha-icono">▼</span>
+                <div class="desplegable-item color-naranja">
+                    <button class="cabecera-desplegable" onclick="toggleAcc(this)">
+                        <span>💼 ODS 8: Trabajo Decente</span>
+                        <span class="icono-flecha">▼</span>
                     </button>
                     <div class="contenido-desplegable">
-                        <p><strong>Problema:</strong> Entre el 25% y 45% de los padres reducen su jornada laboral o
-                            renuncian por la carga imprevista del cuidado.</p>
-                        <p><strong>Impacto:</strong> Devuelve autonomía de tiempo, estabiliza rutinas de sueño y
-                            facilita la reincorporación laboral de los cuidadores.</p>
+                        <p>Estabiliza las rutinas para que las familias recuperen su autonomía laboral.</p>
                     </div>
                 </div>
-
             </section>
 
         </main>
 
-        <!-- BARRA INFERIOR DE NAVEGACIÓN TIPO APP -->
-        <footer class="barra-navegacion-inferior">
-            <a href="#" class="item-nav-app activo" onclick="cambiarSeccion('pag1')">Inicio</a>
-            <a href="#" class="item-nav-app" onclick="cambiarSeccion('pag2')">Foro</a>
-            <a href="#" class="item-nav-app" onclick="cambiarSeccion('pag3')">VR/Demo</a>
-            <a href="#" class="item-nav-app" onclick="cambiarSeccion('pag4')">ODS</a>
+        <!-- BARRA DE NAVEGACIÓN INFERIOR -->
+        <footer class="nav-inferior">
+            <div class="nav-item activo" onclick="cambiarTab('p1', this)">
+                <span class="nav-icon">🏠</span>
+                <span>Inicio</span>
+            </div>
+            <div class="nav-item" onclick="cambiarTab('p2', this)">
+                <span class="nav-icon">💬</span>
+                <span>Foro</span>
+            </div>
+            <div class="nav-item" onclick="cambiarTab('p3', this)">
+                <span class="nav-icon">🥽</span>
+                <span>VR/Demo</span>
+            </div>
+            <div class="nav-item" onclick="cambiarTab('p4', this)">
+                <span class="nav-icon">📊</span>
+                <span>ODS</span>
+            </div>
         </footer>
 
     </div>
 
-    <!-- SCRIPT JS PARA EL FUNCIONAMIENTO DE DESPLEGABLES Y PESTAÑAS -->
     <script src="../js/script.js"></script>
 </body>
 
