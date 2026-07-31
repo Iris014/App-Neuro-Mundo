@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Espacio Amigable - Problemática</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-sensory="estandar">
+
+    <div class="app-container">
+
+        <header class="app-header">
+            <div class="header-top">
+                <span class="app-time">09:41</span>
+                <div class="app-icons">
+                    <button id="btn-idioma" class="lang-btn">EN</button>
+                    <span>📶 🔋</span>
+                </div>
+            </div>
+            <div class="header-main">
+                <div class="app-brand">
+                    <span class="app-logo">🔍</span>
+                    <h1 id="prob-titulo-brand">Diagnóstico Social</h1>
+                </div>
+                <a href="perfil.html" class="notification-btn" aria-label="Notificaciones">🔔<span class="badge"></span></a>
+            </div>
+        </header>
+
+        <main class="app-content">
+
+            <div style="margin-bottom: 12px;">
+                <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--bg-dark-blue);" id="prob-hero-title">El Desafío en Cifras y Vivencias</h2>
+                <p style="font-size: 0.85rem; color: var(--text-muted);" id="prob-hero-sub">Identificamos los puntos donde el entorno urbano y social genera barreras invisibles.</p>
+            </div>
+
+            <!-- Bento Grid Asimétrico -->
+            <section class="bento-container">
+                
+                <!-- Tarjeta Principal (Ancha) -->
+                <div class="bento-card wide">
+                    <div>
+                        <span class="bento-tag" style="color: #b86b28;" id="tag-bento-1">Factor Principal</span>
+                        <h3 style="font-size: 1rem; margin-top: 4px;" id="title-bento-1">Sobrecarga Sensorial Impredecible</h3>
+                    </div>
+                    <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;" id="desc-bento-1">
+                        Estímulos auditivos y luminosos descontrolados en espacios públicos derivan en agotamiento mental y desregulación.
+                    </p>
+                </div>
+
+                <!-- Tarjeta Cuadrada Destacada Oscura -->
+                <div class="bento-card featured">
+                    <span class="bento-tag" id="tag-bento-2">Impacto</span>
+                    <span style="font-size: 1.8rem; font-weight: 800; margin: 8px 0;" id="num-bento-2">8/10</span>
+                    <p style="font-size: 0.7rem;" id="desc-bento-2">Familias evitan lugares concurridos por falta de adaptación.</p>
+                </div>
+
+                <!-- Tarjeta Cuadrada Clara -->
+                <div class="bento-card">
+                    <span class="bento-tag" style="color: var(--bg-dark-blue);" id="tag-bento-3">Comunicación</span>
+                    <span style="font-size: 1.8rem; font-weight: 800; color: var(--bg-dark-blue); margin: 8px 0;" id="num-bento-3">75%</span>
+                    <p style="font-size: 0.7rem; color: var(--text-muted);" id="desc-bento-3">Requiere apoyos visuales y pictogramas estandarizados.</p>
+                </div>
+
+                <!-- Tarjeta Ancha Secundaria -->
+                <div class="bento-card wide" style="background: var(--card-background);">
+                    <span class="bento-tag" style="color: var(--success-green);" id="tag-bento-4">Entorno Escolar y Social</span>
+                    <h4 style="font-size: 0.9rem; margin-top: 4px;" id="title-bento-4">Carencia de Zonas de Calma</h4>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;" id="desc-bento-4">
+                        Pocos establecimientos cuentan con espacios de descompresión cognitiva diseñados para recuperar el balance.
+                    </p>
+                </div>
+
+            </section>
+
+            <div class="scroll-spacing"></div>
+        </main>
+
+        <nav class="app-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label" id="nav-inicio">Inicio</span>
+            </a>
+            <a href="problematica.html" class="nav-item active">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-label" id="nav-problema">Problema</span>
+            </a>
+            <a href="herramientas.html" class="nav-item">
+                <span class="nav-icon">🛠️</span>
+                <span class="nav-label" id="nav-herramientas">Herramientas</span>
+            </a>
+            <a href="perfil.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label" id="nav-perfil">Perfil</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+</html>
