@@ -202,7 +202,6 @@ body {
 }
 
 .welcome-card::before {
-    content: "🌼";
     position: absolute;
     font-size: 5rem;
     opacity: 0.1;
@@ -294,7 +293,6 @@ body {
 }
 
 .category-item {
-    background-color: var(--card-background);
     padding: 10px 16px;
     border-radius: 30px;
     display: flex;
@@ -304,6 +302,8 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     cursor: pointer;
     transition: all 0.2s ease;
+    border: none;
+    outline: none;
 }
 
 .category-item.active {
@@ -491,13 +491,49 @@ body {
     z-index: 20;
 }
 
+/* Contenedor de la barra inferior en móvil */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 8px 6px;
+    border-radius: 0 0 24px 24px; /* Adapta los bordes al marco del teléfono */
+    overflow: hidden;             /* Evita que cualquier botón se salga */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Estado normal de los botones */
 .nav-item {
-    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--text-muted);
-    transition: color 0.2s ease;
+    justify-content: center;
+    flex: 1;                      /* Reparte el espacio por igual sin empujar hacia afuera */
+    padding: 6px 4px;
+    border-radius: 12px;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.7rem;
+    box-sizing: border-box;
+}
+
+/* ESTADO ACTIVO (.active): Ajustado para quedarse DENTRO del contenedor */
+.nav-item.active {
+    background-color: #0056c6;
+    color: #ffffff !important;
+    border-radius: 10px;          /* Un borde redondeado más ajustado */
+    padding: 6px 4px;             /* Mantiene el mismo alto que los demás para no salirse */
+    margin: 0;                    /* Elimina márgenes que lo desplacen */
+    box-shadow: 0 2px 8px rgba(0, 86, 198, 0.3);
+}
+
+/* Ajuste del texto e ícono dentro del activo */
+.nav-item.active .icon,
+.nav-item.active .text,
+.nav-item.active span {
+    color: #ffffff !important;
 }
 
 .nav-icon {
@@ -508,11 +544,6 @@ body {
 .nav-label {
     font-size: 0.7rem;
     font-weight: 500;
-}
-
-.nav-item.active {
-    color: var(--bg-dark-blue);
-    font-weight: 700;
 }
 
 
@@ -948,7 +979,6 @@ body {
 }
 
 .welcome-card::before {
-    content: "🌼";
     position: absolute;
     font-size: 5.5rem;
     opacity: 0.15;
@@ -2168,7 +2198,7 @@ body.view-pc .app-content {
 
 /* Botón flotante/integrado para activar la vista */
 .view-toggle-btn {
-    background: #ff5252;
+    background: #D1A13B;
     color: #ffffff;
     border: none;
     padding: 6px 14px;
@@ -2182,6 +2212,8 @@ body.view-pc .app-content {
 }
 
 .view-toggle-btn:hover {
-    background: #ff2d2d;
+    background: #ffffff;
+    color: #D1A13B;
+    font-weight: bolder;
     transform: scale(1.05);
 }

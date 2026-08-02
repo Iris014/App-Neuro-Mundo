@@ -123,7 +123,7 @@ function toggleViewMode() {
     const btn = document.getElementById('view-toggle');
     
     if (btn) {
-        btn.innerHTML = isPC ? '📱 Vista Móvil' : '🖥️ Vista PC';
+        btn.innerHTML = isPC ? 'Vista Móvil' : 'Vista PC';
     }
     
     localStorage.setItem('userViewMode', isPC ? 'pc' : 'mobile');
@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (savedMode === 'pc') {
         document.body.classList.add('view-pc');
-        if (btn) btn.innerHTML = '📱 Vista Móvil';
+        if (btn) btn.innerHTML = 'Vista Móvil';
     } else {
         document.body.classList.remove('view-pc');
-        if (btn) btn.innerHTML = '🖥️ Vista PC';
+        if (btn) btn.innerHTML = 'Vista PC';
     }
 });
