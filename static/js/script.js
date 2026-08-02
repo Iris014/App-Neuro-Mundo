@@ -116,3 +116,28 @@ function toggleAcc(btn) {
         function compartirPost() {
             alert("¡Enlace copiado al portapapeles!");
         }
+
+
+function toggleViewMode() {
+    const isPC = document.body.classList.toggle('view-pc');
+    const btn = document.getElementById('view-toggle');
+    
+    if (btn) {
+        btn.innerHTML = isPC ? '📱 Vista Móvil' : '🖥️ Vista PC';
+    }
+    
+    localStorage.setItem('userViewMode', isPC ? 'pc' : 'mobile');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedMode = localStorage.getItem('userViewMode');
+    const btn = document.getElementById('view-toggle');
+
+    if (savedMode === 'pc') {
+        document.body.classList.add('view-pc');
+        if (btn) btn.innerHTML = '📱 Vista Móvil';
+    } else {
+        document.body.classList.remove('view-pc');
+        if (btn) btn.innerHTML = '🖥️ Vista PC';
+    }
+});

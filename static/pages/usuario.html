@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mi Perfil</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
     <div class="app-container">
@@ -20,16 +22,21 @@
                     <img src="../images/image_4223f367.png" alt="Logo NeuroMundo" class="logo-app">
                     <h1>Mi Cuenta</h1>
                 </div>
-                <button class="notification-btn" aria-label="Notificaciones">
-                    🔔
-                    <span class="badge"></span>
-                </button>
+                <div class="app-right-brand">
+                    <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
+                        🖥️ Vista PC
+                    </button>
+                    <button class="notification-btn" aria-label="Notificaciones">
+                        🔔
+                        <span class="badge"></span>
+                    </button>
+                </div>
             </div>
         </header>
 
         <!-- CONTENIDO DEL PERFIL -->
         <main class="app-content">
-            
+
             <!-- TARJETA DE USUARIO PRINCIPAL -->
             <section class="profile-card-top">
                 <div class="profile-avatar-big">👋</div>
@@ -43,7 +50,7 @@
 
             <!-- OPCIONES DEL MENÚ TIPO AJUSTES MÓVIL -->
             <h3 class="block-title section-spacer">Configuraciones de la App</h3>
-            
+
             <section class="settings-list-group">
                 <div class="settings-list-item" onclick="alert('Configuración de alertas sensoriales')">
                     <div class="item-left">🔔 Notificaciones de Crisis</div>
@@ -67,33 +74,36 @@
         </main>
 
         <!-- NAVEGACIÓN INFERIOR MÓVIL -->
-<nav class="app-nav">
-    <a href="../../index.html" class="nav-item">
-        <span class="nav-icon">🏠</span>
-        <span class="nav-label">Inicio</span>
-    </a>
-    <a href="problematica.html" class="nav-item">
-        <span class="nav-icon">🔍</span>
-        <span class="nav-label">Problema</span>
-    </a>
-    <a href="proyecto.html" class="nav-item">
-        <span class="nav-icon">🚀</span>
-        <span class="nav-label">Proyecto</span>
-    </a>
-    <a href="metodologia.html" class="nav-item">
-        <span class="nav-icon">🛠️</span>
-        <span class="nav-label">Metodología</span>
-    </a>
-    <a href="comunidad.html" class="nav-item">
-        <span class="nav-icon">👥</span>
-        <span class="nav-label">Comunidad</span>
-    </a>
-    <a href="../pages/usuario.html" class="nav-item">
-        <span class="nav-icon">👤</span>
-        <span class="nav-label">Perfil</span>
-    </a>
-</nav>
+        <nav class="app-nav">
+            <a href="../../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Inicio</span>
+            </a>
+            <a href="problematica.html" class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-label">Problema</span>
+            </a>
+            <a href="proyecto.html" class="nav-item">
+                <span class="nav-icon">🚀</span>
+                <span class="nav-label">Proyecto</span>
+            </a>
+            <a href="metodologia.html" class="nav-item">
+                <span class="nav-icon">🛠️</span>
+                <span class="nav-label">Metodología</span>
+            </a>
+            <a href="comunidad.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-label">Comunidad</span>
+            </a>
+            <a href="../pages/usuario.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Perfil</span>
+            </a>
+        </nav>
     </div>
 
+    <script src="../js/script.js"></script>
+
 </body>
+
 </html>

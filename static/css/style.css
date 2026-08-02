@@ -79,12 +79,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .app-brand {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.app-right-brand {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
 }
 
 .app-logo {
@@ -1930,4 +1939,199 @@ body {
     font-size: 0.75rem;
     outline: none;
     margin-top: 4px;
+}
+/* ==========================================================================
+   DESPLEGABLES DE COMENTARIOS (DETAILED / SUMMARY)
+   ========================================================================== */
+
+/* Elimina las flechas feas por defecto de los browsers */
+details.comments-dropdown summary {
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+}
+
+details.comments-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Animación y margen del contenedor de comentarios desplegado */
+.reddit-comments-thread {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: fadeInComments 0.25s ease-in-out;
+}
+
+.comment-item {
+    background-color: #f8f9fa;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: #333333;
+    line-height: 1.4;
+}
+
+.comment-input-box {
+    margin-top: 8px;
+}
+
+.comment-input-box input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.comment-input-box input:focus {
+    border-color: #0056b3;
+}
+
+@keyframes fadeInComments {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   VERSION PC: FLEXBOX + SIDEBAR MODERNIZADA CON ANIMACIONES
+   ========================================================================== */
+
+/* 1. Ocultar elementos exclusivos de versión móvil */
+body.view-pc .header-top,
+body.view-pc .scroll-spacing {
+    display: none !important;
+}
+
+/* 2. Contenedor principal con Flexbox (Column Wrap) */
+body.view-pc .app-container {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    align-content: flex-start !important;
+    max-width: 1280px;
+    height: 90vh;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* 3. BARRA DE NAVEGACIÓN LATERAL MODERNIZADA */
+body.view-pc .app-nav {
+    order: 1 !important;
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    width: 250px !important;
+    height: 100% !important;
+    background-color: #ffffff !important;
+    border-right: 1px solid #eaeaea !important;
+    border-top: none !important;
+    padding: 25px 14px !important;
+    gap: 8px !important;
+}
+
+/* Estilo base de los botones del menú */
+body.view-pc .app-nav .nav-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 12px 18px !important;
+    gap: 14px !important;
+    border-radius: 12px !important;
+    color: #4a5568 !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    /* Animaciones fluidas como en móvil */
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer;
+}
+
+/* ANIMACIÓN HOVER: Se eleva y desplaza ligeramente a la derecha */
+body.view-pc .app-nav .nav-item:hover {
+    background-color: #edf2ff !important;
+    color: #0056b3 !important;
+    transform: translateX(6px) !important;
+}
+
+body.view-pc .app-nav .nav-item:hover img,
+body.view-pc .app-nav .nav-item:hover svg,
+body.view-pc .app-nav .nav-item:hover i {
+    transform: scale(1.15) rotate(-3deg) !important;
+    transition: transform 0.25s ease !important;
+}
+
+/* ESTADO ACTIVO (Pestaña seleccionada) */
+body.view-pc .app-nav .nav-item.active,
+body.view-pc .app-nav .nav-item:active {
+    background-color: #0056b3 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.25) !important;
+    transform: translateX(4px) !important;
+}
+
+body.view-pc .app-nav .nav-item.active img,
+body.view-pc .app-nav .nav-item.active svg,
+body.view-pc .app-nav .nav-item.active i {
+    filter: brightness(0) invert(1); /* Pone los íconos blancos si son imágenes SVG/PNG */
+}
+
+/* 4. ENCABEZADO SUPERIOR DERECHO */
+body.view-pc .app-header {
+    order: 2 !important;
+    width: calc(100% - 250px) !important;
+    height: 75px !important;
+    padding: 0 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+/* 5. ÁREA DE CONTENIDO PRINCIPAL */
+body.view-pc .app-content {
+    order: 3 !important;
+    width: calc(100% - 250px) !important;
+    height: calc(100% - 75px) !important;
+    overflow-y: auto !important;
+    padding: 30px !important;
+    scroll-behavior: smooth;
+}
+
+/* Botón flotante/integrado para activar la vista */
+.view-toggle-btn {
+    background: #ff5252;
+    color: #ffffff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+    white-space: nowrap;
+}
+
+.view-toggle-btn:hover {
+    background: #ff2d2d;
+    transform: scale(1.05);
 }

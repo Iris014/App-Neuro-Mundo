@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espacio Amigable</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
     <div class="app-container">
@@ -20,15 +22,20 @@
                     <img src="../images/image_4223f367.png" alt="Logo NeuroMundo" class="logo-app">
                     <h1>Info</h1>
                 </div>
-                <button class="notification-btn" aria-label="Notificaciones">
-                    🔔
-                    <span class="badge"></span>
-                </button>
+                <div class="app-right-brand">
+                    <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
+                        🖥️ Vista PC
+                    </button>
+                    <button class="notification-btn" aria-label="Notificaciones">
+                        🔔
+                        <span class="badge"></span>
+                    </button>
+                </div>
             </div>
         </header>
 
-<main class="app-content">
-            
+        <main class="app-content">
+
             <section class="welcome-card">
                 <h2 class="welcome-title">¡Hola! Nos alegra verte</h2>
                 <p class="welcome-subtitle">Tu entorno seguro, accesible e inclusivo</p>
@@ -82,7 +89,7 @@
 
             <section class="tools-section">
                 <h3 class="block-title">Herramientas Diarias</h3>
-                
+
                 <div class="tool-card">
                     <div class="tool-icon bg-blue">💬</div>
                     <div class="tool-info">
@@ -118,7 +125,8 @@
                     <div class="encabezado-tarjeta-app">
                         <span class="titulo-tarjeta-app">📅 Agenda Visual Diaria</span>
                     </div>
-                    <p class="desc-tarjeta-app">Estructura las secuencias de tus actividades diarias paso a paso para reducir la ansiedad.</p>
+                    <p class="desc-tarjeta-app">Estructura las secuencias de tus actividades diarias paso a paso para
+                        reducir la ansiedad.</p>
                     <button class="boton-app-primario">Ver mi día</button>
                 </div>
 
@@ -126,7 +134,8 @@
                     <div class="encabezado-tarjeta-app">
                         <span class="titulo-tarjeta-app">🚦 Semáforo de Autorregulación</span>
                     </div>
-                    <p class="desc-tarjeta-app">Identifica tu nivel de cansancio o sobrecarga y activa estrategias inmediatas de calma.</p>
+                    <p class="desc-tarjeta-app">Identifica tu nivel de cansancio o sobrecarga y activa estrategias
+                        inmediatas de calma.</p>
                     <button class="boton-app-primario">Explorar emociones</button>
                 </div>
 
@@ -134,7 +143,8 @@
                     <div class="encabezado-tarjeta-app">
                         <span class="titulo-tarjeta-app">🧩 Historias Sociales Ilustradas</span>
                     </div>
-                    <p class="desc-tarjeta-app">Guías paso a paso para prepararte ante visitas médicas, cambios de rutina o imprevistos.</p>
+                    <p class="desc-tarjeta-app">Guías paso a paso para prepararte ante visitas médicas, cambios de
+                        rutina o imprevistos.</p>
                     <button class="boton-app-primario">Leer historias</button>
                 </div>
             </section>
@@ -142,7 +152,8 @@
             <section class="metrics-section">
                 <div class="metrica-card">
                     <span class="metrica-num">+85%</span>
-                    <span class="metrica-txt">Disminución de la frustración mediante el uso de agendas estructuradas y tableros visuales.</span>
+                    <span class="metrica-txt">Disminución de la frustración mediante el uso de agendas estructuradas y
+                        tableros visuales.</span>
                 </div>
             </section>
 
@@ -151,7 +162,8 @@
                 <div class="case-card">
                     <span class="case-tag">✓ Validado por Especialistas</span>
                     <p class="case-question">"¿Cómo facilita el semáforo emocional la adaptación a cambios?"</p>
-                    <p class="desc-tarjeta-app">Proporciona anticipación predecible, permitiendo al usuario tomar pausas conscientes antes de colapsar.</p>
+                    <p class="desc-tarjeta-app">Proporciona anticipación predecible, permitiendo al usuario tomar pausas
+                        conscientes antes de colapsar.</p>
                 </div>
             </section>
 
@@ -165,7 +177,8 @@
                     <span class="feed-tag tag-crisis">Guía de Apoyo</span>
                     <div class="feed-body">
                         <h4>Estrategias ante la sobrecarga sensorial</h4>
-                        <p>Pautas esenciales recomendadas por terapeutas ocupacionales para crear ambientes amigables.</p>
+                        <p>Pautas esenciales recomendadas por terapeutas ocupacionales para crear ambientes amigables.
+                        </p>
                     </div>
                     <div class="feed-footer">
                         <span>⏱️ Lectura 3 min</span>
@@ -190,7 +203,8 @@
             <section class="community-banner">
                 <div class="community-content">
                     <h4>🤝 Red de Familias y Profesionales</h4>
-                    <p>Conéctate a un espacio seguro donde compartir experiencias, secuencias y tableros personalizados.</p>
+                    <p>Conéctate a un espacio seguro donde compartir experiencias, secuencias y tableros personalizados.
+                    </p>
                     <button class="community-btn">Unirme a la comunidad</button>
                 </div>
             </section>
@@ -198,33 +212,36 @@
             <div class="scroll-spacing"></div>
         </main>
 
-<nav class="app-nav">
-    <a href="../../index.html" class="nav-item">
-        <span class="nav-icon">🏠</span>
-        <span class="nav-label">Inicio</span>
-    </a>
-    <a href="problematica.html" class="nav-item">
-        <span class="nav-icon">🔍</span>
-        <span class="nav-label">Problema</span>
-    </a>
-    <a href="proyecto.html" class="nav-item">
-        <span class="nav-icon">🚀</span>
-        <span class="nav-label">Proyecto</span>
-    </a>
-    <a href="../pages/metodologia.html" class="nav-item">
-        <span class="nav-icon">🛠️</span>
-        <span class="nav-label">Metodología</span>
-    </a>
-    <a href="comunidad.html" class="nav-item">
-        <span class="nav-icon">👥</span>
-        <span class="nav-label">Comunidad</span>
-    </a>
-    <a href="usuario.html" class="nav-item">
-        <span class="nav-icon">👤</span>
-        <span class="nav-label">Perfil</span>
-    </a>
-</nav>
+        <nav class="app-nav">
+            <a href="../../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Inicio</span>
+            </a>
+            <a href="problematica.html" class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-label">Problema</span>
+            </a>
+            <a href="proyecto.html" class="nav-item">
+                <span class="nav-icon">🚀</span>
+                <span class="nav-label">Proyecto</span>
+            </a>
+            <a href="../pages/metodologia.html" class="nav-item">
+                <span class="nav-icon">🛠️</span>
+                <span class="nav-label">Metodología</span>
+            </a>
+            <a href="comunidad.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-label">Comunidad</span>
+            </a>
+            <a href="usuario.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Perfil</span>
+            </a>
+        </nav>
     </div>
 
+    <script src="../js/script.js"></script>
+
 </body>
+
 </html>
