@@ -120,6 +120,56 @@ body {
     justify-content: center;
 }
 
+/* Contenedor principal alineado con Flexbox */
+.user-menu {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Ocultamos la casilla de verificación */
+.notif-checkbox {
+    display: none;
+}
+
+/* Estilo del botón interactivo */
+.notification-btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Menú desplegable oculto por defecto */
+.user-menu .user-menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 220px;
+    background-color: var(--card-background, #1e1e1e);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+/* AL DAR CLIC: Flexbox activa el desplegable */
+.notif-checkbox:checked ~ .user-menu-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Texto alineado dentro del menú */
+.user-menu-dropdown .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-main, #ffffff);
+}
+
 .badge {
     position: absolute;
     top: 8px;

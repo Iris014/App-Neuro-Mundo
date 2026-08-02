@@ -27,10 +27,19 @@
                     <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
                         🖥️ Vista PC
                     </button>
-                    <button class="notification-btn" aria-label="Notificaciones">
-                        🔔
-                        <span class="badge"></span>
-                    </button>
+                    <div class="user-menu">
+                        <!-- Checkbox oculto que guarda el estado (abierto/cerrado) -->
+                        <input type="checkbox" id="notif-check" class="notif-checkbox">
+                        <!-- El botón ahora es una etiqueta <label> que activa el checkbox al dar clic -->
+                        <label for="notif-check" class="notification-btn" aria-label="Notificaciones">
+                            🔔 <span class="badge"></span>
+                        </label>
+                        <div class="user-menu-dropdown">
+                            <div class="menu-item">
+                                <span>Sin notificaciones pendientes</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
