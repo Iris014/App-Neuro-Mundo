@@ -1,5 +1,20 @@
 console.log("Conexión centralizada con JS...");
 
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.querySelector(".reddit-search-input");
+
+    if (searchInput) {
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                const query = searchInput.value.trim();
+                if (query !== "") {
+                    alert("Buscando: " + query);
+                }
+            }
+        });
+    }
+});
+
 function toggleAcc(btn) {
             const card = btn.parentElement;
             card.classList.toggle('abierto');
