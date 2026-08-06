@@ -1,114 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Mi Perfil</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+    <meta name="author" content="Neu Industries">
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <div class="app-container">
-        <!-- ENCABEZADO FIJO -->
-        <header class="app-header">
-            <div class="header-top">
-                <span>09:41</span>
-                <span>Neu Industries</span>
+      <!-- ENCABEZADO FIJO -->
+      <header class="app-header">
+        <div class="header-top">
+          <span>09:41</span>
+          <span>Neu Industries</span>
+        </div>
+        <div class="header-main">
+          <div class="app-brand">
+            <img
+              src="../images/image_4223f367.png"
+              alt="Logo NeuroMundo"
+              class="logo-app"
+            />
+            <h1>Mi Cuenta</h1>
+          </div>
+          <div class="app-right-brand">
+            <button
+              class="view-toggle-btn"
+              id="view-toggle"
+              onclick="toggleViewMode()"
+            >
+              Vista PC
+            </button>
+            <div class="user-menu">
+              <!-- Checkbox oculto que guarda el estado (abierto/cerrado) -->
+              <input type="checkbox" id="notif-check" class="notif-checkbox" />
+              <!-- El botón ahora es una etiqueta <label> que activa el checkbox al dar clic -->
+              <label
+                for="notif-check"
+                class="notification-btn"
+                aria-label="Notificaciones"
+              >
+                🔔 <span class="badge"></span>
+              </label>
+              <div class="user-menu-dropdown">
+                <div class="menu-item">
+                  <span>Sin notificaciones pendientes</span>
+                </div>
+              </div>
             </div>
-            <div class="header-main">
-                <div class="app-brand">
-                    <img src="../images/image_4223f367.png" alt="Logo NeuroMundo" class="logo-app">
-                    <h1>Mi Cuenta</h1>
-                </div>
-                <div class="app-right-brand">
-                    <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
-                        Vista PC
-                    </button>
-                    <div class="user-menu">
-                        <!-- Checkbox oculto que guarda el estado (abierto/cerrado) -->
-                        <input type="checkbox" id="notif-check" class="notif-checkbox">
-                        <!-- El botón ahora es una etiqueta <label> que activa el checkbox al dar clic -->
-                        <label for="notif-check" class="notification-btn" aria-label="Notificaciones">
-                            🔔 <span class="badge"></span>
-                        </label>
-                        <div class="user-menu-dropdown">
-                            <div class="menu-item">
-                                <span>Sin notificaciones pendientes</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+          </div>
+        </div>
+      </header>
 
-        <!-- CONTENIDO DEL PERFIL -->
-        <main class="app-content">
+      <!-- CONTENIDO DEL PERFIL -->
+      <main class="app-content">
+        <!-- TARJETA DE USUARIO PRINCIPAL -->
+        <section class="profile-card-top">
+          <div class="profile-avatar-big">👋</div>
+          <h2 class="profile-name">Mamá / Papá Protector</h2>
+          <p class="profile-email">familia.unida@email.com</p>
+          <div class="profile-badges-row">
+            <span class="user-badge-item badge-active">Miembro Activo</span>
+            <span class="user-badge-item badge-guide">Guía de Apoyo</span>
+          </div>
+        </section>
 
-            <!-- TARJETA DE USUARIO PRINCIPAL -->
-            <section class="profile-card-top">
-                <div class="profile-avatar-big">👋</div>
-                <h2 class="profile-name">Mamá / Papá Protector</h2>
-                <p class="profile-email">familia.unida@email.com</p>
-                <div class="profile-badges-row">
-                    <span class="user-badge-item badge-active">Miembro Activo</span>
-                    <span class="user-badge-item badge-guide">Guía de Apoyo</span>
-                </div>
-            </section>
+        <!-- OPCIONES DEL MENÚ TIPO AJUSTES MÓVIL -->
+        <h3 class="block-title section-spacer">Configuraciones de la App</h3>
 
-            <!-- OPCIONES DEL MENÚ TIPO AJUSTES MÓVIL -->
-            <h3 class="block-title section-spacer">Configuraciones de la App</h3>
+        <section class="settings-list-group">
+          <div
+            class="settings-list-item"
+            onclick="alert('Configuración de alertas sensoriales')"
+          >
+            <div class="item-left">🔔 Notificaciones de Crisis</div>
+            <span class="item-arrow">➔</span>
+          </div>
+          <div
+            class="settings-list-item"
+            onclick="alert('Miembro de la comunidad verificado')"
+          >
+            <div class="item-left">🔒 Privacidad y Seguridad</div>
+            <span class="item-arrow">➔</span>
+          </div>
+          <div
+            class="settings-list-item"
+            onclick="alert('Contacto con soporte técnico')"
+          >
+            <div class="item-left">🤝 Solicitar Ayuda Técnica</div>
+            <span class="item-arrow">➔</span>
+          </div>
+          <div
+            class="settings-list-item logout-item"
+            onclick="location.href = 'index.html'"
+          >
+            <div class="item-left">🚪 Cerrar Sesión Temporal</div>
+            <span class="item-arrow">➔</span>
+          </div>
+          <div
+            class="settings-list-item switch-account-item"
+            onclick="location.href = 'login.html'"
+          >
+            <div class="item-left">👤 Iniciar sesión con otra cuenta</div>
+            <span class="item-arrow">➔</span>
+          </div>
+        </section>
 
-            <section class="settings-list-group">
-                <div class="settings-list-item" onclick="alert('Configuración de alertas sensoriales')">
-                    <div class="item-left">🔔 Notificaciones de Crisis</div>
-                    <span class="item-arrow">➔</span>
-                </div>
-                <div class="settings-list-item" onclick="alert('Miembro de la comunidad verificado')">
-                    <div class="item-left">🔒 Privacidad y Seguridad</div>
-                    <span class="item-arrow">➔</span>
-                </div>
-                <div class="settings-list-item" onclick="alert('Contacto con soporte técnico')">
-                    <div class="item-left">🤝 Solicitar Ayuda Técnica</div>
-                    <span class="item-arrow">➔</span>
-                </div>
-                <div class="settings-list-item logout-item" onclick="location.href='index.html'">
-                    <div class="item-left">🚪 Cerrar Sesión Temporal</div>
-                    <span class="item-arrow">➔</span>
-                </div>
-            </section>
+        <div class="scroll-spacing"></div>
+      </main>
 
-            <div class="scroll-spacing"></div>
-        </main>
-
-        <!-- NAVEGACIÓN INFERIOR MÓVIL -->
-        <nav class="app-nav">
-            <a href="../../index.html" class="nav-item">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Inicio</span>
-            </a>
-            <a href="proyecto.html" class="nav-item">
-                <span class="nav-icon">🚀</span>
-                <span class="nav-label">Proyecto</span>
-            </a>
-            <a href="metodologia.html" class="nav-item">
-                <span class="nav-icon">🛠️</span>
-                <span class="nav-label">Metodología</span>
-            </a>
-            <a href="comunidad.html" class="nav-item">
-                <span class="nav-icon">👥</span>
-                <span class="nav-label">Comunidad</span>
-            </a>
-            <a href="../pages/usuario.html" class="nav-item active">
-                <span class="nav-icon">👤</span>
-                <span class="nav-label">Perfil</span>
-            </a>
-        </nav>
+      <!-- NAVEGACIÓN INFERIOR MÓVIL -->
+      <nav class="app-nav">
+        <a href="../../index.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-label">Inicio</span>
+        </a>
+        <a href="proyecto.html" class="nav-item">
+          <span class="nav-icon">🚀</span>
+          <span class="nav-label">Proyecto</span>
+        </a>
+        <a href="metodologia.html" class="nav-item">
+          <span class="nav-icon">🛠️</span>
+          <span class="nav-label">Metodología</span>
+        </a>
+        <a href="comunidad.html" class="nav-item">
+          <span class="nav-icon">👥</span>
+          <span class="nav-label">Comunidad</span>
+        </a>
+        <a href="../pages/usuario.html" class="nav-item active">
+          <span class="nav-icon">👤</span>
+          <span class="nav-label">Perfil</span>
+        </a>
+      </nav>
     </div>
 
     <script src="../js/script.js"></script>
-
-</body>
-
+  </body>
 </html>

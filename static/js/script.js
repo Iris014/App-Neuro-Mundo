@@ -156,3 +156,34 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btn) btn.innerHTML = 'Vista PC';
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password');
+    const togglePasswordBtn = document.getElementById('togglePassword');
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+
+  
+    if (togglePasswordBtn && passwordInput) {
+        togglePasswordBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.getAttribute('type') === 'password';
+            passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+            togglePasswordBtn.textContent = isPassword ? '🙈' : '👁️';
+        });
+    }
+
+    
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (errorMessage) {
+                errorMessage.style.display = 'none';
+            }
+
+            
+            window.location.href = 'usuario.html';
+        });
+    }
+});
