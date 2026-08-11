@@ -19,7 +19,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #2c3e50; /* Fondo exterior emulando un escritorio */
+    background-color: #2c3e50;
+    /* Fondo exterior emulando un escritorio */
     color: var(--text-main);
     display: flex;
     justify-content: center;
@@ -30,13 +31,15 @@ body {
 /* Contenedor del Teléfono Inteligente */
 .app-container {
     width: 100%;
-    max-width: 430px; /* Ancho estándar de un smartphone moderno */
+    max-width: 430px;
+    /* Ancho estándar de un smartphone moderno */
     height: 92vh;
     max-height: 932px;
     background-color: var(--app-background);
     border-radius: 40px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    border: 12px solid #111111; /* Borde físico del teléfono */
+    border: 12px solid #111111;
+    /* Borde físico del teléfono */
     position: relative;
     overflow: hidden;
     display: flex;
@@ -48,6 +51,7 @@ body {
     body {
         background-color: var(--app-background);
     }
+
     .app-container {
         width: 100vw;
         height: 100vh;
@@ -155,7 +159,7 @@ body {
 }
 
 /* AL DAR CLIC: Flexbox activa el desplegable */
-.notif-checkbox:checked ~ .user-menu-dropdown {
+.notif-checkbox:checked~.user-menu-dropdown {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,7 +239,7 @@ body {
     padding: 10px 16px;
     border-radius: 20px;
     display: inline-block;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Barra de Búsqueda */
@@ -249,7 +253,7 @@ body {
     align-items: center;
     padding: 12px 16px;
     border-radius: 14px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .search-icon {
@@ -299,7 +303,7 @@ body {
     align-items: center;
     gap: 8px;
     white-space: nowrap;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
     cursor: pointer;
     transition: all 0.2s ease;
     border: none;
@@ -333,7 +337,7 @@ body {
     align-items: center;
     gap: 14px;
     margin-bottom: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .tool-icon {
@@ -347,9 +351,17 @@ body {
     flex-shrink: 0;
 }
 
-.bg-blue { background-color: #e6f0fa; }
-.bg-yellow { background-color: #fdf6e2; }
-.bg-green { background-color: #e8f5e9; }
+.bg-blue {
+    background-color: #e6f0fa;
+}
+
+.bg-yellow {
+    background-color: #fdf6e2;
+}
+
+.bg-green {
+    background-color: #e8f5e9;
+}
 
 .tool-info {
     flex-grow: 1;
@@ -396,7 +408,7 @@ body {
     border-radius: 16px;
     padding: 16px;
     margin-bottom: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
     border-left: 4px solid var(--bg-strip-gray);
 }
 
@@ -410,9 +422,20 @@ body {
     text-transform: uppercase;
 }
 
-.tag-crisis { background-color: #ffebee; color: #c62828; }
-.tag-juego { background-color: #e8f5e9; color: #2e7d32; }
-.tag-comunidad { background-color: #e3f2fd; color: #1565c0; }
+.tag-crisis {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.tag-juego {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.tag-comunidad {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
 
 .feed-body h4 {
     font-size: 1rem;
@@ -472,7 +495,8 @@ body {
 }
 
 .scroll-spacing {
-    height: 70px; /* Previene el solapamiento con la barra inferior fija */
+    height: 70px;
+    /* Previene el solapamiento con la barra inferior fija */
 }
 
 /* Barra de Navegación Inferior Fija (Mobile Nav) */
@@ -487,7 +511,8 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 10px; /* Espacio estético simulando barra de gestos de iOS */
+    padding-bottom: 10px;
+    /* Espacio estético simulando barra de gestos de iOS */
     z-index: 20;
 }
 
@@ -498,8 +523,10 @@ body {
     align-items: center;
     background-color: #ffffff;
     padding: 8px 6px;
-    border-radius: 0 0 24px 24px; /* Adapta los bordes al marco del teléfono */
-    overflow: hidden;             /* Evita que cualquier botón se salga */
+    border-radius: 0 0 24px 24px;
+    /* Adapta los bordes al marco del teléfono */
+    overflow: hidden;
+    /* Evita que cualquier botón se salga */
     box-sizing: border-box;
     width: 100%;
 }
@@ -510,7 +537,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1;                      /* Reparte el espacio por igual sin empujar hacia afuera */
+    flex: 1;
+    /* Reparte el espacio por igual sin empujar hacia afuera */
     padding: 6px 4px;
     border-radius: 12px;
     color: #4a5568;
@@ -523,9 +551,12 @@ body {
 .nav-item.active {
     background-color: #0056c6;
     color: #ffffff !important;
-    border-radius: 10px;          /* Un borde redondeado más ajustado */
-    padding: 6px 4px;             /* Mantiene el mismo alto que los demás para no salirse */
-    margin: 0;                    /* Elimina márgenes que lo desplacen */
+    border-radius: 10px;
+    /* Un borde redondeado más ajustado */
+    padding: 6px 4px;
+    /* Mantiene el mismo alto que los demás para no salirse */
+    margin: 0;
+    /* Elimina márgenes que lo desplacen */
     box-shadow: 0 2px 8px rgba(0, 86, 198, 0.3);
 }
 
@@ -707,10 +738,21 @@ body {
     gap: 8px;
 }
 
-.tarjeta-modulo-app.pictogramas { border-left: 5px solid var(--azul-amigable); }
-.tarjeta-modulo-app.regulacion { border-left: 5px solid var(--verde-calma); }
-.tarjeta-modulo-app.agenda { border-left: 5px solid #0284c7; }
-.tarjeta-modulo-app.alertas { border-left: 5px solid var(--dorado-alerta); }
+.tarjeta-modulo-app.pictogramas {
+    border-left: 5px solid var(--azul-amigable);
+}
+
+.tarjeta-modulo-app.regulacion {
+    border-left: 5px solid var(--verde-calma);
+}
+
+.tarjeta-modulo-app.agenda {
+    border-left: 5px solid #0284c7;
+}
+
+.tarjeta-modulo-app.alertas {
+    border-left: 5px solid var(--dorado-alerta);
+}
 
 .encabezado-tarjeta-app {
     display: flex;
@@ -817,21 +859,29 @@ body {
    ========================================================================== */
 :root {
     /* Colores base y fondos */
-    --bg-dark-blue: #1c355e;        /* Azul marino corporativo base */
-    --bg-strip-gray: #7d91a9;       /* Gris pizarra para fondos secundarios */
-    --app-background: #f1f4f8;      /* Gris claro para fondo de app */
-    --card-background: #ffffff;     /* Blanco limpio para tarjetas */
-    
+    --bg-dark-blue: #1c355e;
+    /* Azul marino corporativo base */
+    --bg-strip-gray: #7d91a9;
+    /* Gris pizarra para fondos secundarios */
+    --app-background: #f1f4f8;
+    /* Gris claro para fondo de app */
+    --card-background: #ffffff;
+    /* Blanco limpio para tarjetas */
+
     /* Textos */
     --text-main: #2b394a;
     --text-muted: #6c7a89;
-    
+
     /* ACENTOS NEÓN / LLAMATIVOS (Versiones intensificadas de la paleta) */
-    --accent-yellow-vibrant: #ffd000; /* Amarillo eléctrico de alto impacto */
-    --blue-electric: #0070ff;         /* Azul brillante para elementos activos */
-    --success-green-vibrant: #00e676;/* Verde neón radiante para estados/éxito */
-    --danger-red-vibrant: #ff2a5f;   /* Rojo vibrante para alertas/badges */
-    
+    --accent-yellow-vibrant: #ffd000;
+    /* Amarillo eléctrico de alto impacto */
+    --blue-electric: #0070ff;
+    /* Azul brillante para elementos activos */
+    --success-green-vibrant: #00e676;
+    /* Verde neón radiante para estados/éxito */
+    --danger-red-vibrant: #ff2a5f;
+    /* Rojo vibrante para alertas/badges */
+
     /* Gradientes llamativos manteniendo la coherencia cromática */
     --gradiente-blue-vibrant: linear-gradient(135deg, #1c355e 0%, #0052cc 100%);
     --gradiente-card-hero: linear-gradient(135deg, #0d2142 0%, #1c355e 60%, #0070ff 100%);
@@ -848,7 +898,8 @@ body {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0f172a; /* Fondo exterior emulando un escritorio */
+    background-color: #0f172a;
+    /* Fondo exterior emulando un escritorio */
     color: var(--text-main);
     display: flex;
     justify-content: center;
@@ -876,6 +927,7 @@ body {
     body {
         background-color: var(--app-background);
     }
+
     .app-container {
         width: 100vw;
         height: 100vh;
@@ -954,7 +1006,8 @@ body {
     background-color: var(--danger-red-vibrant);
     border: 2px solid var(--bg-dark-blue);
     border-radius: 50%;
-    box-shadow: 0 0 8px var(--danger-red-vibrant); /* Resplandor */
+    box-shadow: 0 0 8px var(--danger-red-vibrant);
+    /* Resplandor */
 }
 
 /* ÁREA SCROLLEABLE DE LA APLICACIÓN */
@@ -992,7 +1045,8 @@ body {
     font-weight: 900;
     margin-bottom: 6px;
     line-height: 1.3;
-    text-shadow: 0 2px 10px rgba(255, 208, 0, 0.4); /* Brillo activo */
+    text-shadow: 0 2px 10px rgba(255, 208, 0, 0.4);
+    /* Brillo activo */
 }
 
 .welcome-subtitle {
@@ -1096,7 +1150,8 @@ body {
     background-color: var(--accent-yellow-vibrant);
     color: #0f172a;
     font-weight: 800;
-    box-shadow: 0 4px 15px rgba(255, 208, 0, 0.4); /* Resplandor ambar */
+    box-shadow: 0 4px 15px rgba(255, 208, 0, 0.4);
+    /* Resplandor ambar */
     transform: translateY(-1px);
 }
 
@@ -1141,16 +1196,18 @@ body {
 }
 
 /* Variantes de fondos de iconos con toques vívidos */
-.bg-blue { 
-    background-color: #e6f0fa; 
+.bg-blue {
+    background-color: #e6f0fa;
     color: var(--blue-electric);
 }
-.bg-yellow { 
-    background-color: #fffbeb; 
+
+.bg-yellow {
+    background-color: #fffbeb;
     color: #d97706;
 }
-.bg-green { 
-    background-color: #e6fef0; 
+
+.bg-green {
+    background-color: #e6fef0;
     color: #00a854;
 }
 
@@ -1215,17 +1272,19 @@ body {
     letter-spacing: 0.3px;
 }
 
-.tag-crisis { 
-    background-color: #ffe5ec; 
-    color: var(--danger-red-vibrant); 
+.tag-crisis {
+    background-color: #ffe5ec;
+    color: var(--danger-red-vibrant);
 }
-.tag-juego { 
-    background-color: #e6fef0; 
-    color: #00a854; 
+
+.tag-juego {
+    background-color: #e6fef0;
+    color: #00a854;
 }
-.tag-comunidad { 
-    background-color: #e6f0fa; 
-    color: var(--blue-electric); 
+
+.tag-comunidad {
+    background-color: #e6f0fa;
+    color: var(--blue-electric);
 }
 
 .feed-body h4 {
@@ -1403,9 +1462,17 @@ body {
     gap: 8px;
 }
 
-.tarjeta-modulo-app.color-azul { border-left-color: var(--bg-dark-blue); }
-.tarjeta-modulo-app.color-morado { border-left-color: #7e22ce; }
-.tarjeta-modulo-app.color-naranja { border-left-color: #ea580c; }
+.tarjeta-modulo-app.color-azul {
+    border-left-color: var(--bg-dark-blue);
+}
+
+.tarjeta-modulo-app.color-morado {
+    border-left-color: #7e22ce;
+}
+
+.tarjeta-modulo-app.color-naranja {
+    border-left-color: #ea580c;
+}
 
 .encabezado-tarjeta-app {
     display: flex;
@@ -1541,7 +1608,7 @@ body {
     background-color: var(--card-background);
     border-radius: 18px;
     padding: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1566,10 +1633,21 @@ body {
     display: inline-block;
 }
 
-.tag-warning { color: #b86b28; }
-.tag-light { color: #cbd5e1; }
-.tag-primary { color: var(--bg-dark-blue); }
-.tag-success { color: var(--success-green, #4caf50); }
+.tag-warning {
+    color: #b86b28;
+}
+
+.tag-light {
+    color: #cbd5e1;
+}
+
+.tag-primary {
+    color: var(--bg-dark-blue);
+}
+
+.tag-success {
+    color: var(--success-green, #4caf50);
+}
 
 /* ==========================================================================
    EXTENSIONES PARA LA VISTA EL PROYECTO
@@ -1736,14 +1814,16 @@ body {
     background-color: #fef3c7;
     color: #92400e;
 }
+
 .settings-list-item.switch-account-item {
-    color: #2563eb; 
+    color: #2563eb;
     font-weight: 600;
 }
 
 .settings-list-item.switch-account-item .item-arrow {
     color: #2563eb;
 }
+
 .login-body {
     background-color: var(--bg-main, #f0f4f8);
     display: flex;
@@ -1784,7 +1864,8 @@ body {
 
 /* FORMULARIO */
 .login-form {
-    width: 100%; /* NUEVO: Asegura que ocupe todo el ancho del contenedor */
+    width: 100%;
+    /* NUEVO: Asegura que ocupe todo el ancho del contenedor */
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -1813,7 +1894,7 @@ body {
 
 .form-group input {
     width: 100%;
-    padding: 12px 40px 12px 12px; 
+    padding: 12px 40px 12px 12px;
     border-radius: 10px;
     font-size: 0.9rem;
     box-sizing: border-box;
@@ -1823,7 +1904,7 @@ body {
 
 .form-group input:focus {
     border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); 
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 
@@ -1853,7 +1934,7 @@ body {
     font-size: 0.8rem;
     font-weight: 600;
     text-align: center;
-    display: none; 
+    display: none;
 }
 
 /* BOTONES */
@@ -1875,14 +1956,14 @@ body {
 }
 
 .btn-primary:active {
-    transform: scale(0.98); 
+    transform: scale(0.98);
 }
 
 .login-footer {
     text-align: center;
     margin-top: 16px;
     width: 100%;
-    border-top: 1px solid #f1f5f9; 
+    border-top: 1px solid #f1f5f9;
     padding-top: 14px;
 }
 
@@ -1965,7 +2046,7 @@ body {
     border-radius: 16px;
     padding: 14px;
     margin-bottom: 14px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .share-input-row {
@@ -2175,13 +2256,14 @@ body {
 
 .comment-input-box input {
     width: 100%;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 6px 10px;
     font-size: 0.75rem;
     outline: none;
     margin-top: 4px;
 }
+
 /* ==========================================================================
    DESPLEGABLES DE COMENTARIOS (DETAILED / SUMMARY)
    ========================================================================== */
@@ -2242,6 +2324,7 @@ details.comments-dropdown summary::-webkit-details-marker {
         opacity: 0;
         transform: translateY(-5px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2334,7 +2417,8 @@ body.view-pc .app-nav .nav-item:active {
 body.view-pc .app-nav .nav-item.active img,
 body.view-pc .app-nav .nav-item.active svg,
 body.view-pc .app-nav .nav-item.active i {
-    filter: brightness(0) invert(1); /* Pone los íconos blancos si son imágenes SVG/PNG */
+    filter: brightness(0) invert(1);
+    /* Pone los íconos blancos si son imágenes SVG/PNG */
 }
 
 /* 4. ENCABEZADO SUPERIOR DERECHO */
@@ -2381,124 +2465,124 @@ body.view-pc .app-content {
 }
 
 .category-item {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .category-item.active {
-  background-color: #facc15;
-  border-color: #facc15;
+    background-color: #facc15;
+    border-color: #facc15;
 }
 
 
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 
 .chat-modal {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 350px;
-  max-width: 90vw;
-  height: 450px;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
-  overflow: hidden;
-  border: 1px solid #e2e8f0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    max-width: 90vw;
+    height: 450px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
 }
 
 .chat-header {
-  background-color: #1e293b;
-  color: #ffffff;
-  padding: 12px 16px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 12px 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .btn-cerrar {
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.5rem;
-  cursor: pointer;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .chat-messages {
-  flex: 1;
-  padding: 12px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #f8fafc;
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f8fafc;
 }
 
 .message {
-  padding: 8px 12px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    max-width: 80%;
 }
 
 .message.ia {
-  background-color: #e0f2fe;
-  color: #0369a1;
-  align-self: flex-start;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    align-self: flex-start;
 }
 
 .message.user {
-  background-color: #facc15;
-  color: #1e293b;
-  align-self: flex-end;
+    background-color: #facc15;
+    color: #1e293b;
+    align-self: flex-end;
 }
 
 .chat-input-container {
-  display: flex;
-  padding: 10px;
-  background: #ffffff;
-  border-top: 1px solid #e2e8f0;
+    display: flex;
+    padding: 10px;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
 }
 
 .chat-input-container input {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  outline: none;
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
 }
 
 .chat-input-container button {
-  margin-left: 8px;
-  padding: 8px 14px;
-  background-color: #1e293b;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+    margin-left: 8px;
+    padding: 8px 14px;
+    background-color: #1e293b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 
 .category-item {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .category-item.active {
-  background-color: #facc15;
-  border-color: #facc15;
+    background-color: #facc15;
+    border-color: #facc15;
 }
