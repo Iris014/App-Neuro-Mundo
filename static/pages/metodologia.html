@@ -59,35 +59,37 @@
                 </div>
             </section>
 
-            <section class="categories-section">
-                <h3 class="block-title">Categorías principales</h3>
-                <div class="categories-scroll">
-                    <div class="category-item active">
-                        <span class="cat-icon">⭐</span>
-                        <span class="cat-name">Inicio</span>
-                    </div>
-                    <div class="category-item">
-                        <span class="cat-icon">🎨</span>
-                        <span class="cat-name">Pictogramas</span>
-                    </div>
-                    <div class="category-item">
-                        <span class="cat-icon">🌱</span>
-                        <span class="cat-name">Regulación</span>
-                    </div>
-                    <div class="category-item">
-                        <span class="cat-icon">📅</span>
-                        <span class="cat-name">Rutinas</span>
-                    </div>
-                    <div class="category-item">
-                        <span class="cat-icon">🤖</span>
-                        <span class="cat-name">Copiloto IA</span>
-                    </div>
-                    <div class="category-item">
-                        <span class="cat-icon">💬</span>
-                        <span class="cat-name">Comunidad</span>
-                    </div>
-                </div>
-            </section>
+            <div class="categories-scroll">
+    <button class="category-item active" data-category="inicio">
+        <span class="cat-icon">⭐</span>
+        <span class="cat-name">Inicio</span>
+    </button>
+    <button class="category-item" data-category="pictogramas">
+        <span class="cat-icon">🎨</span>
+        <span class="cat-name">Pictogramas</span>
+    </button>
+    <button class="category-item" data-category="regulacion">
+        <span class="cat-icon">🌱</span>
+        <span class="cat-name">Regulación</span>
+    </button>
+    <button class="category-item" data-category="rutinas">
+        <span class="cat-icon">📅</span>
+        <span class="cat-name">Rutinas</span>
+    </button>
+    <button class="category-item" data-category="copiloto">
+        <span class="cat-icon">🤖</span>
+        <span class="cat-name">Copiloto IA</span>
+    </button>
+    <button class="category-item" data-category="comunidad">
+        <span class="cat-icon">💬</span>
+        <span class="cat-name">Comunidad</span>
+    </button>
+</div>
+
+<div id="seccion-contenido" style="margin-top: 20px; padding: 20px; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
+    <h3 id="seccion-titulo" style="margin-top: 0; color: #1e293b;">⭐ Vista General</h3>
+    <p id="seccion-descripcion" style="color: #64748b; margin-bottom: 0;">Selecciona una categoría arriba para acceder a las herramientas y recursos correspondientes.</p>
+</div>
 
             <section class="copiloto-box">
                 <div class="copiloto-icon">🤖</div>
@@ -95,6 +97,29 @@
                     <h4>Copiloto de Apoyo Adaptativo IA</h4>
                     <p>Asistente inteligente para traducción directa a pictogramas y sugerencias de regulación.</p>
                 </div>
+                <div id="btn-copiloto" class="copiloto-card" style="cursor: pointer;">
+    <span class="cat-icon">🤖</span>
+    <div class="copiloto-info">
+        <h3>Copiloto de Apoyo Adaptativo IA</h3>
+        <p>Asistente inteligente para traducción directa a pictogramas y sugerencias de regulación.</p>
+    </div>
+</div>
+
+<div id="chat-ia-modal" class="chat-modal hidden">
+    <div class="chat-header">
+        <span>🤖 Copiloto IA - NeuroMundo</span>
+        <button id="cerrar-chat" class="btn-cerrar">&times;</button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+        <div class="message ia">
+            ¡Hola! Soy tu Copiloto IA. ¿En qué te puedo ayudar hoy? Puedes pedirme traducir una frase a pictogramas o sugerencias de regulación.
+        </div>
+    </div>
+    <div class="chat-input-container">
+        <input type="text" id="chat-input" placeholder="Escribe tu mensaje aquí..." />
+        <button id="enviar-msg">Enviar</button>
+    </div>
+</div>
             </section>
 
             <section class="tools-section">

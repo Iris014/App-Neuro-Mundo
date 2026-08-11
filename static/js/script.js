@@ -187,3 +187,184 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+// Base de datos de contenido para cada categoría
+const contenidosCategorias = {
+  casa: {
+    titulo: "🏠 Recursos para En Casa",
+    descripcion: "Estrategias y herramientas para crear un entorno seguro, estructurado y comprensivo dentro del hogar."
+  },
+  escuela: {
+    titulo: "🏫 Apoyo e Inclusión Escolar",
+    descripcion: "Adaptaciones curriculares, guías para docentes y estrategias para facilitar el aprendizaje y la socialización en el colegio."
+  },
+  terapia: {
+    titulo: "🧠 Acompañamiento Terapéutico",
+    descripcion: "Ejercicios y herramientas orientadas a Terapia Ocupacional, Fonoaudiología y integración sensorial."
+  },
+  autocuidado: {
+    titulo: "🧘 Auto-cuidado y Bienestar",
+    descripcion: "Técnicas de regulación emocional, descanso sensorial y rutinas de bienestar personal tanto para el usuario como para sus cuidadores."
+  }
+};
+
+const botonesCategoria = document.querySelectorAll('.category-item');
+const tituloInfo = document.getElementById('info-titulo');
+const descripcionInfo = document.getElementById('info-descripcion');
+
+
+botonesCategoria.forEach(boton => {
+  boton.addEventListener('click', () => {
+    
+    boton.classList.add('active');
+
+    const categoria = boton.getAttribute('data-category');
+    const data = contenidosCategorias[categoria];
+
+    if (data) {
+      tituloInfo.textContent = data.titulo;
+      descripcionInfo.textContent = data.descripcion;
+    }
+  });
+});
+
+const contenidos = {
+  casa: {
+    titulo: "🏠 Recursos para En Casa",
+    descripcion: "Estrategias y herramientas para crear un entorno seguro, estructurado y comprensivo dentro del hogar."
+  },
+  escuela: {
+    titulo: "🏫 Apoyo e Inclusión Escolar",
+    descripcion: "Adaptaciones curriculares, guías para docentes y estrategias para facilitar el aprendizaje y la socialización en el colegio."
+  },
+  terapia: {
+    titulo: "🧠 Acompañamiento Terapéutico",
+    descripcion: "Ejercicios y herramientas orientadas a Terapia Ocupacional, Fonoaudiología e Integración Sensorial."
+  },
+  autocuidado: {
+    titulo: "🧘 Auto-cuidado y Bienestar",
+    descripcion: "Técnicas de regulación emocional, descanso sensorial y rutinas de bienestar para usuarios y cuidadores."
+  }
+};
+
+const botones = document.querySelectorAll('.category-item');
+const titulo = document.getElementById('info-titulo');
+const descripcion = document.getElementById('info-descripcion');
+
+botones.forEach(boton => {
+  boton.addEventListener('click', () => {
+    botones.forEach(b => b.classList.remove('active'));
+    boton.classList.add('active');
+
+    const categoria = boton.getAttribute('data-category');
+    if (contenidos[categoria]) {
+      titulo.textContent = contenidos[categoria].titulo;
+      descripcion.textContent = contenidos[categoria].descripcion;
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnCopiloto = document.getElementById('btn-copiloto');
+    const chatModal = document.getElementById('chat-ia-modal');
+    const btnCerrar = document.getElementById('cerrar-chat');
+    const btnEnviar = document.getElementById('enviar-msg');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    btnCopiloto.addEventListener('click', () => chatModal.classList.remove('hidden'));
+    btnCerrar.addEventListener('click', () => chatModal.classList.add('hidden'));
+
+    function enviarMensaje() {
+        const texto = chatInput.value.trim();
+        if (!texto) return;
+
+        agregarMensaje(texto, 'user');
+        chatInput.value = '';
+
+        setTimeout(() => {
+            const respuesta = generarRespuestaIA(texto);
+            agregarMensaje(respuesta, 'ia');
+        }, 800);
+    }
+
+    btnEnviar.addEventListener('click', enviarMensaje);
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') enviarMensaje();
+    });
+
+    function agregarMensaje(texto, tipo) {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message', tipo);
+        msgDiv.textContent = texto;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function generarRespuestaIA(prompt) {
+        const p = prompt.toLowerCase();
+        if (p.includes('pictograma') || p.includes('imagen')) {
+            return "🎨 He generado la secuencia de pictogramas para tu consulta. Puedes verla en el panel de pictogramas.";
+        } else if (p.includes('calma') || p.includes('crisis') || p.includes('estres')) {
+            return "🧘 Te recomiendo activar el 'Espacio de Calma y Descompresión' con ejercicios de respiración de 4 tiempos.";
+        } else if (p.includes('rutina') || p.includes('agenda')) {
+            return "📅 Puedes estructurar esta actividad en la 'Agenda Visual Diaria' para reducir la ansiedad.";
+        } else {
+            return "🤖 Entendido. Como asistente de NeuroMundo, sugiero revisar las herramientas de apoyo o adaptar la actividad con apoyos visuales.";
+        }
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dataSecciones = {
+        inicio: {
+            titulo: "⭐ Vista General",
+            descripcion: "Explora las herramientas disponibles de NeuroMundo para apoyo visual, regulación y rutinas de acompañamiento."
+        },
+        pictogramas: {
+            titulo: "🎨 Biblioteca de Pictogramas y Tablero AAC",
+            descripcion: "Accede al catálogo de apoyos visuales y genera secuencias de comunicación para expresar necesidades y emociones."
+        },
+        regulacion: {
+            titulo: "🌱 Espacio de Regulación y Calma",
+            descripcion: "Herramientas de autorregulación emocional, semáforo de estrés, ejercicios de respiración y sonidos calmantes."
+        },
+        rutinas: {
+            titulo: "📅 Rutinas y Agendas Visuales",
+            descripcion: "Estructura las actividades cotidianas paso a paso mediante guías visuales e historias sociales ilustradas."
+        },
+        copiloto: {
+            titulo: "🤖 Copiloto de Apoyo Adaptativo IA",
+            descripcion: "Asistente inteligente para traducción directa a pictogramas y sugerencias personalizadas de regulación."
+        },
+        comunidad: {
+            titulo: "💬 Comunidad y Red de Familias",
+            descripcion: "Espacio de intercambio para familias y profesionales. Comparte tableros personalizados, secuencias y experiencias."
+        }
+    };
+
+    const botones = document.querySelectorAll('.category-item');
+    const titulo = document.getElementById('seccion-titulo');
+    const descripcion = document.getElementById('seccion-descripcion');
+    const chatModal = document.getElementById('chat-ia-modal');
+
+    botones.forEach(boton => {
+        boton.addEventListener('click', () => {
+            botones.forEach(b => b.classList.remove('active'));
+            boton.classList.add('active');
+
+            const categoria = boton.getAttribute('data-category');
+            if (dataSecciones[categoria]) {
+                titulo.textContent = dataSecciones[categoria].titulo;
+                descripcion.textContent = dataSecciones[categoria].descripcion;
+            }
+
+            if (categoria === 'copiloto' && chatModal) {
+                chatModal.classList.remove('hidden');
+            }
+        });
+    });
+});

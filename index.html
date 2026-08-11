@@ -69,27 +69,33 @@
             </section>
 
             <!-- Categorías Rápidas (Formato Botones App) -->
-            <section class="categories-section">
-                <h3 class="block-title">Categorías de Apoyo</h3>
-                <div class="categories-scroll">
-                    <button class="category-item active">
-                        <span class="cat-icon">🏠</span>
-                        <span class="cat-name">En Casa</span>
-                    </button>
-                    <button class="category-item">
-                        <span class="cat-icon">🏫</span>
-                        <span class="cat-name">Escuela</span>
-                    </button>
-                    <button class="category-item">
-                        <span class="cat-icon">🧠</span>
-                        <span class="cat-name">Terapia</span>
-                    </button>
-                    <button class="category-item">
-                        <span class="cat-icon">🧘</span>
-                        <span class="cat-name">Auto-cuidado</span>
-                    </button>
-                </div>
-            </section>
+<section class="categories-section">
+    <h3 class="block-title">Categorías de Apoyo</h3>
+    <div class="categories-scroll">
+        <button class="category-item active" data-category="casa">
+            <span class="cat-icon">🏠</span>
+            <span class="cat-name">En Casa</span>
+        </button>
+        <button class="category-item" data-category="escuela">
+            <span class="cat-icon">🏫</span>
+            <span class="cat-name">Escuela</span>
+        </button>
+        <button class="category-item" data-category="terapia">
+            <span class="cat-icon">🧠</span>
+            <span class="cat-name">Terapia</span>
+        </button>
+        <button class="category-item" data-category="autocuidado">
+            <span class="cat-icon">🧘</span>
+            <span class="cat-name">Auto-cuidado</span>
+        </button>
+    </div>
+</section>
+
+<!-- Panel de información -->
+<div id="categoria-info" style="margin-top: 15px; padding: 15px; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
+    <h4 id="info-titulo" style="margin: 0 0 8px 0; color: #1e293b;">🏠 Recursos para En Casa</h4>
+    <p id="info-descripcion" style="margin: 0; color: #64748b;">Estrategias y herramientas para crear un entorno seguro, estructurado y comprensivo dentro del hogar.</p>
+</div>
 
             <!-- Sección de Herramientas Diarias -->
             <section class="tools-section">
