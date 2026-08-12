@@ -24,6 +24,31 @@
                     <h1>Muro de la Comunidad</h1>
                 </div>
                 <div class="app-right-brand">
+                    <button class="theme-toggle-animated" id="theme-toggle" onclick="toggleTheme()"
+                        aria-label="Cambiar tema">
+                        <div class="icon-container">
+                            <!-- Icono Sol (Modo Claro) -->
+                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+
+                            <!-- Icono Luna (Modo Oscuro) -->
+                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </div>
+                        <span id="theme-text">Oscuro</span>
+                    </button>
                     <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
                         Vista PC
                     </button>
@@ -48,24 +73,49 @@
         <main class="app-content">
 
             <!-- CAJA PARA CREAR PUBLICACIÓN -->
-            <div class="reddit-create-box">
-                <div class="share-input-row">
-                    <span class="user-avatar-small">👤</span>
-                    <input type="text" id="reddit-post-input" placeholder="Crear una publicación o consulta...">
-                </div>
-                <div class="share-actions">
-                    <button class="share-opt">🖼️ Foto</button>
-                    <button class="share-opt">🏷️ r/Consejos</button>
-                    <button class="publish-btn" onclick="crearPublicacionReddit()">Publicar</button>
-                </div>
-            </div>
+            <<!-- CREADOR DE PUBLICACIONES -->
+<section class="post-creator-box">
+  <div class="creator-input-row">
+    <span class="user-avatar-badge">👤</span>
+    <input type="text" id="reddit-post-input" placeholder="Crear una publicación o consulta..." />
+  </div>
 
-            <!-- FILTROS DE FEED -->
-            <div class="reddit-filter-bar">
-                <button class="filter-btn active">🔥 Tendencias</button>
-                <button class="filter-btn">✨ Nuevos</button>
-                <button class="filter-btn">🏆 Destacados</button>
-            </div>
+  <!-- Vista previa de la foto capturada/seleccionada -->
+  <div id="image-preview-container" class="preview-container" style="display: none;">
+    <img id="image-preview" src="" alt="Vista previa de imagen" />
+    <button type="button" class="btn-remove-img" onclick="removerFoto()" title="Quitar imagen">✕</button>
+  </div>
+
+  <!-- Input nativo para cámara (móvil/webcam) y archivos -->
+  <input type="file" id="foto-input" accept="image/*" capture="environment" style="display: none;" onchange="procesarFoto(event)" />
+
+  <div class="creator-actions">
+    <div class="creator-tools">
+      <button type="button" class="tool-btn" onclick="document.getElementById('foto-input').click()">
+        📷 Foto / Cámara
+      </button>
+      <select id="post-category-select" class="tool-select">
+        <option value="r/Consejos">🏷️ r/Consejos</option>
+        <option value="r/RegulacionSensorial">🏷️ r/RegulacionSensorial</option>
+        <option value="r/ComunicacionAAC">🏷️ r/ComunicacionAAC</option>
+        <option value="r/Escolar">🏷️ r/Escolar</option>
+      </select>
+    </div>
+    <button type="button" class="btn-publish" onclick="crearPublicacionReddit()">Publicar</button>
+  </div>
+</section>
+
+<!-- FILTROS DE CONTENIDO -->
+<div class="feed-filters">
+  <button class="filter-chip active" onclick="cambiarFiltro(this)">🔥 Tendencias</button>
+  <button class="filter-chip" onclick="cambiarFiltro(this)">✨ Nuevos</button>
+  <button class="filter-chip" onclick="cambiarFiltro(this)">🏆 Destacados</button>
+</div>
+
+<!-- CONTENEDOR DEL FEED -->
+<div id="posts-feed"></div>
+
+            
 
             <!-- CONTENEDOR DE PUBLICACIONES -->
             <div id="posts-feed">

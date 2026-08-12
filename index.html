@@ -1,44 +1,108 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="hydrated">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NeuroMundo App</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>NeuroMundo | Ecosistema de Apoyo & Accesibilidad Cognitiva</title>
+    
+    <!-- Meta tags SEO y PWA -->
+    <meta name="description" content="Plataforma interactiva de accesibilidad cognitiva, regulación sensorial y acompañamiento para personas en el espectro autista y sus redes de apoyo.">
     <meta name="author" content="Neu Industries">
+    <meta name="theme-color" content="#1c355e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Tipografía Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Hoja de Estilos Principal -->
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
 
-    <!-- Contenedor del dispositivo móvil (Simulador/Shell) -->
-    <div class="app-container">
+    <!-- Simulador de Hardware / Carcasa de Dispositivo -->
+    <div class="app-container" id="app-viewport">
 
-        <!-- Barra de Estado / Notificaciones de la App -->
+        <!-- Barra de Estado Dinámica (Status Bar) -->
         <header class="app-header">
             <div class="header-top">
-                <span class="app-time">09:41</span>
-                <div class="app-icons">📶 🔋</div>
+                <span class="app-time" id="live-clock">09:41</span>
+                <div class="dynamic-island-indicator" aria-hidden="true"></div>
+                <div class="app-icons" aria-label="Estado de red y batería">
+                    <span class="status-chip signal-chip">
+                        <svg class="h-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.32 19.98 10.63 20.5 12 20.5c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+                    </span>
+                    <span class="status-chip">📶 5G</span>
+                    <span class="status-chip">100% 🔋</span>
+                </div>
             </div>
+
+            <!-- Cabecera de Marca y Controles de Vista/Tema -->
             <div class="header-main">
                 <div class="app-brand">
-                    <img src="static/images/image_4223f367.png" alt="Logo NeuroMundo" class="logo-app">
-                    <h1>NeuroMundo</h1>
+                    <div class="logo-wrapper">
+                        <img src="static/images/image_4223f367.png" alt="Logo Oficial NeuroMundo" class="logo-app" loading="eager">
+                        <span class="online-pulse-dot" title="Ecosistema Activo"></span>
+                    </div>
+                    <div class="brand-text">
+                        <h1>NeuroMundo</h1>
+                        <span class="brand-badge">CLINICAL & SUPPORT</span>
+                    </div>
                 </div>
+
                 <div class="app-right-brand">
-                    <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
-                        Vista PC
+                    <!-- Conmutador de Modo Oscuro/Claro -->
+                    <button class="theme-toggle-animated" id="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema visual" title="Cambiar tema">
+                        <div class="icon-container">
+                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </div>
+                        <span id="theme-text" class="btn-caption">Tema</span>
                     </button>
+
+                    <!-- Conmutador Modo PC / Tablet -->
+                    <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()" aria-label="Cambiar a vista de escritorio" title="Alternar Layout">
+                        <span class="view-icon">🖥️</span>
+                        <span class="btn-caption">Vista PC</span>
+                    </button>
+
+                    <!-- Menú Desplegable Accesible de Notificaciones -->
                     <div class="user-menu">
-                        <!-- Checkbox oculto que guarda el estado (abierto/cerrado) -->
-                        <input type="checkbox" id="notif-check" class="notif-checkbox">
-                        <!-- El botón ahora es una etiqueta <label> que activa el checkbox al dar clic -->
-                        <label for="notif-check" class="notification-btn" aria-label="Notificaciones">
-                            🔔 <span class="badge"></span>
+                        <input type="checkbox" id="notif-check" class="notif-checkbox" aria-label="Desplegar notificaciones">
+                        <label for="notif-check" class="notification-btn" aria-label="Abrir centro de notificaciones" tabindex="0">
+                            <span class="bell-icon">🔔</span>
+                            <span class="badge" aria-label="Nueva notificación activa"></span>
                         </label>
-                        <div class="user-menu-dropdown">
-                            <div class="menu-item">
-                                <span>Sin notificaciones pendientes</span>
+                        <div class="user-menu-dropdown" role="region" aria-label="Panel de avisos">
+                            <div class="dropdown-header">
+                                <h5>Centro de Notificaciones</h5>
+                                <span class="notif-count">1 nueva</span>
+                            </div>
+                            <div class="menu-item unread">
+                                <span class="notif-icon">🌟</span>
+                                <div class="notif-text">
+                                    <strong>Nueva rutina visual agregada</strong>
+                                    <p>Técnicas de relajación táctil añadidas a Terapia.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="btn-link">Marcar todas como leídas</button>
                             </div>
                         </div>
                     </div>
@@ -46,105 +110,141 @@
             </div>
         </header>
 
-        <!-- Contenido de la Aplicación (Scollable) -->
-        <main class="app-content">
+        <!-- Contenedor Principal Scrolleable -->
+        <main class="app-content" id="main-content">
 
-            <!-- Sección de Bienvenida Basada en la Imagen -->
-            <section class="welcome-card">
+            <!-- Hero Banner: Tarjeta de Bienvenida con Microinteracción -->
+            <section class="welcome-card" aria-labelledby="hero-title">
+                <div class="welcome-background-glow"></div>
                 <div class="welcome-overlay">
-                    <h2 class="welcome-title">BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI</h2>
-                    <p class="welcome-subtitle">UN LUGAR AMIGABLE PARA PERSONAS CON AUTISMO</p>
-                    <button class="speech-bubble">
-                        <p>AMAR, RESPETAR E INCLUIR.</p>
+                    <span class="welcome-pill">ESPACIO SENSORIAL SEGURO</span>
+                    <h2 class="welcome-title" id="hero-title">BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI</h2>
+                    <p class="welcome-subtitle">UN LUGAR AMIGABLE, INCLUSIVO Y ACCESIBLE PARA PERSONAS CON AUTISMO</p>
+                    <div class="speech-bubble-container">
+                        <button class="speech-bubble" type="button" aria-label="Lema de NeuroMundo">
+                            <span class="bubble-sparkle">✨</span>
+                            <p>AMAR, RESPETAR E INCLUIR.</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Barra de Búsqueda Global -->
+            <section class="search-section" role="search">
+                <div class="search-box">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input type="search" id="global-search" placeholder="Buscar guías, actividades, pictogramas o consejos..." autocomplete="off" spellcheck="false">
+                    <button class="search-clear-btn" aria-label="Limpiar búsqueda" style="display: none;">✕</button>
+                </div>
+            </section>
+
+            <!-- Categorías Rápidas de Navegación -->
+            <section class="categories-section" aria-labelledby="cat-title">
+                <div class="section-title-wrap">
+                    <h3 class="block-title" id="cat-title">Categorías de Apoyo</h3>
+                    <span class="section-subtext">Selecciona un entorno adaptativo</span>
+                </div>
+                <div class="categories-scroll" role="tablist">
+                    <button class="category-item active" data-category="casa" role="tab" aria-selected="true">
+                        <span class="cat-icon" aria-hidden="true">🏠</span>
+                        <span class="cat-name">En Casa</span>
+                    </button>
+                    <button class="category-item" data-category="escuela" role="tab" aria-selected="false">
+                        <span class="cat-icon" aria-hidden="true">🏫</span>
+                        <span class="cat-name">Escuela</span>
+                    </button>
+                    <button class="category-item" data-category="terapia" role="tab" aria-selected="false">
+                        <span class="cat-icon" aria-hidden="true">🧠</span>
+                        <span class="cat-name">Terapia</span>
+                    </button>
+                    <button class="category-item" data-category="autocuidado" role="tab" aria-selected="false">
+                        <span class="cat-icon" aria-hidden="true">🧘</span>
+                        <span class="cat-name">Auto-cuidado</span>
                     </button>
                 </div>
             </section>
 
-            <!-- Buscador Global de la App -->
-            <section class="search-section">
-                <div class="search-box">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Buscar guías, actividades o consejos...">
+            <!-- Panel de Información Reactivo de la Categoría Activa -->
+            <aside id="categoria-info" class="category-info-panel" role="region" aria-live="polite">
+                <div class="info-content-wrapper">
+                    <div class="info-header">
+                        <span class="info-pulse"></span>
+                        <h4 id="info-titulo">🏠 Recursos para En Casa</h4>
+                    </div>
+                    <p id="info-descripcion">Estrategias y herramientas para crear un entorno seguro, estructurado y comprensivo dentro del hogar.</p>
                 </div>
+            </aside>
+
+            <!-- Copiloto NeuroAsistente IA -->
+            <section class="copiloto-box" role="complementary">
+                <div class="copiloto-icon">🤖</div>
+                <div class="copiloto-text">
+                    <h4>Copiloto Adaptativo NeuroMundo</h4>
+                    <p>Soporte algorítmico contextual para predecir sobrecargas y calibrar descansos visuales.</p>
+                </div>
+                <button class="btn-ia-action" onclick="abrirChatBot()" aria-label="Consultar asistente IA">Hablar</button>
             </section>
 
-            <!-- Categorías Rápidas (Formato Botones App) -->
-<section class="categories-section">
-    <h3 class="block-title">Categorías de Apoyo</h3>
-    <div class="categories-scroll">
-        <button class="category-item active" data-category="casa">
-            <span class="cat-icon">🏠</span>
-            <span class="cat-name">En Casa</span>
-        </button>
-        <button class="category-item" data-category="escuela">
-            <span class="cat-icon">🏫</span>
-            <span class="cat-name">Escuela</span>
-        </button>
-        <button class="category-item" data-category="terapia">
-            <span class="cat-icon">🧠</span>
-            <span class="cat-name">Terapia</span>
-        </button>
-        <button class="category-item" data-category="autocuidado">
-            <span class="cat-icon">🧘</span>
-            <span class="cat-name">Auto-cuidado</span>
-        </button>
-    </div>
-</section>
-
-<!-- Panel de información -->
-<div id="categoria-info" style="margin-top: 15px; padding: 15px; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
-    <h4 id="info-titulo" style="margin: 0 0 8px 0; color: #1e293b;">🏠 Recursos para En Casa</h4>
-    <p id="info-descripcion" style="margin: 0; color: #64748b;">Estrategias y herramientas para crear un entorno seguro, estructurado y comprensivo dentro del hogar.</p>
-</div>
-
-            <!-- Sección de Herramientas Diarias -->
-            <section class="tools-section">
-                <h3 class="block-title">Herramientas Diarias</h3>
+            <!-- Herramientas Diarias de Autonomía -->
+            <section class="tools-section" aria-labelledby="tools-title">
+                <div class="section-title-wrap">
+                    <h3 class="block-title" id="tools-title">Herramientas Diarias</h3>
+                    <span class="section-badge-counter">3 activas</span>
+                </div>
 
                 <!-- Tarjeta 1: Pictogramas -->
-                <div class="tool-card">
-                    <div class="tool-icon bg-blue">📅</div>
+                <div class="tool-card" tabindex="0" role="button" aria-label="Abrir Agenda Visual del Día">
+                    <div class="tool-icon bg-blue" aria-hidden="true">📅</div>
                     <div class="tool-info">
                         <h4>Agenda Visual del Día</h4>
-                        <p>Crea y gestiona las rutinas diarias mediante imágenes y pictogramas simples.</p>
+                        <p>Crea y gestiona las rutinas diarias mediante imágenes y pictogramas secuenciales simples.</p>
                     </div>
-                    <span class="arrow-right">➔</span>
+                    <div class="arrow-container">
+                        <span class="arrow-right">➔</span>
+                    </div>
                 </div>
 
                 <!-- Tarjeta 2: Semáforo Sensorial -->
-                <div class="tool-card">
-                    <div class="tool-icon bg-yellow">🚦</div>
+                <div class="tool-card" tabindex="0" role="button" aria-label="Abrir Semáforo de Alerta Sensorial">
+                    <div class="tool-icon bg-yellow" aria-hidden="true">🚦</div>
                     <div class="tool-info">
                         <h4>Semáforo de Alerta Sensorial</h4>
-                        <p>Monitorea y registra los niveles de estrés o sobrecarga del niño en tiempo real.</p>
+                        <p>Monitorea y registra los niveles de estrés o sobrecarga del entorno en tiempo real.</p>
                     </div>
-                    <span class="arrow-right">➔</span>
+                    <div class="arrow-container">
+                        <span class="arrow-right">➔</span>
+                    </div>
                 </div>
 
                 <!-- Tarjeta 3: Temporizador -->
-                <div class="tool-card">
-                    <div class="tool-icon bg-green">⏳</div>
+                <div class="tool-card" tabindex="0" role="button" aria-label="Abrir Temporizador de Transición">
+                    <div class="tool-icon bg-green" aria-hidden="true">⏳</div>
                     <div class="tool-info">
                         <h4>Temporizador de Transición</h4>
-                        <p>Ayuda a tu hijo a cambiar de una actividad a otra sin generar ansiedad.</p>
+                        <p>Facilita la transición entre actividades de alta y baja energía sin detonar ansiedad.</p>
                     </div>
-                    <span class="arrow-right">➔</span>
+                    <div class="arrow-container">
+                        <span class="arrow-right">➔</span>
+                    </div>
                 </div>
             </section>
 
-            <!-- Sección de Artículos Recomendados (Feed) -->
-            <section class="articles-section">
+            <!-- Feed de Artículos y Evidencia Clínica -->
+            <section class="articles-section" aria-labelledby="articles-title">
                 <div class="section-header-flex">
-                    <h3 class="block-title">Lecturas Recomendadas</h3>
-                    <a href="#" class="see-all">Ver todo</a>
+                    <h3 class="block-title" id="articles-title">Lecturas Recomendadas</h3>
+                    <a href="static/pages/comunidad.html" class="see-all" aria-label="Ver todas las lecturas">Ver todo &rarr;</a>
                 </div>
 
                 <!-- Artículo 1 -->
-                <article class="feed-card">
-                    <div class="feed-tag tag-crisis">Crisis</div>
+                <article class="feed-card" tabindex="0">
+                    <div class="feed-header-row">
+                        <span class="feed-tag tag-crisis">Crisis</span>
+                        <span class="read-time">Lectura: 4 min</span>
+                    </div>
                     <div class="feed-body">
                         <h4>Cómo gestionar una crisis sensorial en espacios públicos</h4>
-                        <p>Una guía paso a paso con técnicas de desescalada amigables y respetuosas.</p>
+                        <p>Una guía clínica paso a paso con técnicas de desescalada amigables, seguras y respetuosas.</p>
                         <div class="feed-footer">
                             <span class="author">Por Dra. Elena Ramos</span>
                             <span class="time">Hace 2 horas</span>
@@ -153,11 +253,14 @@
                 </article>
 
                 <!-- Artículo 2 -->
-                <article class="feed-card">
-                    <div class="feed-tag tag-juego">Juego</div>
+                <article class="feed-card" tabindex="0">
+                    <div class="feed-header-row">
+                        <span class="feed-tag tag-juego">Juego</span>
+                        <span class="read-time">Lectura: 6 min</span>
+                    </div>
                     <div class="feed-body">
                         <h4>5 Juegos de estimulación propioceptiva en casa</h4>
-                        <p>Actividades divertidas que ayudan a regular el sistema nervioso a través del movimiento.</p>
+                        <p>Actividades motoras que ayudan a autorregular el sistema nervioso central a través del movimiento guiado.</p>
                         <div class="feed-footer">
                             <span class="author">Por T.O. Marcos Díaz</span>
                             <span class="time">Ayer</span>
@@ -166,59 +269,129 @@
                 </article>
 
                 <!-- Artículo 3 -->
-                <article class="feed-card">
-                    <div class="feed-tag tag-comunidad">Historias</div>
+                <article class="feed-card" tabindex="0">
+                    <div class="feed-header-row">
+                        <span class="feed-tag tag-comunidad">Historias</span>
+                        <span class="read-time">Lectura: 3 min</span>
+                    </div>
                     <div class="feed-body">
                         <h4>El camino hacia la inclusión escolar: Experiencias reales</h4>
-                        <p>Madres y padres comparten los desafíos y victorias en el sistema educativo tradicional.</p>
+                        <p>Familias y educadores comparten los desafíos y victorias en el sistema educativo contemporáneo.</p>
                         <div class="feed-footer">
-                            <span class="author">Comunidad de Padres</span>
+                            <span class="author">Comunidad NeuroMundo</span>
                             <span class="time">Hace 3 días</span>
                         </div>
                     </div>
                 </article>
             </section>
 
-            <!-- Sección de Comunidad y Soporte Emocional -->
-            <section class="community-banner">
+            <!-- Banner de Círculo Comunitario -->
+            <section class="community-banner" role="region">
                 <div class="community-content">
-                    <h4>¿Necesitas hablar con alguien?</h4>
-                    <p>Únete a nuestros círculos de apoyo virtuales liderados por psicólogos especialistas.</p>
-                    <button class="community-btn">Entrar al Chat Grupal</button>
+                    <div class="community-badge-glow">💬 SOPORTE EN VIVO</div>
+                    <h4>¿Necesitas orientación profesional inmediata?</h4>
+                    <p>Únete a nuestros círculos virtuales moderados por terapeutas ocupacionales y psicólogos clínicos.</p>
+                    <button class="community-btn" type="button" onclick="window.location.href='static/pages/comunidad.html'">Entrar al Chat Grupal Seguro</button>
                 </div>
             </section>
 
-            <!-- Espacio final para que el scroll no tape el menú inferior -->
-            <div class="scroll-spacing"></div>
+            <!-- Espaciador de fin de scroll para no solapar Bottom Nav -->
+            <div class="scroll-spacing" aria-hidden="true"></div>
 
         </main>
 
-        <!-- Barra de Navegación Inferior Fija (Bottom Nav Bar) -->
-        <nav class="app-nav">
-            <a href="index.html" class="nav-item active">
-                <span class="nav-icon">🏠</span>
+        <!-- Barra de Navegación Inferior Móvil Fija -->
+        <nav class="app-nav" aria-label="Menú principal de navegación">
+            <a href="index.html" class="nav-item active" aria-current="page">
+                <div class="nav-icon-wrapper"><span class="nav-icon">🏠</span></div>
                 <span class="nav-label">Inicio</span>
             </a>
             <a href="static/pages/proyecto.html" class="nav-item">
-                <span class="nav-icon">🚀</span>
+                <div class="nav-icon-wrapper"><span class="nav-icon">🚀</span></div>
                 <span class="nav-label">Proyecto</span>
             </a>
             <a href="static/pages/metodologia.html" class="nav-item">
-                <span class="nav-icon">🛠️</span>
+                <div class="nav-icon-wrapper"><span class="nav-icon">🛠️</span></div>
                 <span class="nav-label">Metodología</span>
             </a>
             <a href="static/pages/comunidad.html" class="nav-item">
-                <span class="nav-icon">👥</span>
+                <div class="nav-icon-wrapper"><span class="nav-icon">👥</span></div>
                 <span class="nav-label">Comunidad</span>
             </a>
             <a href="static/pages/usuario.html" class="nav-item">
-                <span class="nav-icon">👤</span>
+                <div class="nav-icon-wrapper"><span class="nav-icon">👤</span></div>
                 <span class="nav-label">Perfil</span>
             </a>
         </nav>
 
+        <!-- Ventana Modal de Chat NeuroAsistente IA -->
+        <div class="chat-modal hidden" id="chatModal" role="dialog" aria-labelledby="chatHeaderTitle" aria-modal="true">
+            <header class="chat-header">
+                <div class="chat-title-group">
+                    <span class="bot-avatar">🤖</span>
+                    <span id="chatHeaderTitle">Asistente NeuroMundo</span>
+                </div>
+                <button class="btn-cerrar" onclick="cerrarChatBot()" aria-label="Cerrar Asistente">&times;</button>
+            </header>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ia">
+                    ¡Hola! Soy tu asistente de autorregulación. ¿En qué puedo ayudarte a estructurar hoy?
+                </div>
+            </div>
+            <form class="chat-input-container" onsubmit="event.preventDefault(); enviarMensajeChat();">
+                <input type="text" id="chatInput" placeholder="Escribe tu consulta..." aria-label="Escribe tu mensaje">
+                <button type="submit" aria-label="Enviar mensaje">➤</button>
+            </form>
+        </div>
+
     </div>
+
+    <!-- Script de Inicialización y Lógica -->
     <script src="static/js/script.js"></script>
+    <script>
+        // Actualización dinámica del reloj
+        function updateClock() {
+            const clockEl = document.getElementById('live-clock');
+            if (clockEl) {
+                const now = new Date();
+                clockEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            }
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function abrirChatBot() {
+            const modal = document.getElementById('chatModal');
+            if (modal) modal.classList.remove('hidden');
+        }
+        function cerrarChatBot() {
+            const modal = document.getElementById('chatModal');
+            if (modal) modal.classList.add('hidden');
+        }
+        function enviarMensajeChat() {
+            const input = document.getElementById('chatInput');
+            const container = document.getElementById('chatMessages');
+            if (!input || !input.value.trim() || !container) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user';
+            userMsg.textContent = input.value;
+            container.appendChild(userMsg);
+
+            const promptText = input.value;
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+
+            // Respuesta automática simulada
+            setTimeout(() => {
+                const iaMsg = document.createElement('div');
+                iaMsg.className = 'message ia';
+                iaMsg.textContent = 'He procesado tu consulta. Te sugiero activar el Temporizador de Transición o revisar las pautas del entorno "En Casa".';
+                container.appendChild(iaMsg);
+                container.scrollTop = container.scrollHeight;
+            }, 600);
+        }
+    </script>
 </body>
 
 </html>
