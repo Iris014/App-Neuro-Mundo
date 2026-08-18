@@ -19,50 +19,64 @@
       </div>
       <div class="header-main">
         <div class="app-brand">
-          <img src="../images/image_4223f367.png" alt="Logo NeuroMundo" class="logo-app" />
-          <h1>Mi Cuenta</h1>
+          <div class="logo-wrapper">
+            <img src="static/images/image_4223f367.png" alt="Logo Oficial NeuroMundo" class="logo-app" loading="eager">
+            <span class="online-pulse-dot" title="Ecosistema Activo"></span>
+          </div>
+          <div class="brand-text">
+            <h1>Mi cuenta</h1>
+            <span class="brand-badge">CLINICAL & SUPPORT</span>
+          </div>
         </div>
         <div class="app-right-brand">
-          <button class="theme-toggle-animated" id="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
-            <div class="icon-container">
-              <!-- Icono Sol (Modo Claro) -->
-              <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-
-              <!-- Icono Luna (Modo Oscuro) -->
-              <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            </div>
-            <span id="theme-text">Oscuro</span>
-          </button>
+                    <!-- Conmutador de Modo Oscuro/Claro -->
+                    <button class="theme-toggle-animated" id="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema visual" title="Cambiar tema">
+                        <div class="icon-container">
+                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </div>
+                        <span id="theme-text" class="btn-caption">Tema</span>
+                    </button>
           <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
             Vista PC
           </button>
-          <div class="user-menu">
-            <!-- Checkbox oculto que guarda el estado (abierto/cerrado) -->
-            <input type="checkbox" id="notif-check" class="notif-checkbox" />
-            <!-- El botón ahora es una etiqueta <label> que activa el checkbox al dar clic -->
-            <label for="notif-check" class="notification-btn" aria-label="Notificaciones">
-              🔔 <span class="badge"></span>
-            </label>
-            <div class="user-menu-dropdown">
-              <div class="menu-item">
-                <span>Sin notificaciones pendientes</span>
-              </div>
-            </div>
-          </div>
+
+                    <!-- Menú Desplegable Accesible de Notificaciones -->
+                    <div class="user-menu">
+                        <input type="checkbox" id="notif-check" class="notif-checkbox" aria-label="Desplegar notificaciones">
+                        <label for="notif-check" class="notification-btn" aria-label="Abrir centro de notificaciones" tabindex="0">
+                            <span class="bell-icon">🔔</span>
+                            <span class="badge" aria-label="Nueva notificación activa"></span>
+                        </label>
+                        <div class="user-menu-dropdown" role="region" aria-label="Panel de avisos">
+                            <div class="dropdown-header">
+                                <h5>Centro de Notificaciones</h5>
+                                <span class="notif-count">1 nueva</span>
+                            </div>
+                            <div class="menu-item unread">
+                                <span class="notif-icon">🌟</span>
+                                <div class="notif-text">
+                                    <strong>Nueva rutina visual agregada</strong>
+                                    <p>Técnicas de relajación táctil añadidas a Terapia.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="btn-link">Marcar todas como leídas</button>
+                            </div>
+                        </div>
+                    </div>
         </div>
       </div>
     </header>
@@ -96,7 +110,7 @@
           <div class="item-left">🤝 Solicitar Ayuda Técnica</div>
           <span class="item-arrow">➔</span>
         </div>
-        <div class="settings-list-item logout-item" onclick="location.href = 'index.html'">
+        <div class="settings-list-item logout-item" onclick="location.href = '../../index.html'">
           <div class="item-left">🚪 Cerrar Sesión Temporal</div>
           <span class="item-arrow">➔</span>
         </div>
