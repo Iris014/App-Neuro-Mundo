@@ -156,6 +156,21 @@
   </div>
 
   <script src="../js/script.js"></script>
+  <!-- SCRIPT DE INICIALIZACIÓN DEL TEMA (Evita el parpadeo blanco) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('neuromundo-theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                
+                if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                    document.body.classList.add('dark-theme');
+                }
+            } catch (e) { console.warn('localStorage no está disponible'); }
+        })();
+    </script>
+    
+    <!-- Aquí va el resto de tu contenido del body (header, main, footer, etc.) -->
 </body>
 
 </html>

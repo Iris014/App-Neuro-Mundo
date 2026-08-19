@@ -258,37 +258,55 @@ function toggleAcc(btn) {
         }
     };
 
-    // Inicialización y persistencia del modo oscuro/claro
-function initTheme() {
-    const savedTheme = localStorage.getItem('neuromundo-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.body.classList.add('dark-theme');
-        updateThemeUI(true);
-    } else {
-        document.body.classList.remove('dark-theme');
-        updateThemeUI(false);
-    }
-}
+    /* ==========================================================================
+   SISTEMA DE TEMA (LÓGICA DE BOTONES Y EVENTOS)
+   Basado en MDN Web Docs: Web Storage API y CSSOM View Module
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Al cargar la página, solo necesitamos sincronizar la interfaz visual del botón
+    // ya que el tema real ya fue aplicado por el script en el HTML.
+    sincronizarBotones();
+
+    // Escuchar cambios en las preferencias del sistema operativo en tiempo real
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('neuromundo-theme')) {
+            aplicarTema(e.matches ? 'dark' : 'light');
+        }
+    });
+});
 
 function toggleTheme() {
-    const isDark = document.body.classList.toggle('dark-theme');
-    localStorage.setItem('neuromundo-theme', isDark ? 'dark' : 'light');
-    updateThemeUI(isDark);
+    const isCurrentlyDark = document.body.classList.contains('dark-theme');
+    const newTheme = isCurrentlyDark ? 'light' : 'dark';
+    
+    // Guardar en la memoria local (persiste entre páginas y sesiones)
+    localStorage.setItem('neuromundo-theme', newTheme);
+    
+    // Aplicar el cambio
+    aplicarTema(newTheme);
 }
 
-function updateThemeUI(isDark) {
-    const toggleBtn = document.getElementById('theme-toggle');
-    const themeText = document.getElementById('theme-text');
+function aplicarTema(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
+    }
+    sincronizarBotones();
+}
+
+function sincronizarBotones() {
+    const isDark = document.body.classList.contains('dark-theme');
+    const themeToggles = document.querySelectorAll('#theme-toggle, .theme-toggle-animated');
     
-    if (toggleBtn) {
+    themeToggles.forEach(toggleBtn => {
         toggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
         toggleBtn.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-    }
-    if (themeText) {
-        themeText.textContent = isDark ? 'Oscuro' : 'Claro';
-    }
+        
+        const themeText = toggleBtn.querySelector('.btn-caption') || document.getElementById('theme-text');
+        if (themeText) {
+            themeText.textContent = isDark ? 'Oscuro' : 'Claro';
+        }
+    });
 }
-
-document.addEventListener('DOMContentLoaded', initTheme);
