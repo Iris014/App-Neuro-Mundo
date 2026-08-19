@@ -4,71 +4,6 @@
    ========================================================================== */
 
 // --------------------------------------------------------------------------
-// 1. MOTOR DE IA ADAPTATIVA (NEUROMUNDO COPILOT CLINICAL ENGINE)
-// --------------------------------------------------------------------------
-const NeuroCopilotEngine = {
-    contexto: {
-        nivelEstres: 'normal',
-        ultimaCategoria: 'general',
-        historialMensajes: []
-    },
-
-    baseConocimiento: {
-        crisis: {
-            keywords: ['crisis', 'meltdown', 'desborde', 'bloqueo', 'rabia', 'llanto', 'colapso', 'sobrecarga', 'panico'],
-            respuesta: "🚨 **Protocolo de Regulación y Desescalada Rápida**\n\n1. **Reduce estímulos**: Apaga luces brillantes y disminuye ruidos de inmediato.\n2. **Espacio Seguro**: Ofrece un rincón de calma sin forzar el contacto físico.\n3. **Lenguaje Mínimo**: Habla con frases de 2 o 3 palabras en tono neutro y predecible.\n4. **Presión Profunda**: Facilita mantas pesadas o compresión proprioceptiva si el usuario lo tolera.",
-            chips: ["🧘 Iniciar Respiración 4x4", "🚦 Ir al Semáforo", "🔇 Modo Sin Ruido"]
-        },
-        respiracion: {
-            keywords: ['respirar', 'respiracion', 'calma', 'calmar', 'relajar', 'ansiedad', 'nervioso'],
-            respuesta: "🌱 **Técnica 4x4 (Respiración de Caja)**\n\n• Inhala en **4 segundos** 🌬️\n• Sostén el aire en **4 segundos** ⏸️\n• Exhala suavemente en **4 segundos** 💨\n• Espera en vacío durante **4 segundos** ⚓\n\n*Repite este ciclo 3 veces para estabilizar la frecuencia cardíaca.*",
-            chips: ["⏱️ Temporizador 1 Min", "🎵 Sonido Blanco"]
-        },
-        pictogramas: {
-            keywords: ['pictograma', 'imagen', 'pictogramas', 'tablero', 'aac', 'comunicar', 'hablar', 'secuencia', 'tarjetas'],
-            respuesta: "🎨 **Secuencia Visual Generada (Comunicación Aumentativa AAC):**\n\n[ 🚿 1. Baño ] ➔ [ 👕 2. Vestirse ] ➔ [ 🍳 3. Desayunar ] ➔ [ 🎒 4. Mochila ]\n\n*Las tarjetas visuales reducen la carga cognitiva y anticipan la estructura del día.*",
-            chips: ["➕ Nueva Secuencia", "📥 Guardar en Agenda", "🖨️ Exportar"]
-        },
-        rutinas: {
-            keywords: ['rutina', 'agenda', 'transicion', 'cambio', 'tiempo', 'horario', 'orden'],
-            respuesta: "📅 **Estructuración de Transiciones Seguras**\n\n• **Aviso previo de 5 minutos**: 'En 5 minutos terminamos el juego'.\n• **Temporizador visual**: Utiliza cuenta renuncias por colores para tangibilizar el tiempo.\n• **Cierre de actividad**: Permite guardar los objetos para marcar físicamente el final de la tarea.",
-            chips: ["⏳ Iniciar Temporizador", "📋 Ver Agenda del Día"]
-        },
-        escuela: {
-            keywords: ['escuela', 'colegio', 'aula', 'profesor', 'tarea', 'examen', 'clase', 'inclusión'],
-            respuesta: "🏫 **Adaptaciones para Entornos Escolares**\n\n• **Pausas activas sensoriales**: 2 minutos de estiramiento propioceptivo cada 45 minutos.\n• **Instrucciones segmentadas**: Divide las tareas en pasos visuales únicos.\n• **Ubicación estratégica**: Asiento lejos de pasillos transitados o fuentes de luz parpadeante.",
-            chips: ["📝 Pauta para Docentes", "🎒 Checklist Escolar"]
-        },
-        propiocepcion: {
-            keywords: ['cuerpo', 'movimiento', 'motor', 'fuerza', 'propiocepcion', 'saltar', 'morder', 'peso'],
-            respuesta: "🧠 **Estrategias Propioceptivas (Trabajo Pesado)**\n\n• Empujar una pared con ambas manos durante 10 segundos.\n• Marchar imitando pasos de animales pesados (oso/elefante).\n• Uso de chalecos o almohadillas de peso en el regazo durante actividades de mesa.",
-            chips: ["🎲 Juegos de Movimiento", "🧸 Herramientas Táctiles"]
-        }
-    },
-
-    procesar(prompt) {
-        const textoLimpio = prompt.toLowerCase().trim();
-        this.contexto.historialMensajes.push({ emisor: 'user', texto: prompt });
-
-        for (const [clave, modulo] of Object.entries(this.baseConocimiento)) {
-            const coincide = modulo.keywords.some(k => textoLimpio.includes(k));
-            if (coincide) {
-                this.contexto.ultimaCategoria = clave;
-                return {
-                    texto: modulo.respuesta,
-                    chips: modulo.chips
-                };
-            }
-        }
-
-        return {
-            texto: `🤖 He analizado tu consulta sobre **"${prompt}"**.\n\nComo asistente adaptativo de **NeuroMundo**, te sugiero estructurar este proceso mediante apoyos visuales, calibrar descansos sensoriales o seleccionar una de nuestras herramientas rápidas:`,
-            chips: ["🎨 Crear Pictograma", "🧘 Ejercicio de Calma", "📅 Organizar Rutina", "🚦 Semáforo Sensorial"]
-        };
-    }
-};
-
-// --------------------------------------------------------------------------
 // 2. INTERFAZ Y CONTROLADOR DEL COPILOT IA (CHAT UI)
 // --------------------------------------------------------------------------
 function abrirChatBot() {
@@ -321,5 +256,39 @@ function toggleAcc(btn) {
         } else {
             return "🤖 Entendido. Como asistente de NeuroMundo, sugiero revisar las herramientas de apoyo o adaptar la actividad con apoyos visuales.";
         }
+    };
+
+    // Inicialización y persistencia del modo oscuro/claro
+function initTheme() {
+    const savedTheme = localStorage.getItem('neuromundo-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.body.classList.add('dark-theme');
+        updateThemeUI(true);
+    } else {
+        document.body.classList.remove('dark-theme');
+        updateThemeUI(false);
     }
-;
+}
+
+function toggleTheme() {
+    const isDark = document.body.classList.toggle('dark-theme');
+    localStorage.setItem('neuromundo-theme', isDark ? 'dark' : 'light');
+    updateThemeUI(isDark);
+}
+
+function updateThemeUI(isDark) {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const themeText = document.getElementById('theme-text');
+    
+    if (toggleBtn) {
+        toggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        toggleBtn.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+    }
+    if (themeText) {
+        themeText.textContent = isDark ? 'Oscuro' : 'Claro';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initTheme);

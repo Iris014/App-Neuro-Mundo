@@ -15,8 +15,15 @@
         <!-- ENCABEZADO FIJO -->
         <header class="app-header">
             <div class="header-top">
-                <span>09:41</span>
-                <span>Neu Industries</span>
+                <span class="app-time" id="live-clock">09:41</span>
+                <div class="dynamic-island-indicator" aria-hidden="true"></div>
+                <div class="app-icons" aria-label="Estado de red y batería">
+                    <span class="status-chip signal-chip">
+                        <svg class="h-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.32 19.98 10.63 20.5 12 20.5c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+                    </span>
+                    <span class="status-chip">📶 5G</span>
+                    <span class="status-chip">100% 🔋</span>
+                </div>
             </div>
             <div class="header-main">
                 <div class="app-brand">
@@ -129,37 +136,6 @@
     <p id="seccion-descripcion" style="color: #64748b; margin-bottom: 0;">Selecciona una categoría arriba para acceder a las herramientas y recursos correspondientes.</p>
 </div>
 
-            <section class="copiloto-box">
-                <div class="copiloto-icon">🤖</div>
-                <div class="copiloto-text">
-                    <h4>Copiloto de Apoyo Adaptativo IA</h4>
-                    <p>Asistente inteligente para traducción directa a pictogramas y sugerencias de regulación.</p>
-                </div>
-                <div id="btn-copiloto" class="copiloto-card" style="cursor: pointer;">
-    <span class="cat-icon">🤖</span>
-    <div class="copiloto-info">
-        <h3>Copiloto de Apoyo Adaptativo IA</h3>
-        <p>Asistente inteligente para traducción directa a pictogramas y sugerencias de regulación.</p>
-    </div>
-</div>
-
-<div id="chat-ia-modal" class="chat-modal hidden">
-    <div class="chat-header">
-        <span>🤖 Copiloto IA - NeuroMundo</span>
-        <button id="cerrar-chat" class="btn-cerrar">&times;</button>
-    </div>
-    <div id="chat-messages" class="chat-messages">
-        <div class="message ia">
-            ¡Hola! Soy tu Copiloto IA. ¿En qué te puedo ayudar hoy? Puedes pedirme traducir una frase a pictogramas o sugerencias de regulación.
-        </div>
-    </div>
-    <div class="chat-input-container">
-        <input type="text" id="chat-input" placeholder="Escribe tu mensaje aquí..." />
-        <button id="enviar-msg">Enviar</button>
-    </div>
-</div>
-            </section>
-
             <section class="tools-section">
                 <h3 class="block-title">Herramientas Diarias</h3>
 
@@ -239,6 +215,7 @@
                         conscientes antes de colapsar.</p>
                 </div>
             </section>
+
 
             <section class="articles-section">
                 <div class="section-header-flex">

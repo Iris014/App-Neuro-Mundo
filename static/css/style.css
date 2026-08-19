@@ -206,6 +206,7 @@ body {
 }
 
 .header-top {
+    position: relative; /* Establece el marco de referencia */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -217,17 +218,14 @@ body {
 }
 
 .dynamic-island-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     width: 72px;
     height: 18px;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: var(--border-radius-pill);
     border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.app-icons {
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
 
 .status-chip {
@@ -821,6 +819,12 @@ body.dark-theme .moon-icon {
     font-size: 0.76rem;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.35;
+}
+
+.copiloto-text-info {
+    font-size: 0.92rem;
+    font-weight: 800;
+    margin-bottom: 2px;
 }
 
 .btn-ia-action {
@@ -2657,4 +2661,305 @@ body.dark-theme .filter-chip.active {
 
 .settings-list-item.logout-item .item-arrow {
     color: #dc2626;
+}
+
+.lista-modulos-autonomia {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta-modulo-app {
+    background-color: var(--bg-tarjeta);
+    border-radius: 14px;
+    padding: 14px;
+    border: 1px solid var(--borde-suave);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tarjeta-modulo-app.pictogramas {
+    border-left: 5px solid var(--azul-amigable);
+}
+
+.tarjeta-modulo-app.regulacion {
+    border-left: 5px solid var(--verde-calma);
+}
+
+.tarjeta-modulo-app.agenda {
+    border-left: 5px solid #0284c7;
+}
+
+.tarjeta-modulo-app.alertas {
+    border-left: 5px solid var(--dorado-alerta);
+}
+
+.encabezado-tarjeta-app {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icono-app-small {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.titulo-tarjeta-app {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+}
+
+.desc-tarjeta-app {
+    font-size: 0.82rem;
+    color: var(--texto-secundario);
+    line-height: 1.35;
+}
+
+.acciones-app-fila {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.boton-app-primario {
+    background-color: var(--azul-amigable);
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.enlace-app-secundario {
+    color: var(--azul-amigable);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: center;
+}
+
+.grilla-recursos-movil {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-recurso-movil {
+    background-color: var(--bg-tarjeta);
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid var(--borde-suave);
+}
+
+.titulo-recurso-movil {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+}
+
+.desc-recurso-movil {
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    margin: 4px 0 8px 0;
+}
+
+.captura-recurso-movil {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.barra-navegacion-inferior {
+    background-color: #ffffff;
+    border-top: 1px solid var(--borde-suave);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+}
+
+.item-nav-app {
+    font-size: 0.75rem;
+    color: var(--texto-secundario);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.item-nav-app.activo {
+    color: var(--azul-amigable);
+}
+
+
+/* MÓDULOS DE AUTONOMÍA Y RUTINAS */
+.autonomia-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-modulo-app {
+    background-color: var(--card-background);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    border-left: 5px solid var(--bg-dark-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.encabezado-tarjeta-app {
+    display: flex;
+    align-items: center;
+}
+
+.titulo-tarjeta-app {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.desc-tarjeta-app {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.boton-app-primario {
+    margin-top: 4px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--bg-dark-blue);
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.boton-app-primario:active {
+    opacity: 0.9;
+}
+
+/* MÉTRICAS DE IMPACTO */
+.metrics-section {
+    margin-bottom: 20px;
+}
+
+.metrica-card {
+    background: linear-gradient(135deg, #1c355e 0%, #7d91a9 100%);
+    color: white;
+    background: var(--gradient-hero);
+    border-radius: var(--border-radius-lg);
+    padding: 26px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow-primary-glow);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.metrica-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-yellow, #d1a13b);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.metrica-txt {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.35;
+    opacity: 0.95;
+}
+
+
+/* CASO CLÍNICO DE EVIDENCIA */
+.case-section {
+    margin-bottom: 20px;
+}
+
+.case-card {
+    background-color: var(--card-background);
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.case-tag {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.case-question {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 0.88rem;
+    color: var(--text-main);
+}
+
+/* VARIANTES DE BORDES PARA LAS CARDS DE ARTÍCULOS */
+.feed-card-green {
+    border-left-color: var(--success-green, #4caf50);
+}
+
+/* Transición suave entre temas */
+body, .app-container, .card-bg, .bento-card, .tool-card, .feed-card {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Corrección de componentes en Modo Oscuro */
+body.dark-theme {
+    --card-background: var(--card-bg);
+    --app-background: var(--app-bg);
+}
+
+body.dark-theme .bento-card,
+body.dark-theme .glass-hero,
+body.dark-theme .profile-card-top,
+body.dark-theme .settings-list-group,
+body.dark-theme .login-card,
+body.dark-theme .case-card {
+    background-color: var(--card-bg);
+    border-color: var(--border-subtle);
+    color: var(--text-heading);
+}
+
+body.dark-theme .glass-hero {
+    background: linear-gradient(135deg, rgba(19, 28, 46, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
+}
+
+body.dark-theme .glass-hero-title,
+body.dark-theme .profile-name,
+body.dark-theme .login-header h2 {
+    color: var(--text-heading);
+}
+
+body.dark-theme .item-left,
+body.dark-theme .form-group label {
+    color: var(--text-body);
+}
+
+body.dark-theme .form-group input {
+    background-color: var(--app-bg);
+    border-color: var(--border-strong);
+    color: var(--text-heading);
 }
