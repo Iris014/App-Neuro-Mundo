@@ -258,54 +258,26 @@ function toggleAcc(btn) {
         }
     };
 
-/* ==========================================================================
-   SISTEMA DE MODO PC PREMIUM - INICIALIZACIÓN INMEDIATA SIN PARPADEO
+    /* ==========================================================================
+   SISTEMA DE MODO PC / ESCRITORIO FORZADO
    ========================================================================== */
 
-// Script de inicialización inmediata (ejecuta antes de DOMContentLoaded)
-(function() {
-    try {
-        // Verificar modo PC guardado
-        const savedViewMode = localStorage.getItem('neuromundo-view-mode');
-        
-        if (savedViewMode === 'pc') {
-            // Aplicar clase inmediatamente al HTML y BODY para evitar parpadeo
-            document.documentElement.classList.add('pc-mode');
-            document.body.classList.add('pc-mode');
-            
-            // Forzar viewport meta dinámicamente
-            const viewportMeta = document.querySelector('meta[name="viewport"]');
-            if (viewportMeta) {
-                viewportMeta.setAttribute('content', 'width=1280, initial-scale=0.25');
-            }
-        }
-    } catch (e) {
-        console.warn('Error en inicialización inmediata del modo PC:', e);
-    }
-})();
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Sincronizar estado del botón después de cargar el DOM
+    // Cargar estado del modo PC desde localStorage
     const savedViewMode = localStorage.getItem('neuromundo-view-mode');
-    actualizarBotonVistaPC(savedViewMode === 'pc');
+    if (savedViewMode === 'pc') {
+        document.body.classList.add('pc-mode');
+        actualizarBotonVistaPC(true);
+    } else {
+        actualizarBotonVistaPC(false);
+    }
 });
 
 function toggleViewMode() {
     const isPCMode = document.body.classList.toggle('pc-mode');
-    document.documentElement.classList.toggle('pc-mode', isPCMode);
     
     // Guardar preferencia en localStorage
     localStorage.setItem('neuromundo-view-mode', isPCMode ? 'pc' : 'mobile');
-    
-    // Manipular viewport meta según el modo
-    const viewportMeta = document.querySelector('meta[name="viewport"]');
-    if (viewportMeta) {
-        if (isPCMode) {
-            viewportMeta.setAttribute('content', 'width=1280, initial-scale=0.25');
-        } else {
-            viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
-        }
-    }
     
     // Actualizar estado visual del botón
     actualizarBotonVistaPC(isPCMode);
