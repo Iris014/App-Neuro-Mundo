@@ -58,9 +58,14 @@
                         </div>
                         <span id="theme-text" class="btn-caption">Tema</span>
                     </button>
-                    <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
-                        Vista PC
-                    </button>
+<!-- Conmutador Modo PC / Tablet -->
+<button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()" aria-label="Cambiar a vista de escritorio" title="Alternar Layout">
+    <span class="view-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h16v12H4V6zm2 2v8h12V8H6zm-4 4h2v2H2v-2zm18 0h2v2h-2v-2zM4 4h16V2H4v2zm0 16h16v-2H4v2z"/>
+        </svg>
+    </span>
+</button>
 
                     <!-- Menú Desplegable Accesible de Notificaciones -->
                     <div class="user-menu">
@@ -92,6 +97,64 @@
 
         <!-- ÁREA SCROLLEABLE -->
         <main class="app-content">
+
+            <!-- ==========================================
+                 PÁGINA 2: EL PROYECTO (SOBRE NEUROMUNDO)
+                 ========================================== -->
+            <section class="seccion-pagina-proyecto">
+
+                <!-- FICHA TÉCNICA PRINCIPAL / HERO TRANSLÚCIDO -->
+                <section class="glass-hero">
+                    <span class="glass-hero-badge" id="proy-badge-hero">Propuesta de Valor</span>
+                    <h2 class="glass-hero-title" id="proy-title-hero">Neuro Mundo App</h2>
+                    <p class="glass-hero-desc" id="proy-desc-hero">
+                        Una solución digital interactiva diseñada para conectar a la persona neurodivergente, su familia y
+                        los entornos que frecuenta bajo un mismo lenguaje visual accesibilizado.
+                    </p>
+
+                    <!-- PÍLDORAS DE PROPIEDADES -->
+                    <div class="feature-pill-list">
+                        <span class="feature-pill" id="pill-1">✨ Interfaz Limpia</span>
+                        <span class="feature-pill" id="pill-2">💬 Pictogramas</span>
+                        <span class="feature-pill" id="pill-3">🛡️ Cero Distractores</span>
+                    </div>
+                </section>
+
+                <!-- BLOQUES INFORMATIVOS DE PROPÓSITO / EJES -->
+                <section class="ejes-container">
+                    <h3 class="block-title" id="proy-sec-title">Ejes Fundamentales</h3>
+
+                    <div class="eje-card">
+                        <span class="eje-icon">🤝</span>
+                        <div class="eje-text">
+                            <h4 id="eje1-title">Puente de Comunicación</h4>
+                            <p id="eje1-desc">Facilita el diálogo entre terapeutas, educadores y cuidadores.</p>
+                        </div>
+                    </div>
+
+                    <div class="eje-card">
+                        <span class="eje-icon">🌿</span>
+                        <div class="eje-text">
+                            <h4 id="eje2-title">Prevención y Calma</h4>
+                            <p id="eje2-desc">Anticipa situaciones de sobrecarga mediante rutinas ajustables.</p>
+                        </div>
+                    </div>
+
+                    <div class="eje-card">
+                        <span class="eje-icon">🎯</span>
+                        <div class="eje-text">
+                            <h4 id="eje3-title">Inclusión Autónoma</h4>
+                            <p id="eje3-desc">Promueve la toma de decisiones y el desarrollo de rutinas propias.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+            <!-- SEPARADOR VISUAL DE TRANSICIÓN ENTRE PÁGINAS -->
+            <div class="bloque-separador-secciones" style="margin: 25px 0 15px 0; position: relative; text-align: center;">
+                <hr style="border: none;">
+            </div>
 
             <!-- ==========================================
                  PÁGINA 1: PROBLEMÁTICA (DIAGNÓSTICO SOCIAL)
@@ -159,6 +222,11 @@
                 <section class="problematica-extra-section" style="margin-top: 20px;">
                     <h3 class="block-title">Barreras Invisibles Más Comunes</h3>
 
+            <!-- SEPARADOR VISUAL DE TRANSICIÓN ENTRE PÁGINAS -->
+            <div class="bloque-separador-secciones" style="margin: 15px 0 5px 0; position: relative; text-align: center;">
+                <hr style="border: none;">
+            </div>
+
                     <div class="tool-card">
                         <div class="tool-icon bg-yellow">🔊</div>
                         <div class="tool-info">
@@ -177,66 +245,6 @@
                 </section>
 
             </section>
-
-            <!-- SEPARADOR VISUAL DE TRANSICIÓN ENTRE PÁGINAS -->
-            <div class="bloque-separador-secciones" style="margin: 35px 0 25px 0; position: relative; text-align: center;">
-                <hr style="border: none; border-top: 2px dashed var(--border-color, rgba(255,255,255,0.15));">
-            </div>
-
-            <!-- ==========================================
-                 PÁGINA 2: EL PROYECTO (SOBRE NEUROMUNDO)
-                 ========================================== -->
-            <section class="seccion-pagina-proyecto">
-
-                <!-- FICHA TÉCNICA PRINCIPAL / HERO TRANSLÚCIDO -->
-                <section class="glass-hero">
-                    <span class="glass-hero-badge" id="proy-badge-hero">Propuesta de Valor</span>
-                    <h2 class="glass-hero-title" id="proy-title-hero">Espacio Amigable App</h2>
-                    <p class="glass-hero-desc" id="proy-desc-hero">
-                        Una solución digital interactiva diseñada para conectar a la persona neurodivergente, su familia y
-                        los entornos que frecuenta bajo un mismo lenguaje visual accesibilizado.
-                    </p>
-
-                    <!-- PÍLDORAS DE PROPIEDADES -->
-                    <div class="feature-pill-list">
-                        <span class="feature-pill" id="pill-1">✨ Interfaz Limpia</span>
-                        <span class="feature-pill" id="pill-2">💬 Pictogramas</span>
-                        <span class="feature-pill" id="pill-3">🛡️ Cero Distractores</span>
-                    </div>
-                </section>
-
-                <!-- BLOQUES INFORMATIVOS DE PROPÓSITO / EJES -->
-                <section class="ejes-container">
-                    <h3 class="block-title" id="proy-sec-title">Ejes Fundamentales</h3>
-
-                    <div class="eje-card">
-                        <span class="eje-icon">🤝</span>
-                        <div class="eje-text">
-                            <h4 id="eje1-title">Puente de Comunicación</h4>
-                            <p id="eje1-desc">Facilita el diálogo entre terapeutas, educadores y cuidadores.</p>
-                        </div>
-                    </div>
-
-                    <div class="eje-card">
-                        <span class="eje-icon">🌿</span>
-                        <div class="eje-text">
-                            <h4 id="eje2-title">Prevención y Calma</h4>
-                            <p id="eje2-desc">Anticipa situaciones de sobrecarga mediante rutinas ajustables.</p>
-                        </div>
-                    </div>
-
-                    <div class="eje-card">
-                        <span class="eje-icon">🎯</span>
-                        <div class="eje-text">
-                            <h4 id="eje3-title">Inclusión Autónoma</h4>
-                            <p id="eje3-desc">Promueve la toma de decisiones y el desarrollo de rutinas propias.</p>
-                        </div>
-                    </div>
-                </section>
-
-            </section>
-
-            <div class="scroll-spacing"></div>
         </main>
 
         <!-- NAVEGACIÓN INFERIOR FIJA -->
@@ -268,20 +276,34 @@
     <script src="../js/script.js"></script>
     <!-- SCRIPT DE INICIALIZACIÓN DEL TEMA (Evita el parpadeo blanco) -->
     <script>
-        (function() {
-            try {
-                var savedTheme = localStorage.getItem('neuromundo-theme');
-                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    (function() {
+        try {
+            // Inicializar tema
+            var savedTheme = localStorage.getItem('neuromundo-theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.body.classList.add('dark-theme');
+            }
+            
+            // Inicializar modo PC INMEDIATAMENTE (antes de cualquier renderizado)
+            var savedViewMode = localStorage.getItem('neuromundo-view-mode');
+            if (savedViewMode === 'pc') {
+                document.documentElement.classList.add('pc-mode');
+                document.body.classList.add('pc-mode');
                 
-                if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                    document.body.classList.add('dark-theme');
+                // Forzar viewport meta inmediatamente
+                var viewportMeta = document.querySelector('meta[name="viewport"]');
+                if (viewportMeta) {
+                    viewportMeta.setAttribute('content', 'width=1280, initial-scale=0.25');
                 }
-            } catch (e) { console.warn('localStorage no está disponible'); }
-        })();
-    </script>
-    
-    <!-- Aquí va el resto de tu contenido del body (header, main, footer, etc.) -->
+            }
+        } catch (e) { 
+            console.warn('localStorage no está disponible'); 
+        }
+    })();
 
+    </script>
 </body>
 
 </html>

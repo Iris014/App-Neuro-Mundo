@@ -258,55 +258,73 @@ function toggleAcc(btn) {
         }
     };
 
-    /* ==========================================================================
-   SISTEMA DE TEMA (LÓGICA DE BOTONES Y EVENTOS)
-   Basado en MDN Web Docs: Web Storage API y CSSOM View Module
+/* ==========================================================================
+   SISTEMA DE MODO PC PREMIUM - INICIALIZACIÓN INMEDIATA SIN PARPADEO
    ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Al cargar la página, solo necesitamos sincronizar la interfaz visual del botón
-    // ya que el tema real ya fue aplicado por el script en el HTML.
-    sincronizarBotones();
-
-    // Escuchar cambios en las preferencias del sistema operativo en tiempo real
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (!localStorage.getItem('neuromundo-theme')) {
-            aplicarTema(e.matches ? 'dark' : 'light');
+// Script de inicialización inmediata (ejecuta antes de DOMContentLoaded)
+(function() {
+    try {
+        // Verificar modo PC guardado
+        const savedViewMode = localStorage.getItem('neuromundo-view-mode');
+        
+        if (savedViewMode === 'pc') {
+            // Aplicar clase inmediatamente al HTML y BODY para evitar parpadeo
+            document.documentElement.classList.add('pc-mode');
+            document.body.classList.add('pc-mode');
+            
+            // Forzar viewport meta dinámicamente
+            const viewportMeta = document.querySelector('meta[name="viewport"]');
+            if (viewportMeta) {
+                viewportMeta.setAttribute('content', 'width=1280, initial-scale=0.25');
+            }
         }
-    });
+    } catch (e) {
+        console.warn('Error en inicialización inmediata del modo PC:', e);
+    }
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Sincronizar estado del botón después de cargar el DOM
+    const savedViewMode = localStorage.getItem('neuromundo-view-mode');
+    actualizarBotonVistaPC(savedViewMode === 'pc');
 });
 
-function toggleTheme() {
-    const isCurrentlyDark = document.body.classList.contains('dark-theme');
-    const newTheme = isCurrentlyDark ? 'light' : 'dark';
+function toggleViewMode() {
+    const isPCMode = document.body.classList.toggle('pc-mode');
+    document.documentElement.classList.toggle('pc-mode', isPCMode);
     
-    // Guardar en la memoria local (persiste entre páginas y sesiones)
-    localStorage.setItem('neuromundo-theme', newTheme);
+    // Guardar preferencia en localStorage
+    localStorage.setItem('neuromundo-view-mode', isPCMode ? 'pc' : 'mobile');
     
-    // Aplicar el cambio
-    aplicarTema(newTheme);
-}
-
-function aplicarTema(theme) {
-    if (theme === 'dark') {
-        document.body.classList.add('dark-theme');
-    } else {
-        document.body.classList.remove('dark-theme');
-    }
-    sincronizarBotones();
-}
-
-function sincronizarBotones() {
-    const isDark = document.body.classList.contains('dark-theme');
-    const themeToggles = document.querySelectorAll('#theme-toggle, .theme-toggle-animated');
-    
-    themeToggles.forEach(toggleBtn => {
-        toggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-        toggleBtn.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-        
-        const themeText = toggleBtn.querySelector('.btn-caption') || document.getElementById('theme-text');
-        if (themeText) {
-            themeText.textContent = isDark ? 'Oscuro' : 'Claro';
+    // Manipular viewport meta según el modo
+    const viewportMeta = document.querySelector('meta[name="viewport"]');
+    if (viewportMeta) {
+        if (isPCMode) {
+            viewportMeta.setAttribute('content', 'width=1280, initial-scale=0.25');
+        } else {
+            viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
         }
-    });
+    }
+    
+    // Actualizar estado visual del botón
+    actualizarBotonVistaPC(isPCMode);
+    
+    // Scroll al inicio para mejor experiencia visual
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function actualizarBotonVistaPC(isPCMode) {
+    const viewToggle = document.getElementById('view-toggle');
+    if (!viewToggle) return;
+    
+    if (isPCMode) {
+        viewToggle.classList.add('active');
+        viewToggle.setAttribute('aria-pressed', 'true');
+        viewToggle.setAttribute('aria-label', 'Cambiar a vista móvil');
+    } else {
+        viewToggle.classList.remove('active');
+        viewToggle.setAttribute('aria-pressed', 'false');
+        viewToggle.setAttribute('aria-label', 'Cambiar a vista de escritorio');
+    }
 }
