@@ -844,6 +844,10 @@ body.dark-theme .moon-icon {
     transform: scale(1.06);
 }
 
+.seccion-contenido {
+    margin-top: 15px;
+}
+
 /* Herramientas Diarias */
 .tools-section {
     margin-bottom: 24px;
@@ -2963,6 +2967,8 @@ body.dark-theme .form-group input {
     border-color: var(--border-strong);
     color: var(--text-heading);
 }
+
+
 
 /* Icono animado de dispositivo girando */
 .view-icon {

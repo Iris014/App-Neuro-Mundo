@@ -300,3 +300,111 @@ function actualizarBotonVistaPC(isPCMode) {
         viewToggle.setAttribute('aria-label', 'Cambiar a vista de escritorio');
     }
 }
+
+/* ==========================================================================
+   SISTEMA DE TEMA BOOTSTRAP - DATA-BS-THEME
+   ========================================================================== */
+
+// Script de inicialización inmediata (ejecuta antes de DOMContentLoaded)
+(function() {
+    try {
+        // Verificar tema guardado en localStorage
+        const savedTheme = localStorage.getItem('themeMode');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Determinar tema inicial (prioridad: guardado > sistema > light)
+        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+        
+        // Aplicar tema inmediatamente al elemento raíz (evita parpadeo)
+        document.documentElement.setAttribute('data-bs-theme', initialTheme);
+        
+        // Mantener compatibilidad con clase dark-theme existente
+        if (initialTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-theme');
+        }
+    } catch (e) {
+        console.warn('Error en inicialización inmediata del tema:', e);
+        // Fallback a light mode si hay error
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+    }
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Sincronizar estado visual del botón después de cargar el DOM
+    sincronizarBotonesTema();
+    
+    // Escuchar cambios en las preferencias del sistema operativo
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        // Solo cambiar si el usuario no ha establecido preferencia manual
+        if (!localStorage.getItem('themeMode')) {
+            aplicarTema(e.matches ? 'dark' : 'light');
+        }
+    });
+});
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    aplicarTema(newTheme);
+}
+
+function aplicarTema(theme) {
+    // Aplicar atributo nativo de Bootstrap
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    
+    // Guardar en localStorage
+    localStorage.setItem('themeMode', theme);
+    
+    // Mantener compatibilidad con clase dark-theme existente
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
+    }
+    
+    // Sincronizar botones
+    sincronizarBotonesTema();
+}
+
+function sincronizarBotonesTema() {
+    const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+    const themeToggles = document.querySelectorAll('#theme-toggle, .theme-toggle-animated');
+    
+    themeToggles.forEach(toggleBtn => {
+        toggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        toggleBtn.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+        
+        const themeText = toggleBtn.querySelector('.btn-caption') || document.getElementById('theme-text');
+        if (themeText) {
+            themeText.textContent = isDark ? 'Oscuro' : 'Claro';
+        }
+        
+        // Cambiar icono según el estado (Bootstrap Icons)
+        const iconContainer = toggleBtn.querySelector('.icon-container');
+        if (iconContainer) {
+            const sunIcon = iconContainer.querySelector('.sun-icon');
+            const moonIcon = iconContainer.querySelector('.moon-icon');
+            
+            if (sunIcon && moonIcon) {
+                if (isDark) {
+                    // Modo oscuro: mostrar sol (para cambiar a claro)
+                    sunIcon.style.opacity = '1';
+                    sunIcon.style.transform = 'rotate(0deg) scale(1)';
+                    sunIcon.style.color = 'var(--brand-accent)';
+                    moonIcon.style.opacity = '0';
+                    moonIcon.style.transform = 'rotate(90deg) scale(0.5)';
+                } else {
+                    // Modo claro: mostrar luna (para cambiar a oscuro)
+                    sunIcon.style.opacity = '0';
+                    sunIcon.style.transform = 'rotate(-90deg) scale(0.5)';
+                    moonIcon.style.opacity = '1';
+                    moonIcon.style.transform = 'rotate(0deg) scale(1)';
+                    moonIcon.style.color = '#ffffff';
+                }
+            }
+        }
+    });
+}

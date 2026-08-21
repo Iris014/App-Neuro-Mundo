@@ -28,7 +28,7 @@
             <div class="header-main">
                 <div class="app-brand">
                     <div class="logo-wrapper">
-                        <img src="static/images/image_4223f367.png" alt="Logo Oficial NeuroMundo" class="logo-app" loading="eager">
+<img src="../images/Logo empresa.png" alt="Logo Oficial NeuroMundo" class="logo-app" loading="eager">
                         <span class="online-pulse-dot" title="Ecosistema Activo"></span>
                     </div>
                     <div class="brand-text">
@@ -136,9 +136,16 @@
     </button>
 </div>
 
-<div id="seccion-contenido" style="margin-top: 20px; padding: 20px; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
-    <h3 id="seccion-titulo" style="margin-top: 0; color: #1e293b;">⭐ Vista General</h3>
-    <p id="seccion-descripcion" style="color: #64748b; margin-bottom: 0;">Selecciona una categoría arriba para acceder a las herramientas y recursos correspondientes.</p>
+<div class="seccion-contenido">
+            <aside id="categoria-info" class="category-info-panel">
+                <div class="info-content-wrapper">
+                    <div class="info-header">
+                        <span class="info-pulse"></span>
+                        <h4 id="info-titulo">⭐ Vista General</h4>
+                    </div>
+                    <p id="info-descripcion">Selecciona una categoría arriba para acceder a las herramientas y recursos correspondientes.</p>
+                </div>
+            </aside>
 </div>
 
             <section class="tools-section">
@@ -296,21 +303,29 @@
     <script>
     (function() {
         try {
-            // Inicializar tema
-            var savedTheme = localStorage.getItem('neuromundo-theme');
+            // Sistema de tema Bootstrap con data-bs-theme
+            var savedTheme = localStorage.getItem('themeMode');
             var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             
-            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            // Determinar tema inicial
+            var initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+            
+            // Aplicar atributo nativo de Bootstrap inmediatamente
+            document.documentElement.setAttribute('data-bs-theme', initialTheme);
+            
+            // Mantener compatibilidad con clase existente
+            if (initialTheme === 'dark') {
                 document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
             }
             
-            // Inicializar modo PC INMEDIATAMENTE (antes de cualquier renderizado)
+            // Inicializar modo PC si existe
             var savedViewMode = localStorage.getItem('neuromundo-view-mode');
             if (savedViewMode === 'pc') {
                 document.documentElement.classList.add('pc-mode');
                 document.body.classList.add('pc-mode');
                 
-                // Forzar viewport meta inmediatamente
                 var viewportMeta = document.querySelector('meta[name="viewport"]');
                 if (viewportMeta) {
                     viewportMeta.setAttribute('content', 'width=1280, initial-scale=0.25');
@@ -318,9 +333,10 @@
             }
         } catch (e) { 
             console.warn('localStorage no está disponible'); 
+            // Fallback a light mode
+            document.documentElement.setAttribute('data-bs-theme', 'light');
         }
     })();
-
     </script>
 </body>
 
